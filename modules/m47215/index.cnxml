@@ -1,0 +1,711 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Optimization in Hilbert Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47215</md:content-id>
+  <md:title>Optimization in Hilbert Spaces</md:title>
+  <md:abstract>Introduces general optimization theory in Hilbert Spaces</md:abstract>
+  <md:uuid>87cb1b52-e9d2-4aab-97ab-283e84e10b1b</md:uuid>
+</metadata>
+
+<content>
+    <para id="id80041">In the remainder of the course we will discuss optimization problems. In general, an optimization problem consists of picking the “best” signal according to some metric; the metric will be some functional <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> and the search will be over a set of interest <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>, so that the problem can be written as</para>
+    <equation id="id80083">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mover accent="true">
+            <m:mi>x</m:mi>
+            <m:mo>^</m:mo>
+          </m:mover>
+          <m:mo>=</m:mo>
+          <m:mo form="prefix">arg</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">max</m:mo>
+            <m:mrow>
+              <m:mi>x</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>D</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mi>f</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mspace width="3.33333pt"/>
+          <m:mi> or </m:mi>
+          <m:mspace width="3.33333pt"/>
+          <m:mover accent="true">
+            <m:mi>x</m:mi>
+            <m:mo>^</m:mo>
+          </m:mover>
+          <m:mo>=</m:mo>
+          <m:mo form="prefix">arg</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">min</m:mo>
+            <m:mrow>
+              <m:mi>x</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>D</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mi>f</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id80523">We will need to extend the ideas of derivatives and gradients (which are used in optimization of single-variable real-valued functions) to arbitrary signal spaces where we can move in infinite directions on a set of interest.</para>
+    <figure id="uid1"><media id="uid1_media" alt="">
+        <image mime-type="image/png" src="../../media/optimization.png" id="uid1_onlineimage" width="800"><!-- NOTE: attribute width changes image size online (pixels). original width is 1085. --></image>
+        <image mime-type="application/postscript" for="pdf" src="../../media/optimization.eps" id="uid1_printimage" print-width="15.0cm">
+          <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+        </image>
+      </media>
+      
+    <caption>Optimization examples. We wish to find the largest or smallest value of a functional <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, over a set <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>. For scalar-valued functions of scalar fields, the maximizer/minimizer is found by solving <m:math overflow="scroll"><m:mrow><m:mfrac><m:mrow><m:mi>d</m:mi><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>d</m:mi><m:mi>x</m:mi></m:mrow></m:mfrac><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</caption></figure><section id="cid1">
+      <title>Directional Derivatives</title>
+      <para id="id80013">Assume that we have a metric function <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> and a set of interest <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>. Navigating the “surface” of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> to find a maximum or minimum requires for us to formulate a framework for derivatives.</para>
+      <para id="id80840"><emphasis effect="bold">Definition 1</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>D</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> be arbitrary. If the limit</para>
+      <equation id="id80882">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>δ</m:mi>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>;</m:mo>
+              <m:mi>h</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mi>α</m:mi>
+                <m:mo>→</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+            </m:munder>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>α</m:mi>
+            </m:mfrac>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>α</m:mi>
+                <m:mi>h</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>]</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id80966">exists, it is called <emphasis effect="italics">Gâteaux differential</emphasis> of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> at <m:math overflow="scroll"><m:mi>x</m:mi></m:math> with increment (or in the direction) <m:math overflow="scroll"><m:mi>h</m:mi></m:math>. If the limit exists for each <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, the transformation <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is said to be <emphasis effect="italics">Gâteaux differentiable</emphasis> at <m:math overflow="scroll"><m:mi>x</m:mi></m:math>. If <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is Gâteaux differentiable at all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, then it is called a <emphasis effect="italics">Gâteaux differentiable functional</emphasis>.</para>
+      <para id="id81062">This extends the concept of derivative to incorporate direction so it can be used for any signal space. Note that <m:math overflow="scroll"><m:mi>α</m:mi></m:math> needs to be sufficiently small so that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>α</m:mi><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>D</m:mi></m:mrow></m:math>.
+Note also that for a fixed point <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and variable direction <m:math overflow="scroll"><m:mi>h</m:mi></m:math>, the Gâteaux differential is a map from <m:math overflow="scroll"><m:mi>X</m:mi></m:math> to <m:math overflow="scroll"><m:mi>Y</m:mi></m:math>, i.e., <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>;</m:mo><m:mo>·</m:mo><m:mo>)</m:mo><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math>.</para>
+      <para id="id81157"><emphasis effect="bold">Fact 1</emphasis> In the common case of <m:math overflow="scroll"><m:mrow><m:mi>Y</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>,</para>
+      <equation id="id81184">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>δ</m:mi>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>;</m:mo>
+              <m:mi>h</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mi>∂</m:mi>
+              <m:mrow>
+                <m:mi>∂</m:mi>
+                <m:mi>α</m:mi>
+              </m:mrow>
+            </m:mfrac>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>+</m:mo>
+              <m:mi>α</m:mi>
+              <m:mi>h</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mo>|</m:mo>
+              <m:mrow>
+                <m:mi>α</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+            </m:msub>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id81251"><emphasis effect="bold">Example 1</emphasis> Let <m:math overflow="scroll"><m:mi>H</m:mi></m:math> be a Hilbert space and <m:math overflow="scroll"><m:mrow><m:mi>L</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>H</m:mi><m:mo>,</m:mo><m:mi>H</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Define the function <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>:</m:mo><m:mi>H</m:mi><m:mo>→</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> by <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>〈</m:mo><m:mi>L</m:mi><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow></m:math>. What is its Gâteaux differential? From the definition,</para>
+      <equation id="id81345">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>δ</m:mi>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>;</m:mo>
+              <m:mi>h</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mi>∂</m:mi>
+              <m:mrow>
+                <m:mi>∂</m:mi>
+                <m:mi>α</m:mi>
+              </m:mrow>
+            </m:mfrac>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>L</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>,</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>α</m:mi>
+                <m:mi>h</m:mi>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mo>|</m:mo>
+              <m:mrow>
+                <m:mi>α</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+            </m:msub>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id81434">We compute the derivative:</para>
+      <equation id="uid5">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>〈</m:mo>
+                  <m:mi>L</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>,</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mi>h</m:mi>
+                  <m:mo>〉</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mi>α</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mfrac>
+                    <m:mi>∂</m:mi>
+                    <m:mrow>
+                      <m:mi>∂</m:mi>
+                      <m:mi>α</m:mi>
+                    </m:mrow>
+                  </m:mfrac>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>L</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>x</m:mi>
+                        <m:mo>+</m:mo>
+                        <m:mi>α</m:mi>
+                        <m:mi>h</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>,</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:mi>α</m:mi>
+                      <m:mi>h</m:mi>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>〈</m:mo>
+                  <m:mi>L</m:mi>
+                  <m:mi>h</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>〉</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mo>〈</m:mo>
+                  <m:mi>L</m:mi>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>〉</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mi>α</m:mi>
+                  <m:mo>〈</m:mo>
+                  <m:mi>L</m:mi>
+                  <m:mi>h</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>〉</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id81681">
+Therefore,</para>
+      <equation id="uid6">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>δ</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>;</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:msup>
+                      <m:mi>L</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msup>
+                    <m:mi>x</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>〈</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>L</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:msup>
+                      <m:mi>L</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mi>x</m:mi>
+                  <m:mo>〉</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id81867">Unfortunately, the Gâbeaux differential does not satisfy our need to connect differentiability to continuity.</para>
+      <para id="id81872"><emphasis effect="bold">Definition 2</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> be a transformation on <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>. If for each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>D</m:mi></m:mrow></m:math> and each direction <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> there exists a function <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo><m:mo>:</m:mo><m:mi>D</m:mi><m:mo>×</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> that is linear and continuous with respect to <m:math overflow="scroll"><m:mi>h</m:mi></m:math> such that</para>
+      <equation id="id81983">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>∥</m:mo>
+                <m:mo>→</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+            </m:munder>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>-</m:mo>
+                <m:mi>δ</m:mi>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>;</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id82075">then f is said to be <emphasis effect="italics">Fréchet differentiable</emphasis> at <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow></m:math> is said to be the <emphasis effect="italics">Fréchet differential</emphasis> of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> at <m:math overflow="scroll"><m:mi>x</m:mi></m:math> with increment <m:math overflow="scroll"><m:mi>h</m:mi></m:math>.</para>
+      <para id="id82152">One can intuitively see that there is a stronger connection between the common definition of a derivative (for functions <m:math overflow="scroll"><m:mrow><m:mi mathvariant="double-struck">R</m:mi><m:mo>→</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>) and the Fréchet derivative. There are additional connections between the derivatives and their properties.</para>
+      <para id="id82176"><emphasis effect="bold">Lemma 1</emphasis> If a function <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is Fréchet differentiable then <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow></m:math> is unique.</para>
+      <para id="id82220"><emphasis effect="bold">Lemma 2</emphasis> If the Fréchet differential of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> exists at <m:math overflow="scroll"><m:mi>x</m:mi></m:math>, then the Gâteaux differential of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> exists at <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and they are equal.</para>
+      <para id="id82269"><emphasis effect="bold">Lemma 3</emphasis> If <m:math overflow="scroll"><m:mi>f</m:mi></m:math> defined on an open set <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> has a Fréchet differential at <m:math overflow="scroll"><m:mi>x</m:mi></m:math> then <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous at <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.</para>
+      <para id="id82339">For a Fréchef-differentiable function, for any <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> there exists a sufficiently small <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that</para>
+      <equation id="id82373">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>-</m:mo>
+                <m:mi>δ</m:mi>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>;</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>&lt;</m:mo>
+            <m:mi>ϵ</m:mi>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id82446">This in turn implies</para>
+      <equation id="uid11">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>∥</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>;</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>;</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mo>≤</m:mo>
+                  <m:mi>ϵ</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>;</m:mo>
+                  <m:mo>·</m:mo>
+                  <m:mo>)</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:mo>(</m:mo>
+                  <m:mi>ϵ</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>;</m:mo>
+                  <m:mo>·</m:mo>
+                  <m:mo>)</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mo>)</m:mo>
+                  <m:mo>∥</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id82666">
+as <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow></m:math> is a linear continuous functional on <m:math overflow="scroll"><m:mi>h</m:mi></m:math>, implying that it is bounded. Therefore, as <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>h</m:mi><m:mo>∥</m:mo><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math>, we have</para>
+      <equation id="id82723">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>∥</m:mo>
+                <m:mo>→</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id82793">This implies that <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous at <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.</para>
+    </section>
+  </content>
+</document>

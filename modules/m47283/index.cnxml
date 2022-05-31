@@ -1,0 +1,701 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Inner Product Spaces and Hilbert Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47283</md:content-id>
+  <md:title>Inner Product Spaces and Hilbert Spaces</md:title>
+  <md:abstract>Review of inner products and inner product spaces.</md:abstract>
+  <md:uuid>45c957e6-fcef-4009-80e4-8986f76a56ab</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Inner Products</title>
+      <para id="id62167">We have defined distances and norms to measure whether two signals are different from each other and to measure the “size” of a signal. However, it is possible for two pairs of signals with the same norms and distance to exhibit different behavior - an example of this contrast is to pick a pair of orthogonal signals and a pair of non-orthogonal signals, as shown in <link target-id="uid1"/>.</para>
+      <figure id="uid1"><media id="uid1_media" alt="">
+          <image mime-type="image/png" src="../../media/orthogonality.png" id="uid1_onlineimage" width="500"><!-- NOTE: attribute width changes image size online (pixels). original width is 690. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/orthogonality.eps" id="uid1_printimage" print-width="12.0cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        
+      <caption>An example of orthogonality in a two-dimensional space: distances and norms are not indicative of orthogonality; two pairs of vectors with the same distance can have arbitrary angle between them.</caption></figure><para id="id62196">To obtain a new metric that distinguishes between orthogonal and non-orthogonal we use the <emphasis effect="italics">inner product</emphasis>, which provides us with a new metric of “similarity”.</para>
+      <para id="id62544"><emphasis effect="bold">Definition 1</emphasis> An <emphasis effect="italics">inner product</emphasis> for a vector space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>R</m:mi><m:mo>,</m:mo><m:mo>+</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> is a function <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mo>·</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>〉</m:mo><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>×</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>R</m:mi></m:mrow></m:math>, sometimes denoted <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mo>·</m:mo><m:mo>|</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math>, with the following properties: for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>,</para>
+      <list id="id62670" display="block" list-type="enumerated">
+        <item id="uid3"><m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:math> = <m:math overflow="scroll"><m:mover><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>¯</m:mo></m:mover></m:math> (complex conjugate property),
+</item>
+        <item id="uid4"><m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo></m:mrow></m:math> = <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo><m:mo>+</m:mo><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo></m:mrow></m:math> (distributive property),
+</item>
+        <item id="uid5"><m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>α</m:mi><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:math> = <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:math> (scaling property),
+</item>
+        <item id="uid6"><m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+      </list>
+      <para id="id63082">A vector space with an inner product is called an <emphasis effect="italics">inner product space</emphasis> or a <emphasis effect="italics">pre-Hilbert</emphasis> space.</para>
+      <para id="id63096">It is worth pointing out that properties (2-3) say that the inner product is linear, albeit only on the first input. However, if <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>, then the properties (2-3) hold for both inputs and the inner product is linear on both inputs.</para>
+      <para id="id63117">Just as every norm induces a distance, every inner product induces a norm: <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow></m:msqrt></m:mrow></m:math>.</para>
+    </section>
+    <section id="cid2">
+      <title>Hilbert Spaces</title>
+      <para id="id63169"><emphasis effect="bold">Definition 2</emphasis> An inner product space that is complete under the metric induced by the induced norm is called a <emphasis effect="italics">Hilbert space</emphasis>.</para>
+      <para id="id63186"><emphasis effect="bold">Example 1</emphasis> The following are examples of inner product spaces:</para>
+      <list id="id63198" display="block" list-type="enumerated"><item id="uid9"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> with the inner product <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msup><m:mi>y</m:mi><m:mi>T</m:mi></m:msup><m:mi>x</m:mi></m:mrow></m:math>. The corresponding induced norm is given by <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow></m:msqrt><m:mo>=</m:mo><m:msqrt><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msubsup><m:mi>x</m:mi><m:mrow><m:mi>i</m:mi></m:mrow><m:mn>2</m:mn></m:msubsup></m:mrow></m:msqrt><m:mo>=</m:mo><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msub></m:mrow></m:math>, i.e., the <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> norm. Since <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup><m:mo>,</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:msub><m:mo>∥</m:mo><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> is complete, then it is a Hilbert space.
+</item>
+        <item id="uid10"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> with inner product <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mo>∫</m:mo><m:mi>T</m:mi></m:msub><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mi>y</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mi>d</m:mi><m:mi>t</m:mi></m:mrow></m:math>. The corresponding induced norm is <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:msub><m:mo>∫</m:mo><m:mi>T</m:mi></m:msub><m:mi>x</m:mi><m:msup><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mi>d</m:mi><m:mi>t</m:mi></m:mrow></m:msqrt><m:mo>=</m:mo><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msub></m:mrow></m:math>, i.e., the <m:math overflow="scroll"><m:msub><m:mi>L</m:mi><m:mn>2</m:mn></m:msub></m:math> norm.
+</item>
+        <item id="uid11">If we allow for <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> to be complex-valued, then the inner product is defined by <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mo>∫</m:mo><m:mi>T</m:mi></m:msub><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mover><m:mrow><m:mi>y</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>¯</m:mo></m:mover><m:mi>d</m:mi><m:mi>t</m:mi></m:mrow></m:math>, and the corresponding induced norm is <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:msub><m:mo>∫</m:mo><m:mi>T</m:mi></m:msub><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mspace width="3.33333pt"/><m:mover><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>¯</m:mo></m:mover><m:mi>d</m:mi><m:mi>t</m:mi></m:mrow></m:msqrt><m:mo>=</m:mo><m:msqrt><m:mrow><m:msub><m:mo>∫</m:mo><m:mi>T</m:mi></m:msub><m:msup><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mi>d</m:mi><m:mi>t</m:mi></m:mrow></m:msqrt><m:mo>=</m:mo><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msub></m:mrow></m:math>.
+</item>
+        <item id="uid12"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">C</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> with inner product <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mover><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>¯</m:mo></m:mover><m:mo>=</m:mo><m:msup><m:mi>y</m:mi><m:mi>H</m:mi></m:msup><m:mi>x</m:mi></m:mrow></m:math>; here, <m:math overflow="scroll"><m:msup><m:mi>x</m:mi><m:mi>H</m:mi></m:msup></m:math> denotes the Hermitian of <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.
+The corresponding induced norm is <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msup><m:mrow><m:mi>|</m:mi><m:msub><m:mi>x</m:mi><m:mrow><m:mi>i</m:mi></m:mrow></m:msub><m:mi>|</m:mi></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt><m:mo>=</m:mo><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msub></m:mrow></m:math>.
+</item>
+      </list><para id="id64010"><emphasis effect="bold">Theorem 1 (Cauchy-Schwarz Inequality)</emphasis>  Assume <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is an inner product space. For each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, we have that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>i</m:mi></m:msub></m:mrow></m:math>, with equality if (<m:math overflow="scroll"><m:mi>i</m:mi></m:math>) <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mi>x</m:mi></m:mrow></m:math> for some <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>; (<m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mi>i</m:mi></m:mrow></m:math>) <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>; or (<m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mi>i</m:mi><m:mi>i</m:mi></m:mrow></m:math>) <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para><para id="id64200"><emphasis effect="italics">Proof:</emphasis> We consider two separate cases.</para><list id="id64204" display="block" list-type="bulleted">
+        <item id="uid14">if <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:mover><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>¯</m:mo></m:mover><m:mo>=</m:mo><m:mover><m:mrow><m:mo>〈</m:mo><m:mn>0</m:mn><m:mo>·</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>¯</m:mo></m:mover><m:mo>=</m:mo><m:mover><m:mn>0</m:mn><m:mo>¯</m:mo></m:mover><m:mover><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>¯</m:mo></m:mover><m:mo>=</m:mo><m:mn>0</m:mn><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>=</m:mo><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub></m:mrow></m:math>. The proof is similar if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+        <item id="uid15">If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>≤</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>a</m:mi><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>a</m:mi><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>-</m:mo><m:mi>a</m:mi><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>-</m:mo><m:mover><m:mi>a</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>+</m:mo><m:mi>a</m:mi><m:mover><m:mi>a</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mrow></m:math>, with equality if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>a</m:mi><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, i.e., <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mi>y</m:mi></m:mrow></m:math> for some <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>. Now set <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mfrac></m:mrow></m:math>, and so <m:math overflow="scroll"><m:mrow><m:mover><m:mi>a</m:mi><m:mo>¯</m:mo></m:mover><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mfrac></m:mrow></m:math>. We then have
+<equation id="uid16"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>≤</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>-</m:mo><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>-</m:mo><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>+</m:mo><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mfrac><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd columnalign="left"><m:mrow><m:mo>≤</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>-</m:mo><m:mfrac><m:mrow><m:mover><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mrow><m:msup><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfrac><m:mo>=</m:mo><m:msup><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>-</m:mo><m:mfrac><m:msup><m:mrow><m:mo>|</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:msup><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfrac><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation>
+
+This implies <m:math overflow="scroll"><m:mrow><m:mfrac><m:msup><m:mrow><m:mo>|</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:msup><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfrac><m:mo>≤</m:mo><m:msup><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>, and so since all quantities involved are positive we have <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo><m:mo>|</m:mo><m:mo>≤</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>·</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math>.
+</item>
+      </list>
+    </section>
+    <section id="cid3">
+      <title>Properties of Inner Products Spaces</title>
+      <para id="id65113">In the previous lecture we discussed norms induced by inner products but failed to prove that they are valid norms. Most properties are easy to check; below, we check the triangle inequality for the induced norm.</para>
+      <para id="id65118"><emphasis effect="bold">Lemma 1</emphasis> If <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow></m:msqrt></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>≤</m:mo><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub></m:mrow></m:math>.</para>
+      <para id="id65231">From the definition of the induced norm,</para>
+      <equation id="uid18">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msubsup>
+                  <m:mfenced separators="" open="∥" close="∥">
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mi>i</m:mi>
+                  <m:mn>2</m:mn>
+                </m:msubsup>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mover>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mo>¯</m:mo>
+                  </m:mover>
+                  <m:mo>+</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mi> real </m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id65536">
+At this point, we can upper bound the real part of the inner product by its magnitude: <m:math overflow="scroll"><m:mrow><m:mi> real </m:mi><m:mrow><m:mo>(</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:mrow><m:mo>|</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>|</m:mo></m:mrow></m:mrow></m:math>. Thus, we obtain</para>
+      <equation id="uid19">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msubsup>
+                  <m:mfenced separators="" open="∥" close="∥">
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mi>i</m:mi>
+                  <m:mn>2</m:mn>
+                </m:msubsup>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:msub>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:msub>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:msubsup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mi>i</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msubsup>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mfenced open="∥" close="∥">
+                          <m:mi>x</m:mi>
+                        </m:mfenced>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>+</m:mo>
+                      <m:mfenced separators="" open="∥" close="∥">
+                        <m:msub>
+                          <m:mi>y</m:mi>
+                          <m:mi>i</m:mi>
+                        </m:msub>
+                      </m:mfenced>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id65832">
+where the second inequality is due to the Cauchy-Schwarz inequality. Thus we have shown that <m:math overflow="scroll"><m:mrow><m:msub><m:mfenced separators="" open="∥" close="∥"><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi></m:mfenced><m:mi>i</m:mi></m:msub><m:mo>≤</m:mo><m:msub><m:mfenced open="∥" close="∥"><m:mi>x</m:mi></m:mfenced><m:mi>i</m:mi></m:msub><m:mo>+</m:mo><m:msub><m:mfenced open="∥" close="∥"><m:mi>y</m:mi></m:mfenced><m:mi>i</m:mi></m:msub></m:mrow></m:math>.
+
+Here's an interesting (and easy to prove) fact about inner products:</para>
+      <para id="id65896"><emphasis effect="bold">Lemma 2</emphasis> If <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+      <para id="id65970"><emphasis effect="italics">Proof:</emphasis> Pick <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math>, and so <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Due to the properties of an inner product, this implies that <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para><para id="id66028">Earlier, we considered whether all distances are induced by norms (and found a counterexample). We can ask the same question here: are all norms induced by inner products? The following theorem helps us check for this property.</para>
+      <para id="id66033"><emphasis effect="bold">Theorem 2 (Parallelogram Law)</emphasis> 
+If a norm <m:math overflow="scroll"><m:mfenced open="∥" close="∥"><m:mo>·</m:mo></m:mfenced></m:math> is induced by an inner product, then
+<m:math overflow="scroll"><m:mrow><m:msup><m:mfenced separators="" open="∥" close="∥"><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mfenced separators="" open="∥" close="∥"><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:msup><m:mfenced open="∥" close="∥"><m:mi>x</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mfenced open="∥" close="∥"><m:mi>y</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.</para>
+      <para id="id66165">This theorem allows us to rule out norms that cannot be induced.</para>
+      <para id="id66176"><emphasis effect="italics">Proof:</emphasis> For an induced norm we have <m:math overflow="scroll"><m:mrow><m:msup><m:mfenced open="∥" close="∥"><m:mi>x</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi></m:mfenced></m:mrow></m:math>. Therefore,</para><equation id="uid22">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msup>
+                    <m:mfenced separators="" open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                      <m:mo>-</m:mo>
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>-</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>-</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>(</m:mo>
+                  <m:msup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mfenced open="∥" close="∥">
+                      <m:mi>y</m:mi>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>)</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id66567"><emphasis effect="bold">Example 2</emphasis> Consider the normed space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow><m:mo>,</m:mo><m:msub><m:mi>L</m:mi><m:mi>∞</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math>, and recall that <m:math overflow="scroll"><m:mrow><m:msub><m:mfenced open="∥" close="∥"><m:mi>x</m:mi></m:mfenced><m:mi>∞</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mi>T</m:mi></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math>. If this norm is induced, then the Parallelogram law would hold. If not, then we can find a counterexample. In particular, let <m:math overflow="scroll"><m:mrow><m:mi>T</m:mi><m:mo>=</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mi>π</m:mi><m:mo>]</m:mo></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>, and <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo form="prefix">cos</m:mo><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Then, we want to check if <m:math overflow="scroll"><m:mrow><m:msup><m:mfenced separators="" open="∥" close="∥"><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mfenced separators="" open="∥" close="∥"><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:msup><m:mfenced open="∥" close="∥"><m:mi>x</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mfenced open="∥" close="∥"><m:mi>y</m:mi></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. We compute:</para>
+      <equation id="uid24">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msub>
+                  <m:mfenced open="∥" close="∥">
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mi>∞</m:mi>
+                </m:msub>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msub>
+                  <m:mfenced open="∥" close="∥">
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mi>∞</m:mi>
+                </m:msub>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msub>
+                  <m:mfenced separators="" open="∥" close="∥">
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mi>∞</m:mi>
+                </m:msub>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="∥" close="∥">
+                    <m:mn>1</m:mn>
+                    <m:mo>+</m:mo>
+                    <m:mo form="prefix">cos</m:mo>
+                    <m:mo>(</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mrow>
+                      <m:mi>t</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>T</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>+</m:mo>
+                    <m:mo form="prefix">cos</m:mo>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>t</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msub>
+                  <m:mfenced separators="" open="∥" close="∥">
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:mi>y</m:mi>
+                  </m:mfenced>
+                  <m:mi>∞</m:mi>
+                </m:msub>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="∥" close="∥">
+                    <m:mn>1</m:mn>
+                    <m:mo>-</m:mo>
+                    <m:mo form="prefix">cos</m:mo>
+                    <m:mo>(</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mrow>
+                      <m:mi>t</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>T</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>-</m:mo>
+                    <m:mo form="prefix">cos</m:mo>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>t</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>-</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mo>-</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id67125">
+Plugging into the two sides of the Parallelogram law,</para>
+      <equation id="uid25">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>(</m:mo>
+                  <m:msup>
+                    <m:mn>1</m:mn>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mn>1</m:mn>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>)</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mn>8</m:mn>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>4</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id67220">
+and the Parallelogram law does not hold. Thus, the <m:math overflow="scroll"><m:msub><m:mi>L</m:mi><m:mi>∞</m:mi></m:msub></m:math> norm is not an induced norm.</para>
+    </section>
+  </content>
+</document>

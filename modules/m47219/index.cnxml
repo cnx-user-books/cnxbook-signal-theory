@@ -1,0 +1,647 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>The ell_2 space</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47219</md:content-id>
+  <md:title>The ell_2 space</md:title>
+  <md:abstract>Formulation of the ell_2 space</md:abstract>
+  <md:uuid>bdd9c932-1377-40fe-a55c-df201519b649</md:uuid>
+</metadata>
+
+<content>
+    <para id="id62159"><emphasis effect="bold">Definition 1</emphasis> We define the <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> space of infinite sequences of finite energy as</para>
+    <equation id="id62184"><m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>ℓ</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mrow>
+            <m:mo>=</m:mo>
+            <m:mo>{</m:mo>
+          </m:mrow>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>3</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mo>...</m:mo>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>∈</m:mo>
+          <m:msup>
+            <m:mi mathvariant="double-struck">R</m:mi>
+            <m:mi>∞</m:mi>
+          </m:msup>
+          <m:mi> such that </m:mi>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>∞</m:mi>
+          </m:munderover>
+          <m:mrow>
+              <m:mi>|</m:mi>
+          </m:mrow>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mrow>
+            <m:msup>
+              <m:mo>|</m:mo>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>&lt;</m:mo>
+            <m:mi>∞</m:mi>
+            <m:mo>}</m:mo>
+          </m:mrow>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation><para id="id62638">On this space, define the inner product <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mover><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>¯</m:mo></m:mover></m:mrow></m:math>, and obtain the induced norm <m:math overflow="scroll"><m:mrow><m:msub><m:mfenced open="∥" close="∥"><m:mi>x</m:mi></m:mfenced><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:msqrt><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:msup><m:mrow><m:mo>|</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt></m:mrow></m:math>, which we term the <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> norm.</para>
+    <para id="id62774">Here <m:math overflow="scroll"><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>∞</m:mi></m:msup></m:math> refers to the set of all infinite sequences of real values. Note that this implies that the sequence <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math> must converge to zero as <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math>. Note also can then say that the <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> space consists of all infinite sequences with finite <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> norm.</para>
+    <para id="id62854"><emphasis effect="bold">Theorem 1</emphasis> 
+The <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> space is a Hilbert space.</para>
+    <para id="id62878">To prove this theorem, we need the following lemma.</para>
+    <para id="id62882"><emphasis effect="bold">Lemma 1</emphasis> A Cauchy sequence in a normed space is bounded.</para>
+    <para id="id62110"><emphasis effect="italics">Proof of Lemma 1:</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> be a Cauchy sequence and let <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> be an integer such that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>&lt;</m:mo><m:mn>1</m:mn></m:mrow></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. For <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:mi>N</m:mi></m:mrow></m:math>, we have
+<m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>=</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mo>+</m:mo><m:msub><m:mi>x</m:mi><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>+</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:msub><m:mrow><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>.
+Now set <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">max</m:mo><m:mrow><m:mn>1</m:mn><m:mo>≤</m:mo><m:mi>n</m:mi><m:mo>≤</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:msub><m:mrow><m:mo>∥</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>∥</m:mo></m:mrow><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math>. Then, <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>&lt;</m:mo><m:mi>M</m:mi></m:mrow></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mn>3</m:mn><m:mo>,</m:mo><m:mo>...</m:mo></m:mrow></m:math>.
+
+</para><para id="eip-14"><emphasis effect="italics">Proof of Theorem 1:</emphasis> We show that <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> is complete by proving that all Cauchy sequences converge in <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math>. Assume that <m:math overflow="scroll"><m:mfenced separators="" open="{" close="}"><m:msup><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msup></m:mfenced></m:math> is a Cauchy sequence in <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math>. Then, if <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msup><m:mo>=</m:mo><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msubsup><m:mo>,</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msubsup><m:mo>,</m:mo><m:mo>...</m:mo></m:mfenced></m:mrow></m:math>, we have that there exists some <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> such that if <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>,</m:mo><m:mi>k</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>, then for each <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>...</m:mo></m:mrow></m:math>,</para><equation id="id63636">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mfenced separators="" open="|" close="|">
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mi>a</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>j</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msubsup>
+            <m:mo>-</m:mo>
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mi>a</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>k</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msubsup>
+          </m:mfenced>
+          <m:mo>≤</m:mo>
+          <m:msqrt>
+            <m:mrow>
+              <m:msubsup>
+                <m:mo>∑</m:mo>
+                <m:mrow>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>∞</m:mi>
+              </m:msubsup>
+              <m:msup>
+                <m:mfenced separators="" open="|" close="|">
+                  <m:msubsup>
+                    <m:mi>x</m:mi>
+                    <m:mi>i</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>j</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:msubsup>
+                  <m:mo>-</m:mo>
+                  <m:msubsup>
+                    <m:mi>x</m:mi>
+                    <m:mi>i</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>k</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:msubsup>
+                </m:mfenced>
+                <m:mn>2</m:mn>
+              </m:msup>
+            </m:mrow>
+          </m:msqrt>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="∥" close="∥">
+            <m:msup>
+              <m:mi>x</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>j</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>-</m:mo>
+            <m:msup>
+              <m:mi>x</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>k</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+          </m:mfenced>
+          <m:mo>&lt;</m:mo>
+          <m:mi>ϵ</m:mi>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id63798">Therefore, each sequence <m:math overflow="scroll"><m:mfenced separators="" open="{" close="}"><m:msubsup><m:mi>x</m:mi><m:mi>a</m:mi><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msubsup></m:mfenced></m:math> for each <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo></m:mrow></m:math> is a Cauchy sequence in the space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi mathvariant="double-struck">C</m:mi><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math>, which is complete. Thus, each sequence <m:math overflow="scroll"><m:mfenced separators="" open="{" close="}"><m:msubsup><m:mi>x</m:mi><m:mi>a</m:mi><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msubsup></m:mfenced></m:math> must converge in <m:math overflow="scroll"><m:mi mathvariant="double-struck">C</m:mi></m:math> to some value <m:math overflow="scroll"><m:msubsup><m:mi>x</m:mi><m:mi>a</m:mi><m:mo>*</m:mo></m:msubsup></m:math>.</para>
+    <para id="id63933">Define <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mo>*</m:mo></m:msubsup><m:mo>,</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>2</m:mn><m:mo>*</m:mo></m:msubsup><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. We show that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>. According to Lemma 1, the sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is bounded by some constant <m:math overflow="scroll"><m:mi>M</m:mi></m:math>. For each pair <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>k</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>...</m:mo></m:mrow></m:math>, we have</para><equation id="id64067">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>k</m:mi>
+          </m:munderover>
+          <m:msup>
+            <m:mfenced separators="" open="|" close="|">
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>a</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msubsup>
+            </m:mfenced>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>≤</m:mo>
+          <m:msubsup>
+            <m:mfenced separators="" open="∥" close="∥">
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msup>
+            </m:mfenced>
+            <m:mn>2</m:mn>
+            <m:mn>2</m:mn>
+          </m:msubsup>
+          <m:mo>≤</m:mo>
+          <m:msup>
+            <m:mi>M</m:mi>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id64164">This inequality is valid for each value of <m:math overflow="scroll"><m:mi>n</m:mi></m:math>, and so we must have</para>
+    <equation id="id64176">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>k</m:mi>
+          </m:munderover>
+          <m:msup>
+            <m:mfenced separators="" open="|" close="|">
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>a</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+            </m:mfenced>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>≤</m:mo>
+          <m:msup>
+            <m:mi>M</m:mi>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id64237">Additionally, his inequality is valid for each value of <m:math overflow="scroll"><m:mi>k</m:mi></m:math>, and so we must have</para>
+    <equation id="id64250">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>∞</m:mi>
+          </m:munderover>
+          <m:msup>
+            <m:mfenced separators="" open="|" close="|">
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>a</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+            </m:mfenced>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>≤</m:mo>
+          <m:msup>
+            <m:mi>M</m:mi>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id64310">Thus, we have shown that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>. The last point we need to show is that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msup><m:mo>→</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>. First, since the sequence <m:math overflow="scroll"><m:mfenced separators="" open="{" close="}"><m:msup><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msup></m:mfenced></m:math> is Cauchy, we have that there exists an <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> such that if <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>,</m:mo><m:mi>k</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> and for each <m:math overflow="scroll"><m:mrow><m:mi>l</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>...</m:mo></m:mrow></m:math>, we have</para>
+    <equation id="id64453">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>l</m:mi>
+          </m:munderover>
+          <m:msup>
+            <m:mfenced separators="" open="|" close="|">
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>j</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msubsup>
+              <m:mo>-</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>k</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msubsup>
+            </m:mfenced>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>≤</m:mo>
+          <m:msubsup>
+            <m:mfenced separators="" open="∥" close="∥">
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>j</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msup>
+              <m:mo>-</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>k</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msup>
+            </m:mfenced>
+            <m:mn>2</m:mn>
+            <m:mn>2</m:mn>
+          </m:msubsup>
+          <m:mo>≤</m:mo>
+          <m:mfrac>
+            <m:mi>ϵ</m:mi>
+            <m:mn>4</m:mn>
+          </m:mfrac>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id64582">Observe also that for each <m:math overflow="scroll"><m:mi>i</m:mi></m:math> there exists <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>i</m:mi></m:mrow></m:msub></m:math> such that if <m:math overflow="scroll"><m:mrow><m:mi>k</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>i</m:mi></m:mrow></m:msub></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="|" close="|"><m:msubsup><m:mi>x</m:mi><m:mi>i</m:mi><m:mrow><m:mo>(</m:mo><m:mi>k</m:mi><m:mo>)</m:mo></m:mrow></m:msubsup><m:mo>-</m:mo><m:msubsup><m:mi>x</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup></m:mfenced><m:mo>&lt;</m:mo><m:mfrac><m:mrow><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:mi>i</m:mi></m:mrow></m:msup><m:mi>ϵ</m:mi></m:mrow><m:mn>4</m:mn></m:mfrac></m:mrow></m:math>; therefore, if <m:math overflow="scroll"><m:mrow><m:mi>k</m:mi><m:mo>≥</m:mo><m:mo movablelimits="true" form="prefix">max</m:mo><m:mfenced separators="" open="(" close=")"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mi>i</m:mi></m:msub><m:msub><m:mi>n</m:mi><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>i</m:mi></m:mrow></m:msub></m:mfenced></m:mrow></m:math>, we have</para>
+    <equation id="uid4">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>l</m:mi>
+                </m:munderover>
+                <m:msup>
+                  <m:mfenced separators="" open="|" close="|">
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mi>i</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>j</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                    </m:msubsup>
+                    <m:mo>-</m:mo>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mi>i</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msubsup>
+                  </m:mfenced>
+                  <m:mn>2</m:mn>
+                </m:msup>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>≤</m:mo>
+                <m:mn>2</m:mn>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>l</m:mi>
+                </m:munderover>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:msup>
+                    <m:mfenced separators="" open="|" close="|">
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>j</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:mo>-</m:mo>
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>k</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:msubsup>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="|" close="|">
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>k</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:mo>-</m:mo>
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mo>*</m:mo>
+                      </m:msubsup>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                </m:mfenced>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>≤</m:mo>
+                <m:mn>2</m:mn>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>l</m:mi>
+                  </m:munderover>
+                  <m:msup>
+                    <m:mfenced separators="" open="|" close="|">
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>j</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:mo>-</m:mo>
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>k</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:msubsup>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>l</m:mi>
+                  </m:munderover>
+                  <m:msup>
+                    <m:mfenced separators="" open="|" close="|">
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mi>k</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:mo>-</m:mo>
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mo>*</m:mo>
+                      </m:msubsup>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                </m:mfenced>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>&lt;</m:mo>
+                <m:mn>2</m:mn>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mfrac>
+                    <m:mi>ϵ</m:mi>
+                    <m:mn>4</m:mn>
+                  </m:mfrac>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mi>ϵ</m:mi>
+                    <m:mn>4</m:mn>
+                  </m:mfrac>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>l</m:mi>
+                  </m:munderover>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>i</m:mi>
+                    </m:mrow>
+                  </m:msup>
+                </m:mfenced>
+                <m:mo>≤</m:mo>
+                <m:mn>2</m:mn>
+                <m:mfenced separators="" open="(" close=")">
+                  <m:mfrac>
+                    <m:mi>ϵ</m:mi>
+                    <m:mn>4</m:mn>
+                  </m:mfrac>
+                  <m:mo>+</m:mo>
+                  <m:mfrac>
+                    <m:mi>ϵ</m:mi>
+                    <m:mn>4</m:mn>
+                  </m:mfrac>
+                </m:mfenced>
+                <m:mo>=</m:mo>
+                <m:mi>ϵ</m:mi>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id65202">
+where the first inequality come from the fact that <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>|</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>≤</m:mo><m:msup><m:mrow><m:mn>2</m:mn><m:mo>(</m:mo><m:mo>|</m:mo><m:mi>a</m:mi><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>|</m:mo><m:mi>b</m:mi><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, which is easy to check. Since this is true for each <m:math overflow="scroll"><m:mrow><m:mi>l</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>...</m:mo></m:mrow></m:math>, then it follows that if <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>≥</m:mo><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>*</m:mo></m:msubsup><m:mo>:</m:mo><m:mo>=</m:mo><m:mo movablelimits="true" form="prefix">max</m:mo><m:mfenced separators="" open="(" close=")"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mi>i</m:mi></m:msub><m:msub><m:mi>n</m:mi><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>i</m:mi></m:mrow></m:msub></m:mfenced></m:mrow></m:math>, then</para>
+    <equation id="id65369">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mfenced separators="" open="∥" close="∥">
+            <m:msup>
+              <m:mi>x</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>j</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mo>-</m:mo>
+            <m:msup>
+              <m:mi>x</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>∞</m:mi>
+          </m:munderover>
+          <m:msup>
+            <m:mfenced separators="" open="|" close="|">
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>j</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:msubsup>
+              <m:mo>-</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+            </m:mfenced>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>&lt;</m:mo>
+          <m:mi>ϵ</m:mi>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id65476">This shows that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>n</m:mi><m:mo>)</m:mo></m:mrow></m:msup><m:mo>→</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>.</para>
+  </content>
+</document>

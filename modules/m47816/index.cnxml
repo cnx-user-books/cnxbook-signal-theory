@@ -1,0 +1,262 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Linear Operators</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47816</md:content-id>
+  <md:title>Linear Operators</md:title>
+  <md:abstract>Introduces linear operators, along with properties and classifications.</md:abstract>
+  <md:uuid>df77c6b6-486d-43d0-a6eb-1322b545e870</md:uuid>
+</metadata>
+
+<content>
+    <para id="id62155">We begin our treatment of linear operators, also known as transformations. They can be thought as extensions of functionals that map into arbitrary vector spaces rather than a scalar space.</para>
+    <para id="id62164"><emphasis effect="bold">Definition 1</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and <m:math overflow="scroll"><m:mi>Y</m:mi></m:math> be be linear vector spaces and <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>. A rule <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> which associates every element in <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>D</m:mi></m:mrow></m:math> with an element <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is said to be a <emphasis effect="italics">transformation</emphasis> from <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> with domain <m:math overflow="scroll"><m:mi>D</m:mi></m:math>.</para>
+    <para id="id62623">We have defined <m:math overflow="scroll"><m:mi>D</m:mi></m:math> because the transformation may only be defined for some subset of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>.</para>
+    <para id="id62642"><emphasis effect="bold">Definition 2</emphasis> A transformation <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo></m:mrow></m:math><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> where X and Y are vector spaces over a scalar set <m:math overflow="scroll"><m:mi>R</m:mi></m:math>, is said to be <emphasis effect="italics">linear</emphasis> if for every <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> and all scalars <m:math overflow="scroll"><m:mrow><m:msub><m:mi>α</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>α</m:mi><m:mn>2</m:mn></m:msub><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>,</para>
+    <equation id="eip-446"><m:math overflow="scroll">
+        <m:mrow>
+          <m:mi>A</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>α</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>α</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mi>α</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mi>A</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>+</m:mo>
+          <m:msub>
+            <m:mi>α</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mi>A</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </equation><para id="id63025">A common type of linear transformation is the transformation <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup><m:mo>→</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>m</m:mi></m:msup></m:mrow></m:math>. In this case, <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is an <m:math overflow="scroll"><m:mrow><m:mi>m</m:mi><m:mo>×</m:mo><m:mi>n</m:mi></m:mrow></m:math> matrix with real-valued entries (i.e., <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mrow><m:mi>m</m:mi><m:mo>×</m:mo><m:mi>n</m:mi></m:mrow></m:msup></m:mrow></m:math>). There are a variety of linear transformations that arise in practice, producing equations of the form <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math>, with <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and <m:math overflow="scroll"><m:mi>Y</m:mi></m:math> are linear vector spaces. For example, the equation</para>
+    <equation id="eip-195"><m:math overflow="scroll">
+        <m:mrow>
+          <m:mfrac>
+            <m:mrow>
+              <m:mi>d</m:mi>
+              <m:mi>x</m:mi>
+            </m:mrow>
+            <m:mrow>
+              <m:mi>d</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:mfrac>
+          <m:mo>-</m:mo>
+          <m:mi>a</m:mi>
+          <m:mi>x</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>t</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mi>y</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>t</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </equation><para id="id63220">may be written in operator notation as <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>y</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo><m:mo>→</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> is the operator</para>
+    <equation id="id63286">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>A</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mo>·</m:mo>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mfrac>
+            <m:mrow>
+              <m:mi>d</m:mi>
+              <m:mo>(</m:mo>
+              <m:mo>·</m:mo>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mi>d</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:mfrac>
+          <m:mo>-</m:mo>
+          <m:mi>a</m:mi>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id63330">Often, we will simply write <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mrow></m:math>.</para>
+    <para id="id63351"><emphasis effect="bold">Definition 3</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:msub><m:mo>∥</m:mo><m:mi>X</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>Y</m:mi><m:mo>,</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:msub><m:mo>∥</m:mo><m:mi>Y</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> be normed vector spaces. A linear operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is <emphasis effect="italics">bounded</emphasis> if there exists a constant <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>Y</m:mi><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:msub><m:mrow><m:mi>M</m:mi><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>X</m:mi></m:msub></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>. The smallest M that satisfies this condition is the <emphasis effect="italics">norm</emphasis> of <m:math overflow="scroll"><m:mi>A</m:mi></m:math>:</para><equation id="id63517">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>A</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mi>X</m:mi>
+              <m:mo>→</m:mo>
+              <m:mi>Y</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mrow>
+              <m:mpadded height="0pt" depth="0pt">
+                <m:mstyle scriptlevel="0" displaystyle="true">
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">max</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>X</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mfrac>
+                    <m:msub>
+                      <m:mrow>
+                        <m:mo>∥</m:mo>
+                        <m:mi>A</m:mi>
+                        <m:mi>x</m:mi>
+                        <m:mo>∥</m:mo>
+                      </m:mrow>
+                      <m:mi>Y</m:mi>
+                    </m:msub>
+                    <m:msub>
+                      <m:mrow>
+                        <m:mo>∥</m:mo>
+                        <m:mi>x</m:mi>
+                        <m:mo>∥</m:mo>
+                      </m:mrow>
+                      <m:mi>X</m:mi>
+                    </m:msub>
+                  </m:mfrac>
+                  <m:mo>=</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">max</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:msub>
+                        <m:mrow>
+                          <m:mi>X</m:mi>
+                          <m:mo>,</m:mo>
+                          <m:mo>∥</m:mo>
+                          <m:mi>x</m:mi>
+                          <m:mo>∥</m:mo>
+                        </m:mrow>
+                        <m:mi>X</m:mi>
+                      </m:msub>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                  </m:munder>
+                </m:mstyle>
+              </m:mpadded>
+              <m:mo>∥</m:mo>
+              <m:mi>A</m:mi>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mi>Y</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:mpadded height="0pt" depth="0pt">
+            <m:mstyle scriptlevel="0" displaystyle="true">
+              <m:munder>
+                <m:mo movablelimits="true" form="prefix">max</m:mo>
+                <m:mrow>
+                  <m:mi>x</m:mi>
+                  <m:mo>∈</m:mo>
+                  <m:msub>
+                    <m:mrow>
+                      <m:mi>X</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mo>∥</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mi>X</m:mi>
+                  </m:msub>
+                  <m:mo>≤</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+              </m:munder>
+            </m:mstyle>
+          </m:mpadded>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>A</m:mi>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mi>Y</m:mi>
+          </m:msub>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id63724">Geometrically, the operator norm <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>A</m:mi><m:mo>∥</m:mo></m:mrow></m:math> measures the maximum extent <m:math overflow="scroll"><m:mi>A</m:mi></m:math> transforms the unit circle. Thus, <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>A</m:mi><m:mo>∥</m:mo></m:mrow></m:math> bounds the amplifying power of the operator <m:math overflow="scroll"><m:mi>A</m:mi></m:math>.</para>
+    <para id="id63769">Operators possess many properties that are shared with functionals, with similar proofs.</para>
+    <para id="id63773"><emphasis effect="bold">Definition 4</emphasis> A linear operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is continuous on <m:math overflow="scroll"><m:mi>X</m:mi></m:math> if it is continuous at any point <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.</para>
+    <para id="id63823"><emphasis effect="bold">Theorem 1</emphasis> A linear operator is bounded if and only if it is continuous.</para>
+    <para id="id63835"><emphasis effect="bold">Definition 5</emphasis> The <emphasis effect="italics">sum</emphasis> of two linear operators <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is defined as <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>(</m:mo><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub><m:mi>x</m:mi><m:mo>+</m:mo><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub><m:mi>x</m:mi></m:mrow></m:math>. Similarly, the <emphasis effect="italics">scaling</emphasis> of a linear operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is defined as <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>c</m:mi><m:mi>A</m:mi><m:mo>)</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>c</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Both resulting operators are linear as well.</para>
+    <para id="id64006">We can also extend the definition of the dual space to operators.</para>
+    <para id="id64010"><emphasis effect="bold">Definition 6</emphasis> The normed space of all bounded linear operators from <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is denoted <m:math overflow="scroll"><m:mrow><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>Y</m:mi><m:mo>)</m:mo></m:mrow></m:math></para>
+    <para id="id64053">Are these spaces complete?</para>
+    <para id="id64056"><emphasis effect="bold">Theorem 2</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>Y</m:mi></m:mrow></m:math> be normed linear spaces. If <m:math overflow="scroll"><m:mi>Y</m:mi></m:math> is a complete space then <m:math overflow="scroll"><m:mrow><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>Y</m:mi><m:mo>)</m:mo></m:mrow></m:math> is complete.</para>
+    <para id="id64108">Much of the terminology for operators is drawn from matrices.</para>
+    <para id="id64112"><emphasis effect="bold">Definition 7</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be a linear vector space. The operator <m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>X</m:mi></m:mrow></m:math> given by <m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> is known as the <emphasis effect="italics">identity operator</emphasis>, and <m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>Y</m:mi><m:mo>)</m:mo></m:mrow></m:math>.</para>
+    <para id="id64216"><emphasis effect="bold">Definition 8</emphasis> Let <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub><m:mo>:</m:mo><m:mi>Y</m:mi><m:mo>→</m:mo><m:mi>Z</m:mi></m:mrow></m:math> be linear operators. The composition of these two operators <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>(</m:mo><m:msub><m:mi>G</m:mi><m:mn>2</m:mn></m:msub><m:msub><m:mi>G</m:mi><m:mn>1</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mi>G</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>G</m:mi><m:mn>1</m:mn></m:msub><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is called a <emphasis effect="italics">product operator</emphasis>.</para>
+    <para id="id64337"><emphasis effect="bold">Definition 9</emphasis> An operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is <emphasis effect="italics">injective</emphasis> (or <emphasis effect="italics">one-to-one</emphasis>) if for each <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math> there exists at most one <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mrow></m:math>. In other words, if <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mi>A</m:mi><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>.</para>
+    <para id="id64479"><emphasis effect="bold">Definition 10</emphasis> An operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is <emphasis effect="italics">surjective</emphasis> (or <emphasis effect="italics">onto</emphasis>) if for all <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math> there exists an <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mrow></m:math>.</para>
+    <para id="id64567"><emphasis effect="bold">Definition 11</emphasis> An operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is <emphasis effect="italics">bijective</emphasis> if it is injective and surjective.</para>
+    <para id="id64603"><emphasis effect="bold">Lemma 1</emphasis> If <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is a bijective operator, then there exists a transformation <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub><m:mo>:</m:mo><m:mi>Y</m:mi><m:mo>→</m:mo><m:mi>X</m:mi></m:mrow></m:math>. such that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.</para>
+    <para id="id64713">Note that the lemma above implies <m:math overflow="scroll"><m:mrow><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mi>I</m:mi></m:mrow></m:math>. Thus, we say that <m:math overflow="scroll"><m:msub><m:mi>A</m:mi><m:mn>1</m:mn></m:msub></m:math> is invertible with inverse <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>A</m:mi><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msubsup><m:mo>=</m:mo><m:msub><m:mi>A</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>.</para>
+    <para id="id64790"><emphasis effect="bold">Definition 12</emphasis> An operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>X</m:mi></m:mrow></m:math> is <emphasis effect="italics">non-singular</emphasis> if it has an inverse in <m:math overflow="scroll"><m:mrow><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math>; otherwise <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is <emphasis effect="italics">singular</emphasis>.</para>
+    <para id="id64861">In other words, if a transformation <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>X</m:mi></m:mrow></m:math> is non-singular there exists a transformation <m:math overflow="scroll"><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mo>=</m:mo><m:mi>I</m:mi></m:mrow></m:math>. This extends the concept of singularity from matrices to arbitrary operators.</para>
+  </content>
+</document>

@@ -1,0 +1,1063 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Convergent Sequences, Cauchy Sequences, and Complete Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47600</md:content-id>
+  <md:title>Convergent Sequences, Cauchy Sequences, and Complete Spaces</md:title>
+  <md:abstract>Description of convergent sequences and Cauchy sequences in metric spaces. Description of complete spaces.</md:abstract>
+  <md:uuid>4cf5d68f-8f4f-40e4-9db1-a15aa3505205</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Convergence</title>
+      <para id="id96368">The concept of convergence evaluates whether a sequence of elements is getting “closer” to a given point or not.</para>
+      <para id="id96374"><emphasis effect="bold">Definition 1</emphasis> Assume a metric space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>d</m:mi><m:mo>)</m:mo></m:mrow></m:math> and a countably infinite sequence of elements <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>:</m:mo><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>,</m:mo><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mn>3</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>}</m:mo></m:mrow><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>. The sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is said to <emphasis effect="italics">converge</emphasis> to <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> if for any <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> there exists an integer <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">Z</m:mi><m:mo>+</m:mo></m:msup></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. A convergent sequence can be denoted as <m:math overflow="scroll"><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math> or <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:mover><m:mi>x</m:mi></m:mrow></m:math>.</para>
+      <figure id="uid2">
+        <media id="uid2_media" alt="">
+          <image mime-type="image/png" src="../../media/converge.png" id="uid2_onlineimage" width="206"><!-- NOTE: attribute width changes image size online (pixels). original width is 206. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/converge.eps" id="uid2_printimage" print-width="12.0cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Illustration of a convergent sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math>.</caption>
+      </figure>
+      <para id="id97202">Note that in the definition <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> is implicitly dependent on <m:math overflow="scroll"><m:mi>ϵ</m:mi></m:math>, and therefore is sometimes written as <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>ϵ</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. Note also that the convergence of a sequence depends on both the space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and the metric <m:math overflow="scroll"><m:mi>d</m:mi></m:math>: a sequence that is convergent in one space may not be convergent in another, and a sequence that is convergent under some metric may not be convergent under another. Finally, one can abbreviate the notation of convergence to <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:mi>x</m:mi></m:mrow></m:math> when the index variable <m:math overflow="scroll"><m:mi>n</m:mi></m:math> is obvious.</para>
+      <para id="id97294"><emphasis effect="bold">Example 1</emphasis> In the metric space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi mathvariant="double-struck">R</m:mi><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>|</m:mo></m:mrow></m:mrow></m:math>, the sequence <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>n</m:mi></m:mrow></m:math> gives <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mover><m:mo>→</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:mover><m:mn>0</m:mn></m:mrow></m:math>: fix <m:math overflow="scroll"><m:mi>ϵ</m:mi></m:math> and let <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>&gt;</m:mo><m:mrow><m:mo>⌈</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>ϵ</m:mi><m:mo>⌉</m:mo></m:mrow></m:mrow></m:math> (i.e., the smallest integer that is larger than <m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math>). If <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> then</para>
+      <equation id="id97489">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>d</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>n</m:mi>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>=</m:mo>
+              <m:mo>|</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>-</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>=</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>=</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>n</m:mi>
+            </m:mfrac>
+            <m:mo>≤</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:msub>
+                <m:mi>n</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:mo>&lt;</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mrow>
+                <m:mo>⌈</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>/</m:mo>
+                <m:mi>ϵ</m:mi>
+                <m:mo>⌉</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>≤</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mrow>
+                <m:mn>1</m:mn>
+                <m:mo>/</m:mo>
+                <m:mi>ϵ</m:mi>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mi>ϵ</m:mi>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id97628">verifying the definition. So by setting <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>ϵ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>&gt;</m:mo><m:mrow><m:mo>⌈</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>ϵ</m:mi><m:mo>⌉</m:mo></m:mrow></m:mrow></m:math>, we have shown that <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a convergent sequence.</para>
+      <para id="id97688"><emphasis effect="bold">Example 2</emphasis> Here are some examples of non-convergent sequences in <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi mathvariant="double-struck">R</m:mi><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math>:</para>
+      <list id="id97724" display="block" list-type="bulleted">
+        <item id="uid5"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:msup><m:mi>n</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:math> diverges as <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, as it constantly increases.
+</item>
+        <item id="uid6"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow><m:mi>n</m:mi></m:msup></m:mrow></m:math> (i.e., the sequence <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>}</m:mo></m:mrow></m:mrow></m:math>) diverges since for <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&lt;</m:mo><m:mn>1</m:mn></m:mrow></m:math> there does not exist an <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> that holds the definition for any choice of limit <m:math overflow="scroll"><m:mi>x</m:mi></m:math>. More explicitly, assume that a limit <m:math overflow="scroll"><m:mi>x</m:mi></m:math> exists. If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∉</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>]</m:mo></m:mrow></m:math> then for any <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>≤</m:mo><m:mn>2</m:mn></m:mrow></m:math> one sees that for either even or odd values of <m:math overflow="scroll"><m:mi>n</m:mi></m:math> we have <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo><m:mo>&gt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math>, and so no <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> holds the definition. If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>]</m:mo></m:mrow></m:math> then select <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac><m:mo movablelimits="true" form="prefix">min</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>-</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. We will have that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo><m:mo>≥</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mi>n</m:mi></m:math>, and so no <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> can hold the definition. Thus, the sequence does not converge.
+</item>
+      </list>
+      <para id="id98111"><emphasis effect="bold">Theorem 1</emphasis> If a sequence converges, then its limit is unique.</para>
+      <para id="id98130"><emphasis effect="italics">Proof:</emphasis> Assume for the sake of contradiction that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:mi>x</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:mi>y</m:mi></m:mrow></m:math>, with <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>≠</m:mo><m:mi>y</m:mi></m:mrow></m:math>. Pick an arbitrary <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>, and so for the two limits we must be able to find <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> and <m:math overflow="scroll"><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>'</m:mo></m:msubsup></m:math>, respectively, such that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math> if <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math> if <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>'</m:mo></m:msubsup></m:mrow></m:math>. Pick <m:math overflow="scroll"><m:mrow><m:msup><m:mi>n</m:mi><m:mo>*</m:mo></m:msup><m:mo>&gt;</m:mo><m:mo movablelimits="true" form="prefix">max</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>'</m:mo></m:msubsup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>; using the triangle inequality, we get that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:msup><m:mi>n</m:mi><m:mo>*</m:mo></m:msup></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:msup><m:mi>n</m:mi><m:mo>*</m:mo></m:msup></m:msub><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi><m:mo>/</m:mo><m:mn>2</m:mn><m:mo>+</m:mo><m:mi>ϵ</m:mi><m:mo>/</m:mo><m:mn>2</m:mn><m:mo>=</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math>. Since for each <m:math overflow="scroll"><m:mi>ϵ</m:mi></m:math> we can find such an <m:math overflow="scroll"><m:msup><m:mi>n</m:mi><m:mo>*</m:mo></m:msup></m:math>, it follows that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Thus, we must have <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math>, and so the two limits are the same and the limit must be unique.</para></section>
+    <section id="cid2">
+      <title>Cauchy Sequences</title>
+      <para id="id98594">The concept of a Cauchy sequence is more subtle than a convergent sequence: each pair of consecutive elements must have a distance smaller than or equal than that of any previous pair.</para>
+      <para id="id98598"><emphasis effect="bold">Definition 2</emphasis> A sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a <emphasis effect="italics">Cauchy sequence</emphasis> if for any <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> there exists an <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">Z</m:mi><m:mo>+</m:mo></m:msup></m:mrow></m:math> such that for all <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>,</m:mo><m:mi>k</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> we have <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>k</m:mi></m:msub><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math>.</para>
+      <para id="id98739">As before, the choice of <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> depends on <m:math overflow="scroll"><m:mi>ϵ</m:mi></m:math>, and whether a sequence is Cauchy depends on the metric space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>d</m:mi><m:mo>)</m:mo></m:mrow></m:math>. That being said, there is a connection between Cauchy sequences and convergent sequences.</para>
+      <para id="id98787"><emphasis effect="bold">Theorem 2</emphasis> Every convergent sequence is a Cauchy sequence.</para>
+      <para id="id98806"><emphasis effect="italics">Proof:</emphasis> Assume that a sequence <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:mi>x</m:mi></m:mrow></m:math> in <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>d</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Fix <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is convergent, there must exist an <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">Z</m:mi><m:mo>+</m:mo></m:msup></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. Now, pick <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>,</m:mo><m:mi>k</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. Then, using the triangle inequality, we have <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>k</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>k</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi><m:mo>/</m:mo><m:mn>2</m:mn><m:mo>+</m:mo><m:mi>ϵ</m:mi><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math> (since both <m:math overflow="scroll"><m:mi>j</m:mi></m:math> and <m:math overflow="scroll"><m:mi>k</m:mi></m:math> are greater or equal to <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math>) and so <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>k</m:mi></m:msub><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math>. Therefore, the sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is Cauchy.</para><para id="eip-890">One may wonder if the opposite is true: is every Cauchy sequence a convergent sequence?</para><para id="id99171"><emphasis effect="bold">Example 3</emphasis> Focus on the metric space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo><m:mo>=</m:mo><m:mo>{</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">R</m:mi><m:mo>:</m:mo><m:mn>0</m:mn><m:mo>&lt;</m:mo><m:mi>x</m:mi><m:mo>≤</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:math>. Now consider the sequence <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>n</m:mi></m:mrow></m:math> in <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. This is a Cauchy sequence: one can show this by picking <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>ϵ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>&gt;</m:mo><m:mrow><m:mo>⌈</m:mo><m:mn>2</m:mn><m:mo>/</m:mo><m:mi>ϵ</m:mi><m:mo>⌉</m:mo></m:mrow></m:mrow></m:math> and using the triangle inequality to get</para>
+      <equation id="id99330">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>d</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>j</m:mi>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>k</m:mi>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:msub>
+              <m:mi>d</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>j</m:mi>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>d</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>k</m:mi>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>=</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>+</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>=</m:mo>
+            </m:mrow>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>j</m:mi>
+            </m:mfrac>
+            <m:mo>+</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>k</m:mi>
+            </m:mfrac>
+            <m:mo>≤</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:msub>
+                <m:mi>n</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:mo>+</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:msub>
+                <m:mi>n</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>2</m:mn>
+              <m:msub>
+                <m:mi>n</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:mo>&lt;</m:mo>
+            <m:mfrac>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mo>⌈</m:mo>
+                <m:mn>2</m:mn>
+                <m:mo>/</m:mo>
+                <m:mi>ϵ</m:mi>
+                <m:mo>⌉</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>≤</m:mo>
+            <m:mfrac>
+              <m:mn>2</m:mn>
+              <m:mrow>
+                <m:mn>2</m:mn>
+                <m:mo>/</m:mo>
+                <m:mi>ϵ</m:mi>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mi>ϵ</m:mi>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id99553">However, this is not a convergent sequence: we've shown earlier that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>∉</m:mo><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math> and a sequence has a unique limit, then there is no <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:mi>x</m:mi></m:mrow></m:math>.</para>
+      </section>
+    <section id="cid3">
+      <title>Complete Metric Spaces</title>
+      <para id="id99819">Whether Cauchy sequences converge or not underlies the concept of completeness of a space.</para>
+      <para id="id99824"><emphasis effect="bold">Definition 4</emphasis> A <emphasis effect="italics">complete metric space</emphasis> is a metric space in which all Cauchy sequences are convergent sequences.</para>
+      <para id="id99842"><emphasis effect="bold">Example 5</emphasis> The metric space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math> from earlier is not complete, since we found a Cauchy sequence that converges to a point outside of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. We can make it complete by adding the convergence point, i.e., if <m:math overflow="scroll"><m:mrow><m:msup><m:mi>X</m:mi><m:mo>'</m:mo></m:msup><m:mo>=</m:mo><m:mrow><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:msup><m:mi>X</m:mi><m:mo>'</m:mo></m:msup><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> is a complete metric space.</para>
+      <para id="id99970"><emphasis effect="bold">Example 6</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> denote the space of all continuous functions with support <m:math overflow="scroll"><m:mi>T</m:mi></m:math>.
+If we pick the metric <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msup><m:mfenced separators="" open="(" close=")"><m:msub><m:mo>∫</m:mo><m:mi>T</m:mi></m:msub><m:msup><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>y</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mi>d</m:mi><m:mi>t</m:mi></m:mfenced><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> is a metric space; however, it is not a complete metric space.</para>
+      <para id="id100131">To show that the space is not complete, all we have to do is find a Cauchy sequence of signals within <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> that does not converge to any signal in <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math>. For simplicity, fix <m:math overflow="scroll"><m:mrow><m:mi>T</m:mi><m:mo>=</m:mo><m:mo>[</m:mo><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>. Fortuitously, we find the sequence illustrated in <link target-id="uid16"/>, which can be written as</para>
+      <equation id="id100199">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfenced separators="" open="{" close="">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                  </m:mtd>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mi> if </m:mi>
+                      <m:mspace width="3.33333pt"/>
+                      <m:mi>t</m:mi>
+                      <m:mo>&lt;</m:mo>
+                      <m:mo>-</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mo>,</m:mo>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd columnalign="left">
+                    <m:mn>1</m:mn>
+                  </m:mtd>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mi> if </m:mi>
+                      <m:mspace width="3.33333pt"/>
+                      <m:mi>t</m:mi>
+                      <m:mo>&gt;</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mo>,</m:mo>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mi>n</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mrow>
+                  </m:mtd>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mi> if </m:mi>
+                      <m:mspace width="3.33333pt"/>
+                      <m:mo>-</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mo>≤</m:mo>
+                      <m:mi>t</m:mi>
+                      <m:mo>≤</m:mo>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mi>n</m:mi>
+                      <m:mo>.</m:mo>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <figure id="uid16">
+        <media id="uid16_media" alt="">
+          <image mime-type="image/png" src="../../media/xn.png" id="uid16_onlineimage" width="240"><!-- NOTE: attribute width changes image size online (pixels). original width is 240. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/xn.eps" id="uid16_printimage" print-width="7.5cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Illustration of a convergent sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math>.</caption>
+      </figure>
+      <para id="id100376">Since all these functions are continuous and defined over <m:math overflow="scroll"><m:mi>T</m:mi></m:math>, then <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a sequence in <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math>. We can show that <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a Cauchy sequence: let <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> be an integer and pick <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>≥</m:mo><m:mi>k</m:mi><m:mo>≥</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. Then,</para>
+      <equation id="uid17">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>d</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mi>k</m:mi>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                        </m:mrow>
+                        <m:mn>1</m:mn>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mi>k</m:mi>
+                          </m:msub>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mi>j</m:mi>
+                          </m:msub>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>j</m:mi>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>j</m:mi>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mi>k</m:mi>
+                          </m:msub>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mi>j</m:mi>
+                          </m:msub>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>≤</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>j</m:mi>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>j</m:mi>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mn>1</m:mn>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mn>2</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mi>j</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>≤</m:mo>
+                  <m:msqrt>
+                    <m:mrow>
+                      <m:mn>2</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:msub>
+                        <m:mi>n</m:mi>
+                        <m:mn>0</m:mn>
+                      </m:msub>
+                    </m:mrow>
+                  </m:msqrt>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id100816">
+So for a given <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>, by picking <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> such that <m:math overflow="scroll"><m:mrow><m:msqrt><m:mrow><m:mn>2</m:mn><m:mo>/</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:msqrt><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math> (say, for example, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>&gt;</m:mo><m:mrow><m:mo>⌈</m:mo><m:mn>2</m:mn><m:mo>/</m:mo><m:msup><m:mi>ϵ</m:mi><m:mn>2</m:mn></m:msup><m:mo>⌉</m:mo></m:mrow></m:mrow></m:math>), we will have that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>k</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>,</m:mo><m:mi>k</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>; thus, the sequence is Cauchy. Now, we must show that the sequence does not converge within <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math>: we will find a point <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∉</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:math> such that for <m:math overflow="scroll"><m:mrow><m:msup><m:mi>X</m:mi><m:mo>'</m:mo></m:msup><m:mo>=</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow><m:mo>∪</m:mo><m:mrow><m:mo>{</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>}</m:mo></m:mrow></m:mrow></m:math> the sequence <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> in <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:msup><m:mi>X</m:mi><m:mo>'</m:mo></m:msup><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math>. By inspecting the sequence of signals, we venture the guess</para>
+      <equation id="id101122">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>x</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfenced separators="" open="{" close="">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                  </m:mtd>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mi> if </m:mi>
+                      <m:mspace width="3.33333pt"/>
+                      <m:mi>t</m:mi>
+                      <m:mo>&lt;</m:mo>
+                      <m:mn>0</m:mn>
+                      <m:mo>,</m:mo>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd columnalign="left">
+                    <m:mn>1</m:mn>
+                  </m:mtd>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mi> if </m:mi>
+                      <m:mspace width="3.33333pt"/>
+                      <m:mi>t</m:mi>
+                      <m:mo>&gt;</m:mo>
+                      <m:mn>0</m:mn>
+                      <m:mo>,</m:mo>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd columnalign="left">
+                    <m:mn>0</m:mn>
+                  </m:mtd>
+                  <m:mtd columnalign="left">
+                    <m:mrow>
+                      <m:mi> if </m:mi>
+                      <m:mspace width="3.33333pt"/>
+                      <m:mi>t</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>0</m:mn>
+                      <m:mo>.</m:mo>
+                    </m:mrow>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id101238">illustrated in <link target-id="uid18"/>.</para>
+      <figure id="uid18">
+        <media id="uid18_media" alt="">
+          <image mime-type="image/png" src="../../media/xstar.png" id="uid18_onlineimage" width="240"><!-- NOTE: attribute width changes image size online (pixels). original width is 240. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/xstar.eps" id="uid18_printimage" print-width="7.5cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Initial guess for a convergence point <m:math overflow="scroll"><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup></m:math> for the sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math>.</caption>
+      </figure>
+      <para id="id101297">For this signal, we will have</para>
+      <equation id="uid19">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>d</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mi>n</m:mi>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:msup>
+                      <m:mi>x</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                        </m:mrow>
+                        <m:mn>1</m:mn>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:msup>
+                            <m:mi>x</m:mi>
+                            <m:mo>*</m:mo>
+                          </m:msup>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                        </m:mrow>
+                        <m:mn>0</m:mn>
+                      </m:msubsup>
+                      <m:mrow>
+                        <m:mo>|</m:mo>
+                      </m:mrow>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+                        <m:mi>n</m:mi>
+                      </m:msub>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>t</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:msup>
+                        <m:mi>x</m:mi>
+                        <m:mo>*</m:mo>
+                      </m:msup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mn>0</m:mn>
+                        </m:mrow>
+                        <m:mn>1</m:mn>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:msup>
+                            <m:mi>x</m:mi>
+                            <m:mo>*</m:mo>
+                          </m:msup>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mi>t</m:mi>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                        <m:mn>0</m:mn>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:mi>n</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mo>-</m:mo>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mo>-</m:mo>
+                            <m:mn>1</m:mn>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mn>0</m:mn>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:mi>n</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                        <m:mn>0</m:mn>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:mi>n</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mo>+</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mn>0</m:mn>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>-</m:mo>
+                          <m:mi>n</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mn>0</m:mn>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>-</m:mo>
+                          <m:mi>n</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                      <m:mo>+</m:mo>
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mn>0</m:mn>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>|</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>-</m:mo>
+                          <m:mi>n</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mo>|</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:mn>2</m:mn>
+                      <m:msubsup>
+                        <m:mo>∫</m:mo>
+                        <m:mrow>
+                          <m:mn>0</m:mn>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>1</m:mn>
+                          <m:mo>/</m:mo>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:msubsup>
+                      <m:msup>
+                        <m:mrow>
+                          <m:mo>(</m:mo>
+                          <m:mn>1</m:mn>
+                          <m:mo>-</m:mo>
+                          <m:mi>n</m:mi>
+                          <m:mi>t</m:mi>
+                          <m:mo>)</m:mo>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:msup>
+                      <m:mi>d</m:mi>
+                      <m:mi>t</m:mi>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:mfrac>
+                        <m:mn>2</m:mn>
+                        <m:mrow>
+                          <m:mn>3</m:mn>
+                          <m:mi>n</m:mi>
+                        </m:mrow>
+                      </m:mfrac>
+                    </m:mfenced>
+                    <m:mrow>
+                      <m:mn>1</m:mn>
+                      <m:mo>/</m:mo>
+                      <m:mn>2</m:mn>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id102021">So if we select <m:math overflow="scroll"><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:math> such that <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>(</m:mo><m:mfrac><m:mn>2</m:mn><m:mrow><m:mn>3</m:mn><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math>, i.e., <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>&gt;</m:mo><m:mfrac><m:mn>2</m:mn><m:mrow><m:mn>3</m:mn><m:msup><m:mi>ϵ</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfrac></m:mrow></m:math>, then we have that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>,</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mi>ϵ</m:mi></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>, and so we have shown that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>. Now, since a convergent sequence has a unique limit and <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∉</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> does not converge in <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> and this is not a complete metric space.</para><para id="id102284">The property of equivalence between Cauchy sequences and convergent sequences often compels us to define metric spaces that are complete by choosing the metric appropriate to the signal space. For example, by switching the distance metric to <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mi>∞</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mi>T</m:mi></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>y</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math>, the metric space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mi>∞</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> becomes complete.</para>
+    </section>
+  </content>
+</document>

@@ -1,0 +1,913 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Orthogonality</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47814</md:content-id>
+  <md:title>Orthogonality</md:title>
+  <md:abstract>Definition of orthogonal vectors, sets, and subspaces; properties and benefits.</md:abstract>
+  <md:uuid>a060712d-d9b6-4b30-bcd2-1f817ffc6e00</md:uuid>
+</metadata>
+
+<content>
+    <para id="id165169">Recall that a set <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is a basis for a subspace <m:math overflow="scroll"><m:mi>X</m:mi></m:math> if <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>S</m:mi><m:mo>]</m:mo><m:mo>=</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mi>S</m:mi></m:math> has linearly independent elements. If <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is a basis for <m:math overflow="scroll"><m:mi>X</m:mi></m:math> then each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> is uniquely determined by <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>a</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math>. In this sense, we could operate either with <m:math overflow="scroll"><m:mi>x</m:mi></m:math> itself or with the vector <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mrow><m:mo>[</m:mo><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:msup><m:mi>R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math>. One would wonder then whether particular operations can be performed with a representation <m:math overflow="scroll"><m:mi>a</m:mi></m:math> instead of the original vector <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.</para>
+    <para id="id165738"><emphasis effect="bold">Example 1</emphasis> Assume <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> have representations <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>∈</m:mo><m:msup><m:mi>R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> in a basis for <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. Can we say that
+<m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi></m:mfenced></m:mrow></m:math>?</para>
+    <para id="id166015">For the particular example of <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msub><m:mi>L</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mi>t</m:mi><m:mo>,</m:mo><m:msup><m:mi>t</m:mi><m:mn>2</m:mn></m:msup><m:mo>}</m:mo></m:mrow></m:math> so that <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>S</m:mi><m:mo>]</m:mo><m:mo>=</m:mo><m:mi>Q</m:mi></m:mrow></m:math>, the set of all quadratic functions supported on <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>. Pick <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mrow><m:mn>2</m:mn><m:mo>+</m:mo><m:mi>t</m:mi><m:mo>+</m:mo><m:msup><m:mi>t</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mrow><m:mn>1</m:mn><m:mo>+</m:mo><m:mn>2</m:mn><m:mi>t</m:mi><m:mo>+</m:mo><m:mn>3</m:mn><m:msup><m:mi>t</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mrow></m:math>. One can see then that if we label <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mi>t</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>3</m:mn></m:msub><m:mo>=</m:mo><m:msup><m:mi>t</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:math>, then the coefficient vectors for <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>y</m:mi></m:math> are <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mo>[</m:mo><m:mn>2</m:mn><m:mspace width="3.33333pt"/><m:mn>1</m:mn><m:mspace width="3.33333pt"/><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>=</m:mo><m:mo>[</m:mo><m:mn>1</m:mn><m:mspace width="3.33333pt"/><m:mn>2</m:mn><m:mspace width="3.33333pt"/><m:mn>3</m:mn><m:mo>]</m:mo></m:mrow></m:math>, respectively. Let us compute both inner products:</para>
+    <equation id="uid2">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mfenced separators="" open="〈" close="〉">
+                <m:mi>x</m:mi>
+                <m:mo>,</m:mo>
+                <m:mi>y</m:mi>
+              </m:mfenced>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:msubsup>
+                  <m:mo>∫</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mn>1</m:mn>
+                </m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mi>y</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mi>d</m:mi>
+                <m:mi>t</m:mi>
+                <m:mo>=</m:mo>
+                <m:msubsup>
+                  <m:mo>∫</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mn>1</m:mn>
+                </m:msubsup>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mi>t</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mi>t</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mn>3</m:mn>
+                  <m:msup>
+                    <m:mi>t</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mi>d</m:mi>
+                <m:mi>t</m:mi>
+                <m:mo>=</m:mo>
+                <m:mfrac>
+                  <m:mn>187</m:mn>
+                  <m:mn>20</m:mn>
+                </m:mfrac>
+                <m:mo>≈</m:mo>
+                <m:mn>9</m:mn>
+                <m:mo>.</m:mo>
+                <m:mn>35</m:mn>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mfenced separators="" open="〈" close="〉">
+                <m:mi>a</m:mi>
+                <m:mo>,</m:mo>
+                <m:mi>b</m:mi>
+              </m:mfenced>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mn>2</m:mn>
+                <m:mo>+</m:mo>
+                <m:mn>2</m:mn>
+                <m:mo>+</m:mo>
+                <m:mn>3</m:mn>
+                <m:mo>=</m:mo>
+                <m:mn>7</m:mn>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id166506">
+Since <m:math overflow="scroll"><m:mrow><m:mn>7</m:mn><m:mo>≠</m:mo><m:mn>9</m:mn><m:mo>.</m:mo><m:mn>35</m:mn></m:mrow></m:math>, we find that we fail to obtain the desired equivalence between vectors and their representations.</para>
+    <para id="id166529">While this example was unsuccessful, simple conditions on the basis <m:math overflow="scroll"><m:mi>S</m:mi></m:math> will yield this desired equivalence, plus many more useful properties.</para>
+    <para id="id166541">Several definitions of orthogonality will be useful to us during the course.</para>
+    <para id="id166545"><emphasis effect="bold">Definition 1</emphasis> A pair of vectors <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>y</m:mi></m:math> in an inner product space are <emphasis effect="italics">orthogonal</emphasis> (denoted <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>⊥</m:mo><m:mi>y</m:mi></m:mrow></m:math>) if the inner product <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+    <para id="id166616">Note that 0 is immediately orthogonal to all vectors.</para>
+    <para id="id166619"><emphasis effect="bold">Definition 2</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be an inner product space. A set of vectors <m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is <emphasis effect="italics">orthogonal</emphasis> if <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>≠</m:mo><m:mi>y</m:mi></m:mrow></m:math>.</para>
+    <para id="id166708"><emphasis effect="bold">Definition 3</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be an inner product space. A set of vectors <m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is <emphasis effect="italics">orthonormal</emphasis> if <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is an orthogonal set and <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>s</m:mi><m:mo>∥</m:mo></m:mrow><m:mo>=</m:mo><m:msqrt><m:mrow><m:mo>〈</m:mo><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>s</m:mi><m:mo>〉</m:mo></m:mrow></m:msqrt><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>.</para>
+    <para id="id166801"><emphasis effect="bold">Definition 4</emphasis> A vector <m:math overflow="scroll"><m:mi>x</m:mi></m:math> in an inner product space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is <emphasis effect="italics">orthogonal to a set</emphasis><m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> (denoted <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>⊥</m:mo><m:mi>S</m:mi></m:mrow></m:math>) if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>⊥</m:mo><m:mi>y</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>.</para>
+    <para id="id166886"><emphasis effect="bold">Definition 5</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be an inner product space. Two sets <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> are <emphasis effect="italics">orthogonal</emphasis> (denoted <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>⊥</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>) if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>⊥</m:mo><m:mi>y</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:msub><m:mi>s</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>.</para>
+    <para id="id167022"><emphasis effect="bold">Definition 6</emphasis> The <emphasis effect="italics">orthogonal complement</emphasis> <m:math overflow="scroll"><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:math> of a set <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is the set of all vectors that are orthogonal to <m:math overflow="scroll"><m:mi>S</m:mi></m:math>.</para><section id="cid1">
+      <title>Benefits of Orthogonality</title>
+      <para id="id167076">Why is orthonormality good? For many reasons. One of them is the equivalence of inner products that we desired in a previous example. Another is that having an orthonormal basis allows us to easily find the coefficients <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> in a basis <m:math overflow="scroll"><m:mi>S</m:mi></m:math>.</para>
+      <para id="id167123"><emphasis effect="bold">Example 2</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mi>S</m:mi></m:math> be a basis for <m:math overflow="scroll"><m:mi>X</m:mi></m:math> (i.e., <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>S</m:mi><m:mo>]</m:mo><m:mo>=</m:mo><m:mi>X</m:mi></m:mrow></m:math>). We wish to find <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>. Consider the inner products</para>
+      <equation id="uid10">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                </m:mfenced>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:munderover>
+                      <m:mo>∑</m:mo>
+                      <m:mrow>
+                        <m:mi>j</m:mi>
+                        <m:mo>=</m:mo>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                      <m:mi>n</m:mi>
+                    </m:munderover>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>j</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id167401">due to the linearity of the inner product in the first term. If <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is orthonormal, then we have that for <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>≠</m:mo><m:mi>j</m:mi></m:mrow></m:math> <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. In that case the sum above becomes</para><equation id="uid11">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                </m:mfenced>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>=</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id167585">
+due to the orthonormality of <m:math overflow="scroll"><m:mi>S</m:mi></m:math>. In other words, for an orthonormal basis <m:math overflow="scroll"><m:mi>S</m:mi></m:math> one can find the basis coefficients as <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>〉</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id167644">If <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is not orthonormal, then we can rewrite the sum above as the product of a row vector and a column vector as follows:</para>
+      <equation id="id167657">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfenced separators="" open="〈" close="〉">
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>s</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+            </m:mfenced>
+            <m:mo>=</m:mo>
+            <m:mfenced open="[" close="]">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mn>1</m:mn>
+                      </m:msub>
+                      <m:mo>,</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                    </m:mfenced>
+                  </m:mtd>
+                  <m:mtd>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mn>2</m:mn>
+                      </m:msub>
+                      <m:mo>,</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                    </m:mfenced>
+                  </m:mtd>
+                  <m:mtd>
+                    <m:mo>⋯</m:mo>
+                  </m:mtd>
+                  <m:mtd>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>n</m:mi>
+                      </m:msub>
+                      <m:mo>,</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                    </m:mfenced>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mfenced open="[" close="]">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mn>1</m:mn>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mo>⋮</m:mo>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mi>n</m:mi>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id167818">We can then stack these equations for <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math> to obtain the following matrix-vector multiplication:
+</para>
+      <equation id="id167861">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munder>
+              <m:munder accentunder="true">
+                <m:mfenced open="[" close="]">
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:mi>x</m:mi>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:mi>x</m:mi>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mo>⋮</m:mo>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:mi>x</m:mi>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+                </m:mfenced>
+                <m:mo>︸</m:mo>
+              </m:munder>
+              <m:mi>β</m:mi>
+            </m:munder>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:munder accentunder="true">
+                <m:mfenced open="[" close="]">
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mo>⋯</m:mo>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>3</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mo>⋯</m:mo>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mo>⋮</m:mo>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mo>⋮</m:mo>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mo>⋱</m:mo>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mo>⋮</m:mo>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mo>⋯</m:mo>
+                      </m:mtd>
+                      <m:mtd>
+                        <m:mfenced separators="" open="〈" close="〉">
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                          <m:mo>,</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                        </m:mfenced>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+                </m:mfenced>
+                <m:mo>︸</m:mo>
+              </m:munder>
+              <m:mi>G</m:mi>
+            </m:munder>
+            <m:munder>
+              <m:munder accentunder="true">
+                <m:mfenced open="[" close="]">
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:msub>
+                          <m:mi>a</m:mi>
+                          <m:mn>1</m:mn>
+                        </m:msub>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:msub>
+                          <m:mi>a</m:mi>
+                          <m:mn>2</m:mn>
+                        </m:msub>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mo>⋮</m:mo>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:msub>
+                          <m:mi>a</m:mi>
+                          <m:mi>n</m:mi>
+                        </m:msub>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+                </m:mfenced>
+                <m:mo>︸</m:mo>
+              </m:munder>
+              <m:mi>a</m:mi>
+            </m:munder>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id168293">The nomenclature given above provides us with the matrix equation <m:math overflow="scroll"><m:mrow><m:mi>β</m:mi><m:mo>=</m:mo><m:mi>G</m:mi><m:mo>·</m:mo><m:mi>a</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mi>β</m:mi></m:math> and <m:math overflow="scroll"><m:mi>G</m:mi></m:math> have entries <m:math overflow="scroll"><m:mrow><m:msub><m:mi>β</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub></m:mfenced></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>G</m:mi><m:mrow><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub></m:mfenced></m:mrow></m:math>, respectively.</para>
+      <para id="id168421"><emphasis effect="bold">Definition 7</emphasis> The matrix <m:math overflow="scroll"><m:mi>G</m:mi></m:math> above is called the <emphasis effect="italics">Gram matrix (or Gramian)</emphasis> of the set <m:math overflow="scroll"><m:mi>S</m:mi></m:math>.</para>
+      <para id="id168457">In the particular case of orthonormal <m:math overflow="scroll"><m:mi>S</m:mi></m:math>, it is easy to see that <m:math overflow="scroll"><m:mrow><m:mi>G</m:mi><m:mo>=</m:mo><m:mi>I</m:mi></m:mrow></m:math>, the identity matrix, and so <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mi>β</m:mi></m:mrow></m:math> as given earlier. For invertible Gramians <m:math overflow="scroll"><m:mi>G</m:mi></m:math>, one could compute the coefficients in vector form as <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:msup><m:mi>G</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mi>β</m:mi></m:mrow></m:math>. For square matrices (like <m:math overflow="scroll"><m:mi>G</m:mi></m:math>), invertibility is linked to singularity.</para>
+      <para id="id168542"><emphasis effect="bold">Definition 8</emphasis> A <emphasis effect="italics">singular</emphasis> matrix is a non-invertible square matrix. A <emphasis effect="italics">non-singular matrix</emphasis> is an invertible square matrix.</para>
+      <para id="id168565"><emphasis effect="bold">Theorem 1</emphasis> A matrix is singular if <m:math overflow="scroll"><m:mrow><m:mi>G</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for some <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math>. A matrix is non-singular if <m:math overflow="scroll"><m:mrow><m:mi>G</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> only for <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+      <para id="id168645">The link between this notion of singularity and invertibility is straightforward: if <m:math overflow="scroll"><m:mi>G</m:mi></m:math> is singular, then there is some <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math> for which <m:math overflow="scroll"><m:mrow><m:mi>G</m:mi><m:mo>·</m:mo><m:mi>a</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Consider the mapping <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>G</m:mi><m:mo>·</m:mo><m:mi>x</m:mi></m:mrow></m:math>; we would also have <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>G</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>≠</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>a</m:mi></m:mrow></m:math>, one cannot “invert” the mapping provided by <m:math overflow="scroll"><m:mi>G</m:mi></m:math> into <m:math overflow="scroll"><m:mi>y</m:mi></m:math>.</para>
+      <para id="id168771"><emphasis effect="bold">Theorem 2</emphasis> <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is linearly independent if and only if <m:math overflow="scroll"><m:mi>G</m:mi></m:math> is non-singular (i.e. <m:math overflow="scroll"><m:mrow><m:mi>G</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>).</para><para id="id168838"><emphasis effect="italics">Proof:</emphasis> We will prove an equivalent statement: <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is linearly dependent if and only if <m:math overflow="scroll"><m:mi>G</m:mi></m:math> is singular, i.e., if and only if there exists a vector <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>G</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para><para id="id168891"><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mo>⇒</m:mo><m:mo>)</m:mo></m:mrow></m:math> We first prove that if <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is linearly dependent then <m:math overflow="scroll"><m:mi>G</m:mi></m:math> is singular.
+In this case there exist a set <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo><m:mo>⊆</m:mo><m:mi>R</m:mi></m:mrow></m:math>, with at least one nonzero, such that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. We then can write <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub></m:mfenced><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for each <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub></m:math>. Linearity allows us to take the sum and the scalar outside the inner product:</para>
+      <equation id="id169088">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mfenced separators="" open="〈" close="〉">
+              <m:msub>
+                <m:mi>s</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>s</m:mi>
+                <m:mi>j</m:mi>
+              </m:msub>
+            </m:mfenced>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id169152">We can rewrite this equation in terms of the entries of the Gram matrix as <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>G</m:mi><m:mrow><m:mi>j</m:mi><m:mi>i</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. This sum, in turn, can be written as the vector inner product</para>
+      <equation id="id169205">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mfenced open="[" close="]">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>G</m:mi>
+                      <m:mrow>
+                        <m:mi>j</m:mi>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                    </m:msub>
+                  </m:mtd>
+                  <m:mtd>
+                    <m:mo>⋯</m:mo>
+                  </m:mtd>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>G</m:mi>
+                      <m:mrow>
+                        <m:mn>1</m:mn>
+                        <m:mi>n</m:mi>
+                      </m:mrow>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mfenced open="[" close="]">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mn>1</m:mn>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mo>⋮</m:mo>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mi>n</m:mi>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id169285">which is true for every value of <m:math overflow="scroll"><m:mi>j</m:mi></m:math>. We can therefore collect these equations into a matrix-vector product:</para>
+      <equation id="uid16">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mfenced open="[" close="]">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:msub>
+                            <m:mi>G</m:mi>
+                            <m:mn>11</m:mn>
+                          </m:msub>
+                        </m:mtd>
+                        <m:mtd>
+                          <m:mo>⋯</m:mo>
+                        </m:mtd>
+                        <m:mtd>
+                          <m:msub>
+                            <m:mi>G</m:mi>
+                            <m:mrow>
+                              <m:mn>1</m:mn>
+                              <m:mi>n</m:mi>
+                            </m:mrow>
+                          </m:msub>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mo>⋮</m:mo>
+                        </m:mtd>
+                        <m:mtd>
+                          <m:mo>⋱</m:mo>
+                        </m:mtd>
+                        <m:mtd>
+                          <m:mo>⋮</m:mo>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:msub>
+                            <m:mi>G</m:mi>
+                            <m:mrow>
+                              <m:mi>n</m:mi>
+                              <m:mn>1</m:mn>
+                            </m:mrow>
+                          </m:msub>
+                        </m:mtd>
+                        <m:mtd>
+                          <m:mo>⋯</m:mo>
+                        </m:mtd>
+                        <m:mtd>
+                          <m:msub>
+                            <m:mi>G</m:mi>
+                            <m:mrow>
+                              <m:mi>n</m:mi>
+                              <m:mi>n</m:mi>
+                            </m:mrow>
+                          </m:msub>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:mfenced>
+                  <m:mfenced open="[" close="]">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:msub>
+                            <m:mi>a</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mo>⋮</m:mo>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:msub>
+                            <m:mi>a</m:mi>
+                            <m:mi>n</m:mi>
+                          </m:msub>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:mfenced open="[" close="]">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mn>0</m:mn>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mo>⋮</m:mo>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mn>0</m:mn>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:mfenced>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id169445">
+Therefore we have found a nonzero vector <m:math overflow="scroll"><m:mi>a</m:mi></m:math> for which <m:math overflow="scroll"><m:mrow><m:mi>G</m:mi><m:mi>a</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, and therefore <m:math overflow="scroll"><m:mi>G</m:mi></m:math> is singular. Since all statements here are equalities, we can backtrack to prove the opposite direction of the theorem <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mo>⇐</m:mo><m:mo>)</m:mo></m:mrow></m:math>.</para>
+    </section>
+    <section id="cid2">
+      <title>Pythagorean Theorem</title>
+      <para id="id169510">There are still more nice proper ties for orthogonal sets of vectors. The next one has well-known geometric applications.</para>
+      <para id="id169514"><emphasis effect="bold">Theorem 3 (Pythagorean theorem)</emphasis> 
+If <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>y</m:mi></m:math> are orthogonal (<m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>⊥</m:mo><m:mi>y</m:mi></m:mrow></m:math>), then <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>.</para><para id="eip-846"><emphasis effect="italics">Proof:</emphasis></para><equation id="id169622">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>y</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>+</m:mo>
+              <m:mi>y</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>+</m:mo>
+              <m:mi>y</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>y</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>y</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>y</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>y</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id169729">Because <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>y</m:mi></m:math> are orthogonal, <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and we are left with <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>. Thus: <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>.</m:mo></m:mrow></m:math></para>
+    </section>
+  </content>
+</document>

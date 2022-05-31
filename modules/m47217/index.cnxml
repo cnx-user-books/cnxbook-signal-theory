@@ -1,0 +1,1021 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Projection Theorem</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47217</md:content-id>
+  <md:title>Projection Theorem</md:title>
+  <md:abstract>Introduces the concept of subspace projection and the optimality given by the projection theorem.</md:abstract>
+  <md:uuid>3ad2a92a-a2fa-47ee-ae70-c167805dfa75</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Uniqueness of Decompositions</title>
+      <para id="id62167">For the next property, we need two quick definitions.</para>
+      <para id="id62170"><emphasis effect="bold">Definition 1</emphasis> The sum of two spaces <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is the set <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mfenced separators="" open="{" close="}"><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>:</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub></m:mfenced></m:mrow></m:math>.</para><para id="id62615"><emphasis effect="bold">Definition 2</emphasis> The subspaces <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> are disjoint if <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>∩</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mfenced open="{" close="}"><m:mn>0</m:mn></m:mfenced></m:mrow></m:math>.</para><para id="id62687"><emphasis effect="bold">Theorem 1</emphasis> Let <m:math overflow="scroll"><m:mi>V</m:mi></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>W</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> be subspaces. For each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>+</m:mo><m:mi>W</m:mi></m:mrow></m:math> there exists a unique pair <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>,</m:mo><m:mi>w</m:mi><m:mo>∈</m:mo><m:mi>W</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>v</m:mi><m:mo>+</m:mo><m:mi>w</m:mi></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mi>V</m:mi></m:math> and <m:math overflow="scroll"><m:mi>W</m:mi></m:math> are disjoint.</para>
+      <para id="id62110"><emphasis effect="italics">Proof:</emphasis> We prove the two directions of this “if and only if” statement separately.</para><para id="id62114"><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mo>⇒</m:mo><m:mo>)</m:mo></m:mrow></m:math> If for each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> there exists a unique pair <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>,</m:mo><m:mi>w</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>×</m:mo><m:mi>W</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>v</m:mi><m:mo>+</m:mo><m:mi>w</m:mi></m:mrow></m:math>, then the subspaces <m:math overflow="scroll"><m:mi>V</m:mi></m:math> and <m:math overflow="scroll"><m:mi>W</m:mi></m:math> are disjoint.</para>
+      <para id="id63066">Assume there exists a unique pair <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>,</m:mo><m:mi>w</m:mi></m:mrow></m:math> s.t. <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>v</m:mi><m:mo>+</m:mo><m:mi>w</m:mi></m:mrow></m:math> for each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>+</m:mo><m:mi>W</m:mi></m:mrow></m:math>. For the sake of contradiction, assume <m:math overflow="scroll"><m:mi>V</m:mi></m:math> and <m:math overflow="scroll"><m:mi>W</m:mi></m:math> are not disjoint, i.e. there exists some <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>∩</m:mo><m:mi>W</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Pick <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and the corresponding <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>,</m:mo><m:mi>w</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>v</m:mi><m:mo>+</m:mo><m:mi>w</m:mi></m:mrow></m:math>. Then,</para>
+      <equation id="uid4">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>x</m:mi>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mi>v</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>w</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>z</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mi>z</m:mi>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mi>v</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>z</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>w</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mi>z</m:mi>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id63275">
+We examine these two terms in the equation:</para>
+      <equation id="id63281"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>v</m:mi>
+            <m:mo>+</m:mo>
+            <m:mi>z</m:mi>
+            <m:mo>:</m:mo>
+            <m:mi>v</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V</m:mi>
+            <m:mo>,</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>z</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V</m:mi>
+            <m:mo>⇒</m:mo>
+            <m:mi>v</m:mi>
+            <m:mo>+</m:mo>
+            <m:mi>z</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V,</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation><equation id="id63329"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>w</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>z</m:mi>
+            <m:mo>:</m:mo>
+            <m:mi>w</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W</m:mi>
+            <m:mo>,</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>z</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W</m:mi>
+            <m:mo>⇒</m:mo>
+            <m:mi>w</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>z</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W.</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation><para id="id63377">Also note</para>
+      <equation id="id63382"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>v</m:mi>
+            <m:mo>+</m:mo>
+            <m:mi>z</m:mi>
+            <m:mo>≠</m:mo>
+            <m:mi>v</m:mi>
+            <m:mspace width="1.em"/>
+            <m:mtext>and</m:mtext>
+            <m:mspace width="1.em"/>
+            <m:mi>w</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>z</m:mi>
+            <m:mo>≠</m:mo>
+            <m:mi>w</m:mi>
+            <m:mspace width="1.em"/>
+            <m:mtext>since</m:mtext>
+            <m:mspace width="1.em"/>
+            <m:mi>z</m:mi>
+            <m:mo>≠</m:mo>
+            <m:mn>0.</m:mn>
+          </m:mrow>
+        </m:math>
+</equation><para id="id63435">So we have two pairs of elements from <m:math overflow="scroll"><m:mi>V</m:mi></m:math> and <m:math overflow="scroll"><m:mi>W</m:mi></m:math> which sum to <m:math overflow="scroll"><m:mi>x</m:mi></m:math>, a contradiction to the assumption that these pairs are unique. Therefore, <m:math overflow="scroll"><m:mrow><m:mi>V</m:mi><m:mo>∩</m:mo><m:mi>W</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>}</m:mo></m:mrow></m:math> and thus <m:math overflow="scroll"><m:mi>V</m:mi></m:math> and <m:math overflow="scroll"><m:mi>W</m:mi></m:math> are disjoint.</para>
+      <para id="id63500"><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mo>⇐</m:mo><m:mo>)</m:mo></m:mrow></m:math> If <m:math overflow="scroll"><m:mi>V</m:mi></m:math> and <m:math overflow="scroll"><m:mi>W</m:mi></m:math> are disjoint, then for each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>+</m:mo><m:mi>W</m:mi></m:mrow></m:math> there exists a unique pair <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>,</m:mo><m:mi>w</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>×</m:mo><m:mi>W</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>+</m:mo><m:mi>w</m:mi><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math>.</para>
+      <para id="id63590">To prove uniqueness, we will assume that two distinct pairs exist and show at the end that they are qual to each other. The two pairs we begin with are</para>
+      <equation id="id63594">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>x</m:mi>
+            <m:mo>=</m:mo>
+            <m:mi>v</m:mi>
+            <m:mo>+</m:mo>
+            <m:mi>w</m:mi>
+            <m:mo>,</m:mo>
+            <m:mspace width="0.277778em"/>
+            <m:mi>v</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V</m:mi>
+            <m:mspace width="3.33333pt"/>
+            <m:mtext>and</m:mtext>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>w</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W</m:mi>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation id="id63642">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>x</m:mi>
+            <m:mo>=</m:mo>
+            <m:mi>p</m:mi>
+            <m:mo>+</m:mo>
+            <m:mi>q</m:mi>
+            <m:mo>,</m:mo>
+            <m:mspace width="0.277778em"/>
+            <m:mi>p</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V</m:mi>
+            <m:mspace width="3.33333pt"/>
+            <m:mtext>and</m:mtext>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>q</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W</m:mi>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation id="id63690">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>p</m:mi>
+            <m:mo>≠</m:mo>
+            <m:mi>v</m:mi>
+            <m:mspace width="3.33333pt"/>
+            <m:mtext>or</m:mtext>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>q</m:mi>
+            <m:mo>≠</m:mo>
+            <m:mi>w</m:mi>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id63722">so the pairs are distinct from each other. Subtract the equations:</para>
+      <equation id="uid5">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mn>0</m:mn>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mi>p</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mi>v</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>q</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mi>w</m:mi>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>w</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mi>q</m:mi>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mi>p</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mi>v</m:mi>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id63799">
+We examine these two terms in the equation:</para>
+      <equation id="id63805"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>p</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>v</m:mi>
+            <m:mo>:</m:mo>
+            <m:mi>p</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V</m:mi>
+            <m:mo>,</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>v</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V</m:mi>
+            <m:mo>⇒</m:mo>
+            <m:mi>p</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>v</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V,</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation><equation id="id63853"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>w</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>q</m:mi>
+            <m:mo>:</m:mo>
+            <m:mi>w</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W</m:mi>
+            <m:mo>,</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>q</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W</m:mi>
+            <m:mo>⇒</m:mo>
+            <m:mi>w</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>q</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W.</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation><para id="id63901">Since those two terms are equal,</para>
+      <equation id="id63906"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>w</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>q</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>V</m:mi>
+            <m:mspace width="1.em"/>
+            <m:mtext>and</m:mtext>
+            <m:mspace width="1.em"/>
+            <m:mi>p</m:mi>
+            <m:mo>-</m:mo>
+            <m:mi>v</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>W.</m:mi>
+          </m:mrow>
+        </m:math>
+      </equation><para id="id63944">which means that <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>-</m:mo><m:mi>q</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>∩</m:mo><m:mi>W</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>-</m:mo><m:mi>v</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi><m:mo>∩</m:mo><m:mi>W</m:mi></m:mrow></m:math>. Our starting assumption was that <m:math overflow="scroll"><m:mrow><m:mi>V</m:mi><m:mo>∩</m:mo><m:mi>W</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>}</m:mo></m:mrow></m:math>, so therefore <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>-</m:mo><m:mi>q</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>-</m:mo><m:mi>v</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> which implies <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>=</m:mo><m:mi>q</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>=</m:mo><m:mi>v</m:mi></m:mrow></m:math>. This statement is a contradiction since we assumed that the pairs were distinct, i.e., <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>≠</m:mo><m:mi>q</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>≠</m:mo><m:mi>v</m:mi></m:mrow></m:math>. Therefore, only a unique pair <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>∈</m:mo><m:mi>V</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>∈</m:mo><m:mi>W</m:mi></m:mrow></m:math> exists such that <m:math overflow="scroll"><m:mrow><m:mi>v</m:mi><m:mo>+</m:mo><m:mi>w</m:mi><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math>.</para>
+      <para id="id64153"><emphasis effect="bold">Fact 1</emphasis> If <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is a subspace, then <m:math overflow="scroll"><m:mi>S</m:mi></m:math> and <m:math overflow="scroll"><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:math> are disjoint. To see this, assume <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi><m:mo>∩</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math>, which means <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math> and so <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>. Pick <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math> so <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>⇒</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> which means <m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>∩</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id64355"><emphasis effect="bold">Fact 2</emphasis> Using Fact 1, we can show that for each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> there exists a unique pair <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>s</m:mi><m:mo>+</m:mo><m:mi>t</m:mi></m:mrow></m:math>. In particular:</para><list id="id64441" display="block" list-type="bulleted">
+        <item id="uid8">If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+        <item id="uid9">If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math>.
+</item>
+        <item id="uid10">If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∉</m:mo><m:mi>S</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∉</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math>, both <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>t</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+      </list>
+    </section>
+    <section id="cid2">
+      <title>Projection Theorem</title>
+      <para id="id64633">In fact, there is quite a lot more we can say about the projection of a point <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> into a subspace <m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math></para>
+      <para id="id64665"><emphasis effect="bold">Theorem 2</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be a Hilbert space and <m:math overflow="scroll"><m:mi>S</m:mi></m:math> be a closed subspace of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. For any vector <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> there exists a unique point <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> that is closest to <m:math overflow="scroll"><m:mi>x</m:mi></m:math>, i.e.,</para>
+      <equation id="id64748">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">min</m:mo>
+              <m:mrow>
+                <m:mi>s</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>S</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>-</m:mo>
+              <m:mi>s</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id64796">In other words, <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mspace width="0.166667em"/><m:mo>≤</m:mo><m:mspace width="0.166667em"/><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>s</m:mi><m:mo>∥</m:mo></m:mrow></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> with equality only if <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>=</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>.</para>
+      <para id="id64883">Furthermore, <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:math> is a minimizer of <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>s</m:mi><m:mo>∥</m:mo></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>⊥</m:mo><m:mi>S</m:mi></m:mrow></m:math>. In other words, <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math>.</para>
+      <para id="id64997"><emphasis effect="italics">Proof:</emphasis> To structure our proof, we will restate the theorem into four separate facts:</para><list id="id65001" display="block" list-type="enumerated">
+        <item id="uid12"><emphasis effect="italics">Existence:</emphasis> A minimizer of the distance <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>s</m:mi><m:mo>∥</m:mo></m:mrow></m:math> exists in <m:math overflow="scroll"><m:mi>S</m:mi></m:math>.
+</item>
+        <item id="uid13"><emphasis effect="italics">Orthogonality of the error:</emphasis> If <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:math> is a minimizer, then <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>⊥</m:mo><m:mi>S</m:mi></m:mrow></m:math>.
+</item>
+        <item id="uid14"><emphasis effect="italics">Sufficiency of orthogonality:</emphasis> If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>⊥</m:mo><m:mi>S</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:math> is a minimizer to the distance function.
+</item>
+        <item id="uid15"><emphasis effect="italics">Uniqueness:</emphasis> only one point that minimizes the distance exists in <m:math overflow="scroll"><m:mi>S</m:mi></m:math>.
+</item>
+      </list>
+      <para id="id65185">Each of these facts is proven separately.</para>
+      <para id="id65189">1. Existence: If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:mi>x</m:mi></m:mrow></m:math> is the minimizer (since 0 is the minimum distance). If <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∉</m:mo><m:mi>S</m:mi></m:mrow></m:math>, we denote <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">inf</m:mo><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>s</m:mi><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>. Note here that we use the infimum, which is the upper bound on all the lower bounds on the distance. The infimum is used because we do not yet know if there exists a point in <m:math overflow="scroll"><m:mi>S</m:mi></m:math> that has lowest distance to <m:math overflow="scroll"><m:mi>x</m:mi></m:math>. Note also that an infimum exists because norms have a lower bound.</para>
+      <para id="id65302">We need to show that for some <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>, we have <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>=</m:mo><m:mi>δ</m:mi></m:mrow></m:mrow></m:math>. Let <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo><m:mo>⊆</m:mo><m:mi>S</m:mi></m:mrow></m:math> be a sequence that yields <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>→</m:mo><m:mi>δ</m:mi></m:mrow></m:mrow></m:math>. We will show that this sequence is a Cauchy sequence; thenm using the fact that the space <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is closed and Hilbert, it is complete and therefore the Cauchy sequence must converge to a point <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>.</para>
+      <para id="id65442">To prove that the sequence is Cauchy, we use the Parallelogram Law:</para>
+      <equation id="uid16">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>∥</m:mo>
+                  </m:mrow>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                    <m:mo>-</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:msub>
+                          <m:mi>s</m:mi>
+                          <m:mi>j</m:mi>
+                        </m:msub>
+                        <m:mo>-</m:mo>
+                        <m:mi>x</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>x</m:mi>
+                        <m:mo>-</m:mo>
+                        <m:msub>
+                          <m:mi>s</m:mi>
+                          <m:mi>i</m:mi>
+                        </m:msub>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mfenced separators="" open="(" close=")">
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                    <m:msup>
+                      <m:mrow>
+                        <m:mo>-</m:mo>
+                        <m:mi>x</m:mi>
+                        <m:mo>∥</m:mo>
+                      </m:mrow>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                    <m:mo>+</m:mo>
+                    <m:msup>
+                      <m:mrow>
+                        <m:mo>∥</m:mo>
+                        <m:mi>x</m:mi>
+                        <m:mo>-</m:mo>
+                        <m:msub>
+                          <m:mi>s</m:mi>
+                          <m:mi>i</m:mi>
+                        </m:msub>
+                        <m:mo>∥</m:mo>
+                      </m:mrow>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>∥</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>=</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mo>∥</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mrow>
+                    <m:mo>+</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mo>∥</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>-</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>j</m:mi>
+                      </m:msub>
+                      <m:mo>+</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>-</m:mo>
+                      <m:mn>2</m:mn>
+                      <m:mi>x</m:mi>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>∥</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>=</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mo>∥</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>-</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>-</m:mo>
+                  <m:mn>4</m:mn>
+                  <m:msup>
+                    <m:mfenced separators="" open="∥" close="∥">
+                      <m:mfrac>
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>i</m:mi>
+                          </m:msub>
+                          <m:mo>+</m:mo>
+                          <m:msub>
+                            <m:mi>s</m:mi>
+                            <m:mi>j</m:mi>
+                          </m:msub>
+                        </m:mrow>
+                        <m:mn>2</m:mn>
+                      </m:mfrac>
+                      <m:mo>-</m:mo>
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id65910">Since <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is a subspace, <m:math overflow="scroll"><m:mrow><m:mfrac><m:mrow><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>+</m:mo><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub></m:mrow><m:mn>2</m:mn></m:mfrac><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> so <m:math overflow="scroll"><m:mrow><m:msup><m:mfenced separators="" open="∥" close="∥"><m:mi>x</m:mi><m:mo>-</m:mo><m:mfrac><m:mrow><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>+</m:mo><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub></m:mrow><m:mn>2</m:mn></m:mfrac></m:mfenced><m:mn>2</m:mn></m:msup><m:mo>≥</m:mo><m:msup><m:mi>δ</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:math>, since <m:math overflow="scroll"><m:mi>δ</m:mi></m:math> is the infimum. Therefore,</para><equation id="id66026"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mrow>
+              <m:mo>≤</m:mo>
+              <m:mn>2</m:mn>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>-</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>+</m:mo>
+            <m:mn>2</m:mn>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:msub>
+                  <m:mi>s</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>-</m:mo>
+            <m:mn>4</m:mn>
+            <m:msup>
+              <m:mi>δ</m:mi>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation><para id="id66132">At this point, we note that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mi>j</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:mrow></m:math> as <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, and so the sequence can be shown to be a Cauchy sequence. Since <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>s</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is Cauchy, it converges to a point <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:math> and by the triangle inequality:</para>
+      <equation id="id66229">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>-</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mo>≤</m:mo>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>-</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mo>+</m:mo>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mspace width="3.33333pt"/>
+              <m:mtext>for</m:mtext>
+              <m:mspace width="4.pt"/>
+              <m:mtext>each</m:mtext>
+              <m:mspace width="4.pt"/>
+              <m:mtext>value</m:mtext>
+              <m:mspace width="4.pt"/>
+              <m:mtext>of</m:mtext>
+              <m:mspace width="3.33333pt"/>
+              <m:mi>j</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mn>2</m:mn>
+              <m:mo>,</m:mo>
+              <m:mo>...</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66342">Now the first term of the inequality goes to <m:math overflow="scroll"><m:mi>δ</m:mi></m:math> as <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math> and the second term goes to 0, and so we have that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mi>δ</m:mi><m:mo>+</m:mo><m:mi>ϵ</m:mi></m:mrow></m:mrow></m:math> for all values of <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mi>δ</m:mi></m:math> was the infimum of the norm on the left hand side, it follows that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>=</m:mo><m:mi>δ</m:mi></m:mrow></m:mrow></m:math>, and so we have found that a minimizer exists.</para>
+      <para id="id66463">2. Orthogonality of the error: We proceed by contradiction by assuming <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> is not orthonormal to <m:math overflow="scroll"><m:mi>S</m:mi></m:math>, i.e., that there exists a unit-norm vector <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>^</m:mo></m:mover><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:mover accent="true"><m:mi>s</m:mi><m:mo>^</m:mo></m:mover><m:mo>〉</m:mo><m:mo>=</m:mo><m:mi>δ</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Let <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>=</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>+</m:mo><m:mi>δ</m:mi><m:mover accent="true"><m:mi>s</m:mi><m:mo>^</m:mo></m:mover><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>. Then <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>z</m:mi><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>. Furthermore,</para>
+      <equation id="uid17">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msup>
+                  <m:mrow>
+                    <m:mo>∥</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:mi>z</m:mi>
+                    <m:mo>∥</m:mo>
+                  </m:mrow>
+                  <m:mn>2</m:mn>
+                </m:msup>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:mi>z</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:mi>z</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>-</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mover accent="true">
+                      <m:mi>s</m:mi>
+                      <m:mo>^</m:mo>
+                    </m:mover>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>-</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mover accent="true">
+                      <m:mi>s</m:mi>
+                      <m:mo>^</m:mo>
+                    </m:mover>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mover accent="true">
+                      <m:mi>s</m:mi>
+                      <m:mo>^</m:mo>
+                    </m:mover>
+                    <m:mo>,</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mover accent="true">
+                      <m:mi>s</m:mi>
+                      <m:mo>^</m:mo>
+                    </m:mover>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mtext>Re</m:mtext>
+                  <m:mfenced separators="" open="(" close=")">
+                    <m:mo>〈</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>s</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:mi>δ</m:mi>
+                    <m:mover accent="true">
+                      <m:mi>s</m:mi>
+                      <m:mo>^</m:mo>
+                    </m:mover>
+                    <m:mo>〉</m:mo>
+                  </m:mfenced>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>=</m:mo>
+                    <m:mo>∥</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>s</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>+</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>|</m:mo>
+                      <m:mi>δ</m:mi>
+                      <m:mo>|</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>∥</m:mo>
+                      <m:mover accent="true">
+                        <m:mi>s</m:mi>
+                        <m:mo>^</m:mo>
+                      </m:mover>
+                      <m:mo>∥</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>-</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mtext>Re</m:mtext>
+                  <m:mfenced separators="" open="(" close=")">
+                    <m:mover accent="true">
+                      <m:mi>δ</m:mi>
+                      <m:mo>¯</m:mo>
+                    </m:mover>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>-</m:mo>
+                      <m:msub>
+                        <m:mi>s</m:mi>
+                        <m:mn>0</m:mn>
+                      </m:msub>
+                      <m:mo>,</m:mo>
+                      <m:mi>δ</m:mi>
+                      <m:mover accent="true">
+                        <m:mi>s</m:mi>
+                        <m:mo>^</m:mo>
+                      </m:mover>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                  </m:mfenced>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id67012">
+Now we recognize two simplifications. First, we selected <m:math overflow="scroll"><m:mover accent="true"><m:mi>s</m:mi><m:mo>^</m:mo></m:mover></m:math> so that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>^</m:mo></m:mover><m:msup><m:mrow><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>; second, the remaining inner product is equal to <m:math overflow="scroll"><m:mrow><m:mo>-</m:mo><m:mn>2</m:mn><m:mtext>Re</m:mtext><m:mfenced separators="" open="(" close=")"><m:mover accent="true"><m:mi>δ</m:mi><m:mo>¯</m:mo></m:mover><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:mi>δ</m:mi><m:mover accent="true"><m:mi>s</m:mi><m:mo>^</m:mo></m:mover><m:mo>〉</m:mo></m:mrow></m:mfenced><m:mo>=</m:mo><m:mo>-</m:mo><m:mn>2</m:mn><m:mtext>Re</m:mtext><m:mrow><m:mo>(</m:mo><m:mover accent="true"><m:mi>δ</m:mi><m:mo>¯</m:mo></m:mover><m:mi>δ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mo>-</m:mo><m:mn>2</m:mn><m:msup><m:mrow><m:mo>|</m:mo><m:mi>δ</m:mi><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>. Therefore,</para>
+      <equation id="id67174">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>-</m:mo>
+                <m:mi>z</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mrow>
+              <m:mo>=</m:mo>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>-</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>-</m:mo>
+            <m:msup>
+              <m:mrow>
+                <m:mo>|</m:mo>
+                <m:mi>δ</m:mi>
+                <m:mo>|</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>&lt;</m:mo>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>s</m:mi>
+                  <m:mn>0</m:mn>
+                </m:msub>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mspace width="1.em"/>
+            <m:mtext>since</m:mtext>
+            <m:mspace width="1.em"/>
+            <m:mi>δ</m:mi>
+            <m:mo>≠</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id67287">This is a contradiction, since we have found a <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> closer to <m:math overflow="scroll"><m:mi>x</m:mi></m:math> than <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:math>. Thus <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:mover accent="true"><m:mi>s</m:mi><m:mo>¯</m:mo></m:mover><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>¯</m:mo></m:mover><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>, which means that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>⊥</m:mo><m:mi>S</m:mi></m:mrow></m:math>.</para>
+      <para id="id67416">3. Sufficiency of orthogonality: Assume <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>⊥</m:mo><m:mi>S</m:mi></m:mrow></m:math>. For any <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:mo>≠</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>, we have <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:msup><m:mrow><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>. We use the Pythagorean theorem (if <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>⊥</m:mo><m:mi>b</m:mi></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>=</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>a</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>b</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>): since <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>⊥</m:mo><m:mi>S</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>, we have <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:msup><m:mrow><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mrow><m:mo>=</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:msup><m:mrow><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>≠</m:mo><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover></m:mrow></m:math>, we have <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:mrow><m:mo>∥</m:mo><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:mrow></m:math>, and so <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:msup><m:mrow><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>&gt;</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>. Now, since we picked <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>s</m:mi><m:mo>˜</m:mo></m:mover><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math> arbitrarily, it follows that <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:math> is the minimizer of <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>s</m:mi><m:mo>∥</m:mo></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>s</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>.</para>
+      <para id="id67978">4. Uniqueness: We can write <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. From previous parts, we know that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mi>S</m:mi></m:math> and <m:math overflow="scroll"><m:msup><m:mi>S</m:mi><m:mo>⊥</m:mo></m:msup></m:math> are disjoint, only one pair of values <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> that holds these two properties exists. Therefore, the minimizer <m:math overflow="scroll"><m:msub><m:mi>s</m:mi><m:mn>0</m:mn></m:msub></m:math> is unique.</para>
+    </section>
+  </content>
+</document>

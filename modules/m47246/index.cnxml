@@ -1,0 +1,989 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Infinite-Dimensional Hilbert Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47246</md:content-id>
+  <md:title>Infinite-Dimensional Hilbert Spaces</md:title>
+  <md:abstract>Describes the extension of Hilbert spaces to infinite dimensions, including complete orthonormal sequences and Parseval's relation.</md:abstract>
+  <md:uuid>13b1e453-f9b4-4638-a6d3-33d5902d9fef</md:uuid>
+</metadata>
+
+<content>
+    <para id="id260743">While up to now bases have been linked to finite-dimensional spaces and subspaces, it is possible to extend the concept to infinite-dimensional spaces.</para>
+    <para id="id260751"><emphasis effect="bold">Definition 1</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>R</m:mi><m:mo>,</m:mo><m:mo>+</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> be a vector space. An infinite sequence of orthonormal vectors <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>}</m:mo><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is said to be a <emphasis effect="italics">complete orthonormal sequence</emphasis> (CONS) in <m:math overflow="scroll"><m:mi>X</m:mi></m:math> if for every <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> there exists a sequence <m:math overflow="scroll"><m:mrow><m:msub><m:mi>α</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>α</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mo>∑</m:mo><m:mi>i</m:mi></m:msub><m:msub><m:mi>α</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>.</para>
+    <para id="id261260">For the sake of concreteness, an infinite sum is defined as <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:msub><m:mi>α</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">lim</m:mo><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:msub><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>α</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>. It is easy to see that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>α</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mfenced></m:mrow></m:math>.</para>
+    <para id="id261392"><emphasis effect="bold">Lemma 1</emphasis> An orthonormal sequence is complete if and only if the only vector in <m:math overflow="scroll"><m:mi>X</m:mi></m:math> orthogonal to each of the <m:math overflow="scroll"><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:math>'s is the zero vector.</para>
+    <para id="id261424"><emphasis effect="bold">Example 1</emphasis> For the space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> of finite-energy complex-valued functions, <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">C</m:mi></m:mrow></m:math>, a CONS is given by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mi>k</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mstyle scriptlevel="0" displaystyle="true"><m:mfrac><m:mn>1</m:mn><m:msqrt><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi></m:mrow></m:msqrt></m:mfrac></m:mstyle><m:msup><m:mi>e</m:mi><m:mrow><m:mi>j</m:mi><m:mi>k</m:mi><m:mi>t</m:mi></m:mrow></m:msup></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>k</m:mi><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mo>±</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>±</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo></m:mrow></m:math>. These vectors are orthonormal:</para>
+    <equation id="id261726">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>l</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:msubsup>
+            <m:mo>∫</m:mo>
+            <m:mrow>
+              <m:mn>0</m:mn>
+            </m:mrow>
+            <m:mrow>
+              <m:mn>2</m:mn>
+              <m:mi>π</m:mi>
+            </m:mrow>
+          </m:msubsup>
+          <m:mstyle scriptlevel="0" displaystyle="true">
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mrow>
+                <m:mn>2</m:mn>
+                <m:mi>π</m:mi>
+              </m:mrow>
+            </m:mfrac>
+          </m:mstyle>
+          <m:msup>
+            <m:mi>e</m:mi>
+            <m:mrow>
+              <m:mi>j</m:mi>
+              <m:mi>k</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:msup>
+            <m:mi>e</m:mi>
+            <m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>j</m:mi>
+              <m:mi>l</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mi>d</m:mi>
+          <m:mi>t</m:mi>
+          <m:mo>=</m:mo>
+          <m:msubsup>
+            <m:mo>∫</m:mo>
+            <m:mrow>
+              <m:mn>0</m:mn>
+            </m:mrow>
+            <m:mrow>
+              <m:mn>2</m:mn>
+              <m:mi>π</m:mi>
+            </m:mrow>
+          </m:msubsup>
+          <m:mstyle scriptlevel="0" displaystyle="true">
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mrow>
+                <m:mn>2</m:mn>
+                <m:mi>π</m:mi>
+              </m:mrow>
+            </m:mfrac>
+          </m:mstyle>
+          <m:msup>
+            <m:mi>e</m:mi>
+            <m:mrow>
+              <m:mi>j</m:mi>
+              <m:mo>(</m:mo>
+              <m:mi>k</m:mi>
+              <m:mo>-</m:mo>
+              <m:mi>l</m:mi>
+              <m:mo>)</m:mo>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mi>d</m:mi>
+          <m:mi>t</m:mi>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="{" close="">
+            <m:mtable>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>1</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>≠</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+            </m:mtable>
+          </m:mfenced>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id261925">The coefficients are given by</para>
+    <equation id="id261930">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>c</m:mi>
+            <m:mi>k</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:mi>x</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:msubsup>
+            <m:mo>∫</m:mo>
+            <m:mrow>
+              <m:mn>0</m:mn>
+            </m:mrow>
+            <m:mrow>
+              <m:mn>2</m:mn>
+              <m:mi>π</m:mi>
+            </m:mrow>
+          </m:msubsup>
+          <m:mi>x</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>t</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:msup>
+            <m:mi>e</m:mi>
+            <m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>j</m:mi>
+              <m:mi>k</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mi>d</m:mi>
+          <m:mi>t</m:mi>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id262015">and we obtain <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mo>∑</m:mo><m:mi>k</m:mi></m:msub><m:msub><m:mi>c</m:mi><m:mi>k</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>k</m:mi></m:msub></m:mrow></m:math>. This is the sequence behind the Fourier series representation.</para>
+    <para id="id262054"><emphasis effect="bold">Example 2</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be the space of bandlimited functions <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math> (i.e., the set of functions with Fourier transform <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>)</m:mo></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>X</m:mi><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>∉</m:mo><m:mo>[</m:mo><m:mo>-</m:mo><m:mi>B</m:mi><m:mo>,</m:mo><m:mi>B</m:mi><m:mo>]</m:mo></m:mrow></m:math>). A CONS for this space is given by</para>
+    <equation id="id262152">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>e</m:mi>
+            <m:mi>k</m:mi>
+          </m:msub>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>t</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mstyle scriptlevel="0" displaystyle="true">
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:msqrt>
+                <m:mrow>
+                  <m:mn>2</m:mn>
+                  <m:mi>B</m:mi>
+                </m:mrow>
+              </m:msqrt>
+            </m:mfrac>
+          </m:mstyle>
+          <m:mi> sinc </m:mi>
+          <m:mfenced separators="" open="(" close=")">
+            <m:mn>2</m:mn>
+            <m:mi>B</m:mi>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mi>t</m:mi>
+              <m:mo>-</m:mo>
+              <m:mstyle scriptlevel="0" displaystyle="true">
+                <m:mfrac>
+                  <m:mi>k</m:mi>
+                  <m:mrow>
+                    <m:mn>2</m:mn>
+                    <m:mi>B</m:mi>
+                  </m:mrow>
+                </m:mfrac>
+              </m:mstyle>
+            </m:mfenced>
+          </m:mfenced>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id262235">where
+<m:math overflow="scroll"><m:mrow><m:mi> sinc </m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>(</m:mo><m:mo form="prefix">sin</m:mo><m:mo>(</m:mo><m:mi>π</m:mi><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>/</m:mo><m:mo>(</m:mo><m:mi>π</m:mi><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math>. It is possible to show that the functions are orthogonal to each other, i.e.,</para>
+    <equation id="id262286">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>l</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mi>δ</m:mi>
+            <m:mrow>
+              <m:mi>k</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>l</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:mfenced separators="" open="{" close="">
+            <m:mtable>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>1</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mi>k</m:mi>
+                    <m:mo>≠</m:mo>
+                    <m:mi>l</m:mi>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+            </m:mtable>
+          </m:mfenced>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id262379">If <m:math overflow="scroll"><m:mi>x</m:mi></m:math> is bandlimited, then it follows that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mo>∑</m:mo><m:mi>k</m:mi></m:msub><m:msub><m:mi>c</m:mi><m:mi>k</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>k</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, with <m:math overflow="scroll"><m:mrow><m:msub><m:mi>c</m:mi><m:mi>k</m:mi></m:msub><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>k</m:mi></m:msub></m:mfenced><m:mo>=</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>k</m:mi><m:mo>/</m:mo><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mi>B</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+The preservation of the norm in the coefficients can also be extended from ONBs to CONS.</para>
+    <para id="id262498"><emphasis effect="bold">Theorem 1</emphasis> (Completeness Relation)
+An orthonormal sequence <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo></m:mrow></m:math> is complete for <m:math overflow="scroll"><m:mi>X</m:mi></m:math> if and only if the completeness relation holds for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>:</para>
+    <equation id="id262564">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msup>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo>∑</m:mo>
+            <m:mi>i</m:mi>
+          </m:munder>
+          <m:mrow>
+            <m:mo>|</m:mo>
+          </m:mrow>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:mi>x</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:msup>
+            <m:mrow>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo>∑</m:mo>
+            <m:mi>i</m:mi>
+          </m:munder>
+          <m:msup>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:msub>
+                <m:mi>c</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id262663">The sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is CONS if and only if</para>
+    <equation id="id262684">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>x</m:mi>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>∞</m:mi>
+          </m:munderover>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:mi>x</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:msub>
+            <m:mi>e</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">lim</m:mo>
+            <m:mrow>
+              <m:mi>n</m:mi>
+              <m:mo>→</m:mo>
+              <m:mi>∞</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:mi>x</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:msub>
+            <m:mi>e</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">lim</m:mo>
+            <m:mrow>
+              <m:mi>n</m:mi>
+              <m:mo>→</m:mo>
+              <m:mi>∞</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>n</m:mi>
+          </m:msub>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id262831">where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mfenced><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> is the partial sum. We then have <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mrow><m:mo>=</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:msup><m:mrow><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>∥</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math> as these two components are orthogonal to each other. Applying a limit on both sides for <m:math overflow="scroll"><m:mi>n</m:mi></m:math>, we have</para>
+    <equation id="id262968">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msup>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">lim</m:mo>
+            <m:mrow>
+              <m:mi>n</m:mi>
+              <m:mo>→</m:mo>
+              <m:mi>∞</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>-</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>n</m:mi>
+          </m:msub>
+          <m:msup>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>+</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">lim</m:mo>
+            <m:mrow>
+              <m:mi>n</m:mi>
+              <m:mo>→</m:mo>
+              <m:mi>∞</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>n</m:mi>
+          </m:msub>
+          <m:msup>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>=</m:mo>
+          <m:mn>0</m:mn>
+          <m:mo>+</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">lim</m:mo>
+            <m:mrow>
+              <m:mi>n</m:mi>
+              <m:mo>→</m:mo>
+              <m:mi>∞</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mrow>
+            <m:mo>|</m:mo>
+          </m:mrow>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:mi>x</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:msup>
+            <m:mrow>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>∞</m:mi>
+          </m:munderover>
+          <m:msup>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mfenced separators="" open="〈" close="〉">
+                <m:mi>x</m:mi>
+                <m:mo>,</m:mo>
+                <m:msub>
+                  <m:mi>e</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+              </m:mfenced>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id263192"><emphasis effect="bold">Theorem 2</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be a Hilbert space with a CONS <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>}</m:mo></m:mrow></m:math>. Then for any <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, Parseval's relation holds:
+<m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:msub><m:mo>∑</m:mo><m:mi>i</m:mi></m:msub><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mfenced><m:mover><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mfenced><m:mo>¯</m:mo></m:mover></m:mrow></m:math>.</para>
+    <para id="id263345">Using the CONS, we can write the partial sums <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mfenced><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>y</m:mi><m:mi>n</m:mi></m:msub><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mfenced><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>. We then have</para>
+    <equation id="uid7">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                </m:mfenced>
+                <m:mo>-</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mo>-</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mo>+</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                </m:mfenced>
+                <m:mo>-</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mo>+</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>≤</m:mo>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>∥</m:mo>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>y</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:mi>y</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:mrow>
+                  <m:mi>x</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>y</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id263853">
+Letting <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math> we have that the upper bound goes to zero, and therefore as <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, we have <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>,</m:mo><m:msub><m:mi>y</m:mi><m:mi>n</m:mi></m:msub></m:mfenced><m:mo>→</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced></m:mrow></m:math>. Therefore,</para>
+    <equation id="uid8">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mfenced separators="" open="〈" close="〉">
+                <m:mi>x</m:mi>
+                <m:mo>,</m:mo>
+                <m:mi>y</m:mi>
+              </m:mfenced>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munder>
+                  <m:mo movablelimits="true" form="prefix">lim</m:mo>
+                  <m:mrow>
+                    <m:mi>n</m:mi>
+                    <m:mo>→</m:mo>
+                    <m:mi>∞</m:mi>
+                  </m:mrow>
+                </m:munder>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                </m:mfenced>
+                <m:mo>=</m:mo>
+                <m:munder>
+                  <m:mo movablelimits="true" form="prefix">lim</m:mo>
+                  <m:mrow>
+                    <m:mi>n</m:mi>
+                    <m:mo>→</m:mo>
+                    <m:mi>∞</m:mi>
+                  </m:mrow>
+                </m:munder>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>e</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:msub>
+                    <m:mi>e</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>e</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:msub>
+                    <m:mi>e</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                </m:mfenced>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munder>
+                  <m:mo movablelimits="true" form="prefix">lim</m:mo>
+                  <m:mrow>
+                    <m:mi>n</m:mi>
+                    <m:mo>→</m:mo>
+                    <m:mi>∞</m:mi>
+                  </m:mrow>
+                </m:munder>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>j</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>e</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                </m:mfenced>
+                <m:mover>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>e</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:mo>¯</m:mo>
+                </m:mover>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:msub>
+                    <m:mi>e</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>e</m:mi>
+                    <m:mi>j</m:mi>
+                  </m:msub>
+                </m:mfenced>
+                <m:mo>=</m:mo>
+                <m:munder>
+                  <m:mo movablelimits="true" form="prefix">lim</m:mo>
+                  <m:mrow>
+                    <m:mi>n</m:mi>
+                    <m:mo>→</m:mo>
+                    <m:mi>∞</m:mi>
+                  </m:mrow>
+                </m:munder>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>e</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                </m:mfenced>
+                <m:mover>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>e</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:mo>¯</m:mo>
+                </m:mover>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msub>
+                    <m:mi>e</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                </m:mfenced>
+                <m:mover>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:msub>
+                      <m:mi>e</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                  </m:mfenced>
+                  <m:mo>¯</m:mo>
+                </m:mover>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+  </content>
+</document>

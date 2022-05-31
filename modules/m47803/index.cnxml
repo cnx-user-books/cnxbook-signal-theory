@@ -1,0 +1,1240 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Constrained Optimization</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47803</md:content-id>
+  <md:title>Constrained Optimization</md:title>
+  <md:abstract>Introduces the theory of constrained optimization, including Lagrange multipliers.</md:abstract>
+  <md:uuid>bab3effe-3bf1-467e-afa9-d3702f205dee</md:uuid>
+</metadata>
+
+<content>
+    <para id="id209099">In constrained optimization, we look to minimize or maximize an objective function only over a set of inputs <m:math overflow="scroll"><m:mrow><m:mi>Ω</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> that can be written in the following form:</para>
+    <equation id="id209121">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>Ω</m:mi>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="{" close="}">
+            <m:mtable>
+              <m:mtr>
+                <m:mtd>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>∈</m:mo>
+                    <m:mi>X</m:mi>
+                    <m:mo>:</m:mo>
+                  </m:mrow>
+                </m:mtd>
+                <m:mtd>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>g</m:mi>
+                      <m:mn>1</m:mn>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>,</m:mo>
+                    <m:mspace width="1.em"/>
+                    <m:msub>
+                      <m:mi>h</m:mi>
+                      <m:mn>1</m:mn>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>≤</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd/>
+                <m:mtd>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>g</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>,</m:mo>
+                    <m:mspace width="1.em"/>
+                    <m:msub>
+                      <m:mi>h</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>≤</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd/>
+                <m:mtd>
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>g</m:mi>
+                      <m:mn>3</m:mn>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>,</m:mo>
+                    <m:mspace width="1.em"/>
+                    <m:msub>
+                      <m:mi>h</m:mi>
+                      <m:mn>3</m:mn>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>≤</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd/>
+                <m:mtd>
+                  <m:mrow>
+                    <m:mo>⋮</m:mo>
+                    <m:mspace width="2.em"/>
+                    <m:mspace width="2.em"/>
+                    <m:mspace width="2.em"/>
+                    <m:mo>⋮</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+            </m:mtable>
+          </m:mfenced>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id209845">In words, <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> is a set described by set of equalities and inequalities on <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.
+The constraints <m:math overflow="scroll"><m:mrow><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> are said to be <emphasis effect="italics">equality constraints</emphasis>, and the constraints <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:mn>0</m:mn></m:mrow></m:math> are said to be <emphasis effect="italics">inequality constraints</emphasis>.</para>
+    <para id="id209928"><emphasis effect="bold">Example 1</emphasis> Minimize <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> subject to <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>3</m:mn></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>≤</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>≤</m:mo><m:mn>2</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>≤</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>≤</m:mo><m:mn>2</m:mn></m:mrow></m:math>, drawn on <link target-id="uid2"/>.</para>
+    <figure id="uid2">
+      <media id="uid2_media" alt="">
+        <image mime-type="image/png" src="../../media/fig.png" id="uid2_onlineimage" width="429"><!-- NOTE: attribute width changes image size online (pixels). original width is 429. --></image>
+        <image mime-type="application/postscript" for="pdf" src="../../media/fig.eps" id="uid2_printimage" print-width="9.0cm">
+          <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+        </image>
+      </media>
+      <caption>An example of a feasible set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> that can be expressed using equality and inequality constraints.</caption>
+    </figure>
+    <para id="id210044">In this optimization problem, the feasible set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> can be written in terms of one equality constraint, <m:math overflow="scroll"><m:mrow><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>3</m:mn></m:msub></m:mrow></m:math>, and four inequality constraints:</para>
+    <equation id="id210082">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable>
+          <m:mtr>
+            <m:mtd>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mn>1</m:mn>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mn>1</m:mn>
+                </m:msub>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mn>2</m:mn>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mn>1</m:mn>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:mn>2</m:mn>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mn>3</m:mn>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mn>2</m:mn>
+                </m:msub>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mn>4</m:mn>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mn>2</m:mn>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:mn>2</m:mn>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id210228"><emphasis effect="bold">Definition 1</emphasis> The points <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:math> are called <emphasis effect="italics">feasible points</emphasis>, and the set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> is called the <emphasis effect="italics">feasible set</emphasis>.</para>
+    <para id="id210271">In the sequel, we will assume that <m:math overflow="scroll"><m:mi>f</m:mi></m:math>, <m:math overflow="scroll"><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub></m:math>, <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>i</m:mi></m:msub></m:math> are continuous and Fréchet-differentiable (continuous gradients).</para>
+    <para id="id210309">We will first consider problems where the feasible set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> can be expressed in terms of equality constraints only.</para>
+    <section id="cid1">
+      <title>Tangent space</title>
+      <para id="id210330">For a given feasible point <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:math>, the <emphasis effect="italics">tangent space</emphasis> gives us the set of directions in which one can move from <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> while still staying within the feasible set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math>. The two examples below show tangent spaces in the cases where the set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> correspond to a curve in <m:math overflow="scroll"><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mn>2</m:mn></m:msup></m:math> and a nonlinear manifold in <m:math overflow="scroll"><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mn>3</m:mn></m:msup></m:math>.</para>
+      <figure id="uid4">
+        <media id="uid4_media" alt="">
+          <image mime-type="image/png" src="../../media/fig2.png" id="uid4_onlineimage" width="517"><!-- NOTE: attribute width changes image size online (pixels). original width is 517. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/fig2.eps" id="uid4_printimage" print-width="10.5cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Examples of tangent spaces and gradients.</caption>
+      </figure>
+      <para id="id210440">The tangent space at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> can be expressed formally in terms of the derivatives of the equality constraints.</para>
+      <para id="id210457"><emphasis effect="bold">Definition 2</emphasis> The <emphasis effect="italics">tangent space</emphasis> to the feasible set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> with equality constraints <m:math overflow="scroll"><m:mrow><m:msub><m:mi>g</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>g</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> at a feasible point <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:math> is given by</para>
+      <equation id="uid6">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msub>
+                    <m:mi>T</m:mi>
+                    <m:mi>Ω</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>{</m:mo>
+                  <m:mi>d</m:mi>
+                  <m:mo>∈</m:mo>
+                  <m:mi>X</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:mi>δ</m:mi>
+                  <m:msub>
+                    <m:mi>g</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>;</m:mo>
+                    <m:mi>d</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mspace width="3.33333pt"/>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mo>⋯</m:mo>
+                  <m:mo>,</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>{</m:mo>
+                  <m:mi>d</m:mi>
+                  <m:mo>∈</m:mo>
+                  <m:mi>X</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>∇</m:mi>
+                    <m:msub>
+                      <m:mi>g</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+                        <m:mn>0</m:mn>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>,</m:mo>
+                    <m:mi>d</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mspace width="3.33333pt"/>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mn>2</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mo>⋯</m:mo>
+                  <m:mo>,</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id210748">Requiring all the directional derivatives of the equality constraints to be zero in the direction of the tangent <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> guarantees that the value of the equality constraints remains at zero, therefore guaranteeing that <m:math overflow="scroll"><m:mi>d</m:mi></m:math> remains a feasible point, i.e., <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:math>.</para>
+      <para id="id210793"><emphasis effect="bold">Definition 3</emphasis> A point <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> satisfying the constraints <m:math overflow="scroll"><m:mrow><m:msub><m:mi>g</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:msub><m:mi>g</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>g</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> is said to be a regular point if the <m:math overflow="scroll"><m:mi>n</m:mi></m:math> linear functionals <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:msub><m:mi>g</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mi>δ</m:mi><m:msub><m:mi>g</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>δ</m:mi><m:msub><m:mi>g</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> (i.e., the derivatives of the equality constraints) are linearly independent on <m:math overflow="scroll"><m:mi>h</m:mi></m:math>.</para>
+      <para id="id211018"><emphasis effect="bold">Theorem 1</emphasis> If <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> is an extremum of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> subject to constraints <m:math overflow="scroll"><m:mrow><m:msub><m:mi>g</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:msub><m:mi>g</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>g</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> is a regular point of <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup></m:math> then for any <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math>, we must have <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+      <para id="id211296">One can rewrite this theorem in terms of gradients as: if <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>∇</m:mi><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mi>h</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mi>h</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. More intuition can be obtained by defining the translated tangent space at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> as follows:</para>
+      <equation id="id211392">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mover accent="true">
+                <m:mi>T</m:mi>
+                <m:mo>˜</m:mo>
+              </m:mover>
+              <m:mi>Ω</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>d</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>:</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>∇</m:mi>
+                <m:msub>
+                  <m:mi>g</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>,</m:mo>
+                <m:mi>d</m:mi>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>,</m:mo>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mn>2</m:mn>
+              <m:mo>,</m:mo>
+              <m:mo>⋯</m:mo>
+              <m:mo>,</m:mo>
+              <m:mi>n</m:mi>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id211503">Thus, the theorem above can be written as: if <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:msub><m:mover accent="true"><m:mi>T</m:mi><m:mo>˜</m:mo></m:mover><m:mi>Ω</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mi>h</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. In words, we expect for the derivative of the objective function <m:math overflow="scroll"><m:mi>f</m:mi></m:math> at the constrained extremum <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> to be zero-valued in the directions in which we can move from <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> and remain in the feasible set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> — that is, in the directions <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:msub><m:mover accent="true"><m:mi>T</m:mi><m:mo>˜</m:mo></m:mover><m:mi>Ω</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. Thus, we can write that the constrained optimum <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> must obey <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mi>⊥</m:mi><m:mover accent="true"><m:mi>T</m:mi><m:mo>˜</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, which implies <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mi>⊥</m:mi><m:msub><m:mi>T</m:mi><m:mi>Ω</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id211781"><emphasis effect="bold">Example 2</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:math>; solve</para>
+      <equation id="id211816">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mo form="prefix">arg</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">max</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>=</m:mo>
+                <m:msup>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>1</m:mn>
+                    </m:msub>
+                    <m:mspace width="3.33333pt"/>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msub>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                  <m:mi>T</m:mi>
+                </m:msup>
+              </m:mrow>
+            </m:munder>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mspace width="3.33333pt"/>
+            <m:mi> subjectto </m:mi>
+            <m:mspace width="3.33333pt"/>
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+              <m:mn>2</m:mn>
+            </m:msubsup>
+            <m:mo>+</m:mo>
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+              <m:mn>2</m:mn>
+            </m:msubsup>
+            <m:mo>=</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id211951">In words, we look for the point in a unit circle in <m:math overflow="scroll"><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mn>2</m:mn></m:msup></m:math> that has the largest sum of its coordinates. It is easy to see by inspection that such point is given by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:msup><m:mrow><m:mo>[</m:mo><m:msqrt><m:mn>2</m:mn></m:msqrt><m:mspace width="3.33333pt"/><m:msqrt><m:mn>2</m:mn></m:msqrt><m:mo>]</m:mo></m:mrow><m:mi>T</m:mi></m:msup></m:mrow></m:math>.
+The feasible set can be given in terms of the single equality constrain</para>
+      <equation id="id212014">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>g</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+              <m:mn>2</m:mn>
+            </m:msubsup>
+            <m:mo>+</m:mo>
+            <m:msubsup>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+              <m:mn>2</m:mn>
+            </m:msubsup>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>=</m:mo>
+            <m:msup>
+              <m:mi>x</m:mi>
+              <m:mi>T</m:mi>
+            </m:msup>
+            <m:mi>x</m:mi>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>I</m:mi>
+              <m:mi>x</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id212120">From previous work, we know that the gradient is given by <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mi>I</m:mi><m:mo>+</m:mo><m:msup><m:mi>I</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>2</m:mn><m:mi>I</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>2</m:mn><m:mi>x</m:mi></m:mrow></m:math>
+We can also write the objective function as</para>
+      <equation id="id212183">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfenced separators="" open="〈" close="〉">
+              <m:mfenced separators="" open="[" close="]">
+                <m:mtable>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mn>1</m:mn>
+                    </m:mtd>
+                  </m:mtr>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:mn>1</m:mn>
+                    </m:mtd>
+                  </m:mtr>
+                </m:mtable>
+              </m:mfenced>
+              <m:mo>,</m:mo>
+              <m:mi>x</m:mi>
+            </m:mfenced>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id212236">which has gradient <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfenced separators="" open="[" close="]"><m:mtable><m:mtr><m:mtd><m:mn>1</m:mn></m:mtd></m:mtr><m:mtr><m:mtd><m:mn>1</m:mn></m:mtd></m:mtr></m:mtable></m:mfenced></m:mrow></m:math>. Thus, we can write the tangent space in this case as</para>
+      <equation id="id212280">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>T</m:mi>
+              <m:mi>Ω</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>h</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>:</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>∇</m:mi>
+                <m:mi>g</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>,</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>h</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>:</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mn>0</m:mn>
+                </m:msub>
+                <m:mo>,</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>h</m:mi>
+              <m:mo>:</m:mo>
+              <m:msqrt>
+                <m:mn>2</m:mn>
+              </m:msqrt>
+              <m:msub>
+                <m:mi>h</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+              <m:mo>+</m:mo>
+              <m:msqrt>
+                <m:mn>2</m:mn>
+              </m:msqrt>
+              <m:msub>
+                <m:mi>h</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id212439">Therefore, we can write the tangent space as <m:math overflow="scroll"><m:mrow><m:msub><m:mi>T</m:mi><m:mi>Ω</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>:</m:mo><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mo>-</m:mo><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mo>}</m:mo></m:mrow></m:mrow></m:math>. It is easy to see at this point that for any such <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:msub><m:mi>T</m:mi><m:mi>Ω</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> we will have <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:mi>h</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, as stated by Theorem <link target-id="uid8"/>.</para>
+    </section>
+    <section id="cid2">
+      <title>Lagrangian Multipliers</title>
+      <para id="id212595">In this section, we will develop a method to solve optimization problems with linear objective functions and linear equality constraints.</para>
+      <para id="id212600"><emphasis effect="bold">Lemma 1</emphasis> Let <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> be linear functionals on a Hilbert space X and suppose <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mspace width="3.33333pt"/><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math>. Then there exists constants <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mo>+</m:mo><m:mo>...</m:mo><m:mo>+</m:mo><m:msub><m:mi>λ</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math>.</para>
+      <para id="id212872">Since our functionals are linear we have <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>∈</m:mo><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>. Define the subspace <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>=</m:mo><m:mi> span </m:mi><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:math>.
+Since <m:math overflow="scroll"><m:mi>M</m:mi></m:math> is finite-dimensional, then <m:math overflow="scroll"><m:mi>M</m:mi></m:math> is closed. We can therefore define its orthogonal complement:</para>
+      <equation id="id213000">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>M</m:mi>
+              <m:mo>⊥</m:mo>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>∈</m:mo>
+              <m:msup>
+                <m:mi>X</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>:</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>,</m:mo>
+                <m:msub>
+                  <m:mi>f</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>,</m:mo>
+              <m:mspace width="3.33333pt"/>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mn>2</m:mn>
+              <m:mo>,</m:mo>
+              <m:mo>...</m:mo>
+              <m:mo>,</m:mo>
+              <m:mi>n</m:mi>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id213087">Since Hilbert spaces are self-dual, then for each function <m:math overflow="scroll"><m:msub><m:mi>f</m:mi><m:mi>i</m:mi></m:msub></m:math> there exists <m:math overflow="scroll"><m:mrow><m:msub><m:mi>w</m:mi><m:mi>i</m:mi></m:msub><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msub><m:mi>w</m:mi><m:mi>i</m:mi></m:msub><m:mo>〉</m:mo></m:mrow></m:mrow></m:math>; therefore, we can rewrite the space above as its dual equivalent</para>
+      <equation id="id213171">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>M</m:mi>
+              <m:mo>⊥</m:mo>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>:</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>w</m:mi>
+                <m:mo>,</m:mo>
+                <m:msub>
+                  <m:mi>w</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>,</m:mo>
+              <m:mspace width="3.33333pt"/>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mn>2</m:mn>
+              <m:mo>,</m:mo>
+              <m:mo>...</m:mo>
+              <m:mo>,</m:mo>
+              <m:mi>n</m:mi>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id213253">Now since <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>w</m:mi><m:mo>,</m:mo><m:msub><m:mi>w</m:mi><m:mi>i</m:mi></m:msub><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>f</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>w</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, it follows that for all <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>∈</m:mo><m:msup><m:mi>M</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math> we have that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>w</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math>.
+Therefore, the Lemma implies that for all <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>∈</m:mo><m:msup><m:mi>M</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math> we have that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>w</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>w</m:mi><m:mo>,</m:mo><m:msub><m:mi>w</m:mi><m:mn>0</m:mn></m:msub><m:mo>〉</m:mo></m:mrow></m:mrow></m:math>.
+This implies that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>w</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>M</m:mi><m:mo>⊥</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mo>⊥</m:mo></m:msup><m:mo>=</m:mo><m:mi>M</m:mi></m:mrow></m:math>, due to <m:math overflow="scroll"><m:mi>M</m:mi></m:math> being closed.
+Reversing to the dual space <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math>, this implies that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>M</m:mi><m:mo>=</m:mo><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, and so we can write <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>=</m:mo><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mo>+</m:mo><m:mo>...</m:mo><m:mo>+</m:mo><m:msub><m:mi>λ</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math>.</para>
+      <para id="id213624">Theorem <link target-id="uid8"/> shows that we can apply Lemma <link target-id="uid10"/> to the constrained optimization problem. Thus, at the extremum <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> of the constrained program there exist constants <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> such that for all <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>,</para>
+      <equation id="uid11">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>δ</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>;</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:msub>
+                    <m:mi>λ</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mi>δ</m:mi>
+                  <m:msub>
+                    <m:mi>g</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>;</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>〈</m:mo>
+                  <m:mi>∇</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>〉</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:msub>
+                    <m:mi>λ</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>∇</m:mi>
+                    <m:msub>
+                      <m:mi>g</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+                        <m:mn>0</m:mn>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>,</m:mo>
+                    <m:mi>h</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>∇</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:msub>
+                    <m:mi>λ</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mi>∇</m:mi>
+                  <m:msub>
+                    <m:mi>g</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                  <m:mi>h</m:mi>
+                </m:mfenced>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id213994">
+which is equivalent to <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. This can be written as the gradient of the Lagrangian function</para>
+      <equation id="id214069">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>L</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>λ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>λ</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>g</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id214147">Thus, we say that the extremum must provide a zero-valued directional derivative of the Lagrangian in all directions or, equivalently, a zero-valued gradient for the Lagrangian. The results obtained in this section can be collected into a proof for the following theorem.</para>
+      <para id="id214155"><emphasis effect="bold">Theorem 2</emphasis> If <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> is an extremum of a functional <m:math overflow="scroll"><m:mi>f</m:mi></m:math> subject to constraints <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup></m:math>, then there exist scalars <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math>, such that the Lagrangian <m:math overflow="scroll"><m:mrow><m:mi>L</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>λ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>λ</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is stationary at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>, i.e., for all <m:math overflow="scroll"><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> we have that <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mi>L</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>λ</m:mi><m:mo>;</m:mo><m:mi>h</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, i.e., <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>L</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>λ</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+      <para id="id214423">The constants <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> are known as Lagrange multipliers.</para>
+      <para id="id214466"><emphasis effect="bold">Example 3</emphasis> We want to minimize <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:mn>2</m:mn></m:msubsup><m:mo>+</m:mo><m:msubsup><m:mi>x</m:mi><m:mn>2</m:mn><m:mn>2</m:mn></m:msubsup></m:mrow></m:math> subject to <m:math overflow="scroll"><m:mrow><m:mn>2</m:mn><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mn>3</m:mn></m:mrow></m:math>. The constraint function is</para>
+      <equation id="id214554">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>g</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mn>2</m:mn>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:mn>3</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id214600">From earlier we know that <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>2</m:mn><m:mi>x</m:mi><m:mo>,</m:mo></m:mrow></m:math> while we can rewrite the constraint as</para>
+      <equation id="id214634">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>g</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfenced separators="" open="[" close="]">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mn>2</m:mn>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mn>1</m:mn>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mi>x</m:mi>
+            <m:mo>+</m:mo>
+            <m:mn>3</m:mn>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id214680">so that <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfenced separators="" open="[" close="]"><m:mtable><m:mtr><m:mtd><m:mn>2</m:mn></m:mtd></m:mtr><m:mtr><m:mtd><m:mn>1</m:mn></m:mtd></m:mtr></m:mtable></m:mfenced></m:mrow></m:math>. Therefore, the extremum's condition on the gradient of the Lagrangian results in the equation</para>
+      <equation id="uid14">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>∇</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                  <m:mo>+</m:mo>
+                  <m:mi>λ</m:mi>
+                  <m:mi>∇</m:mi>
+                  <m:mi>g</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mn>2</m:mn>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>λ</m:mi>
+                  <m:mfenced separators="" open="[" close="]">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mn>2</m:mn>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mn>1</m:mn>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:mfenced>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn mathvariant="bold">0</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mfenced separators="" open="[" close="]">
+                  <m:mtable>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mn>2</m:mn>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mn>1</m:mn>
+                          </m:msub>
+                          <m:mo>+</m:mo>
+                          <m:mn>2</m:mn>
+                          <m:mi>λ</m:mi>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                    <m:mtr>
+                      <m:mtd>
+                        <m:mrow>
+                          <m:mn>2</m:mn>
+                          <m:msub>
+                            <m:mi>x</m:mi>
+                            <m:mn>2</m:mn>
+                          </m:msub>
+                          <m:mo>+</m:mo>
+                          <m:mi>λ</m:mi>
+                        </m:mrow>
+                      </m:mtd>
+                    </m:mtr>
+                  </m:mtable>
+                </m:mfenced>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="[" close="]">
+                    <m:mtable>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mn>0</m:mn>
+                        </m:mtd>
+                      </m:mtr>
+                      <m:mtr>
+                        <m:mtd>
+                          <m:mn>0</m:mn>
+                        </m:mtd>
+                      </m:mtr>
+                    </m:mtable>
+                  </m:mfenced>
+                  <m:mo>;</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id214902">
+the solution to this equation is <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mo>-</m:mo><m:mi>λ</m:mi><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mo>-</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac><m:mi>λ</m:mi></m:mrow></m:math>. To solve for the value of the Lagrangian multiplier <m:math overflow="scroll"><m:mi>λ</m:mi></m:math>, we plug the solution into the constraint:
+Plug in the constraint function</para>
+      <equation id="id214963">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mn>2</m:mn>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mo>-</m:mo>
+              <m:mi>λ</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mfenced separators="" open="(" close=")">
+              <m:mo>-</m:mo>
+              <m:mfrac>
+                <m:mn>1</m:mn>
+                <m:mn>2</m:mn>
+              </m:mfrac>
+              <m:mi>λ</m:mi>
+            </m:mfenced>
+            <m:mo>-</m:mo>
+            <m:mn>3</m:mn>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id215015">which gives <m:math overflow="scroll"><m:mrow><m:mi>λ</m:mi><m:mo>=</m:mo><m:mo>-</m:mo><m:mfrac><m:mn>6</m:mn><m:mn>5</m:mn></m:mfrac></m:mrow></m:math>. Therefore, we end up with the solution <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mfrac><m:mn>6</m:mn><m:mn>5</m:mn></m:mfrac><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mfrac><m:mn>3</m:mn><m:mn>5</m:mn></m:mfrac></m:mrow></m:math>.</para>
+    </section>
+  </content>
+</document>

@@ -1,0 +1,1314 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Constrained Optimization with Inequality Constraints</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47213</md:content-id>
+  <md:title>Constrained Optimization with Inequality Constraints</md:title>
+  <md:abstract>Introduces constrained optimization with inequality constraints and the Karush Kuhn Tucker conditions.</md:abstract>
+  <md:uuid>aafaf6e2-1930-43dd-83e6-b7c3f94d1086</md:uuid>
+</metadata>
+
+<content>
+    <para id="id62155">A constrained optimization problem with inequality constraints can be written as</para>
+    <equation id="uid1"><m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mo movablelimits="true" form="prefix">min</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mspace width="3.33333pt"/>
+                <m:mi> subject </m:mi>
+                <m:mo> </m:mo>
+                <m:mi> to </m:mi>
+                <m:mspace width="3.33333pt"/>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:msub>
+                  <m:mi>g</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>,</m:mo>
+                <m:mspace width="3.33333pt"/>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mo>⋯</m:mo>
+                  <m:mo>,</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mi>j</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>≤</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>,</m:mo>
+                <m:mspace width="3.33333pt"/>
+                <m:mi>j</m:mi>
+                <m:mo>=</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mo>⋯</m:mo>
+                  <m:mo>,</m:mo>
+                  <m:mi>m</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation><para id="id62830"><emphasis effect="bold">Definition 1</emphasis> Let <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> be a feasible point. If <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, we say that the constraint <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub></m:math> is <emphasis effect="italics">active</emphasis> at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>, if <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>o</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> then <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub></m:math> is <emphasis effect="italics">inactive</emphasis> at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>.
+The set of active constraints at <m:math overflow="scroll"><m:mi>x</m:mi></m:math> is denoted by;</para>
+    <equation id="id62987">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>J</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="{" close="}">
+            <m:mi>j</m:mi>
+            <m:mo>:</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:msub>
+              <m:mi>h</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+          </m:mfenced>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id63042"><emphasis effect="bold">Definition 2</emphasis> We say <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:math> is a <emphasis effect="italics">regular point</emphasis> in <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> if
+<m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="{" close="}"><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>,</m:mo><m:mspace width="3.33333pt"/><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mfenced><m:mo>∪</m:mo><m:mfenced separators="" open="{" close="}"><m:mrow><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>,</m:mo><m:mspace width="3.33333pt"/><m:mrow><m:mi>j</m:mi><m:mo>∈</m:mo><m:mrow><m:mi>J</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:mfenced></m:mrow></m:math> is a linearly independent set.</para>
+    <para id="id63182"><emphasis effect="bold">Theorem 1 (Karush-Kuhn-Tucker Conditions)</emphasis> 
+if <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> is a regular point of <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> and <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> is a local minimizer of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> over <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> then there exist scalars <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:msub><m:mi>μ</m:mi><m:mi>m</m:mi></m:msub></m:mrow></m:math> such that;</para>
+    <list id="id63299" display="block" list-type="enumerated">
+      <item id="uid5"><m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mi>j</m:mi></m:msub><m:mo>≥</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mrow></m:math><m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>m</m:mi></m:mrow></m:math>,
+</item>
+      <item id="uid6"><m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>m</m:mi></m:msubsup><m:msub><m:mi>μ</m:mi><m:mi>j</m:mi></m:msub><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> (complementary slackness condition),
+</item>
+      <item id="uid7"><m:math overflow="scroll"><m:mrow><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>λ</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow><m:mo>+</m:mo><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>m</m:mi></m:msubsup><m:msub><m:mi>μ</m:mi><m:mi>j</m:mi></m:msub><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+    </list>
+    <para id="id63561">Since <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:mn>0</m:mn></m:mrow></m:math>, we have that if <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub></m:math> is inactive at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> (i.e., if <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>) then we must have <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mi>j</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Therefore, some versions of the theorem feature only the active inequality constraints in the third condition.</para>
+    <para id="id63672"><emphasis effect="bold">Example 1</emphasis> We pictorially demonstrate some examples of active inequality constraints: consider the case where the set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> is a convex set bounded by three inequality constraints, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>3</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. Now, consider these three possibilities for the minimizer <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> in <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math>, illustrated in <link target-id="uid9"/>:</para>
+    <figure id="uid9"><media id="uid9_media" alt="">
+        <image mime-type="image/png" src="../../media/KKT.png" id="uid9_onlineimage" width="800"><!-- NOTE: attribute width changes image size online (pixels). original width is 1024. --></image>
+        <image mime-type="application/postscript" for="pdf" src="../../media/KKT.eps" id="uid9_printimage" print-width="15.0cm">
+          <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+        </image>
+      </media>
+      
+    <caption>Three examples of the application of the Karhush-Kuhn-Tucker conditions.</caption></figure><list id="id63814" display="block" list-type="bulleted">
+      <item id="uid10"><label>(a)</label>In this case, the minimizer is in the interior of the set <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math>, and no constraints are active; therefore, the minimizer of the constrained problem matches the minimizer of the unconstrained problem, and the solution is found by solving <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, which ignores all inequality constraints. This means that each <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+      <item id="uid11"><label>(b)</label>In this case, the minimizer has one active constraint (<m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>). Consider the gradient of the constraint <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, which is orthogonal to the tangent space. If <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> are not collinear (scalar multiples of one another), then there is a direction within the tangent space in which the value of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> would decrease and <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> would not be a minimizer. Otherwise, if <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:mo>≤</m:mo><m:mn>0</m:mn></m:mrow></m:math>, then both gradients point in the same direction and the value of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> would decrease by moving in the opposite direction toward the interior of <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math>, and so <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> would not be a minimizer. Therefore, we must have <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>, as specified by the KKT conditions. In this case the inactive constraints <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>3</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> are ignored.
+</item>
+      <item id="uid12"><label>(c)</label>In this case, the minimizer has two active constraints (<m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>).
+In this case, the directions <m:math overflow="scroll"><m:mi>d</m:mi></m:math> in which we can move from <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> within <m:math overflow="scroll"><m:mi>ω</m:mi></m:math> must obey <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>d</m:mi><m:mo>,</m:mo><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>〉</m:mo><m:mo>&lt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>d</m:mi><m:mo>,</m:mo><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>〉</m:mo><m:mo>&lt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Similarly, moving in a direction <m:math overflow="scroll"><m:mi>d</m:mi></m:math> decreases the value of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>+</m:mo><m:mi>d</m:mi><m:mo>)</m:mo></m:mrow></m:math> below <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> if <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>d</m:mi><m:mo>,</m:mo><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>〉</m:mo><m:mo>&lt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Thus, for us to be able to find such a direction <m:math overflow="scroll"><m:mi>d</m:mi></m:math> we must have that <m:math overflow="scroll"><m:mrow><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>a</m:mi><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mi>b</m:mi><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>b</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math>, which would give
+<equation id="id64630"><m:math overflow="scroll" mode="display"><m:mrow><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>a</m:mi><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>b</m:mi><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>.</m:mo></m:mrow></m:math></equation>
+Thus, the minimizer <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> must obey
+<equation id="id64752"><m:math overflow="scroll" mode="display"><m:mrow><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:msub><m:mi>h</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msub><m:mi>μ</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mrow></m:math></equation>
+with <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mn>2</m:mn></m:msub><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+    </list>
+    <para id="id64896">The example illustrates a simple “recipe” for solving inequality constraint optimization problems includes the following steps:</para>
+    <list id="id64901" display="block" list-type="enumerated">
+      <item id="uid13">Pick a candidate active set <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>J</m:mi><m:mo>^</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>,
+</item>
+      <item id="uid14">Build the corresponding form of the third KKT condition:
+<equation id="id64958"><m:math overflow="scroll" mode="display"><m:mrow><m:mrow><m:mi>∇</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mrow><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:munderover><m:msub><m:mi>λ</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow><m:mo>+</m:mo><m:mrow><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>j</m:mi><m:mo>∈</m:mo><m:mover accent="true"><m:mi>J</m:mi><m:mo>^</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mi>m</m:mi></m:munderover><m:msub><m:mi>μ</m:mi><m:mi>j</m:mi></m:msub><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mrow></m:math></equation>
+and solve for <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>,<m:math overflow="scroll"><m:mi>λ</m:mi></m:math>, and <m:math overflow="scroll"><m:mi>μ</m:mi></m:math>,
+</item>
+      <item id="uid15">If <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mi>j</m:mi></m:msub><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>∈</m:mo><m:mover accent="true"><m:mi>J</m:mi><m:mo>^</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> then <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> is a solution. Otherwise, pick a new candidate active set <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>J</m:mi><m:mo>^</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and repeat Step 2.
+</item>
+    </list>
+    <para id="id65282">With some additional assumptions, it can be shown that the KKT conditions can find a global minimizer.</para>
+    <para id="id65286"><emphasis effect="bold">Definition 3</emphasis> A function <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is said to be <emphasis effect="italics">affine</emphasis> over <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math> if <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msubsup><m:mo>∑</m:mo><m:mi>i</m:mi><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mn>1</m:mn><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:math> and all weights <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> obeying <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mi>i</m:mi><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>.</para>
+    <para id="id65484"><emphasis effect="bold">Theorem 2 (Karush-Kuhn-Tucker Sufficient Conditions)</emphasis>  If <m:math overflow="scroll"><m:mi>f</m:mi></m:math> and <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>m</m:mi></m:mrow></m:math> are convex functions and <m:math overflow="scroll"><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math> are affine functions, and if the KKT condition are satisfied at a feasible point <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:mrow></m:math> then <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> is a global minimizer of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> over <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math>.</para>
+    <para id="id65639">Fix <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:mrow></m:math> let <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. Define a functional <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>t</m:mi><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>+</m:mo><m:mi>t</m:mi><m:mi>d</m:mi></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>. Then, define the constraints limited over the set of points <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math>:</para>
+    <equation id="uid18">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:msub>
+                  <m:mi>G</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:msub>
+                  <m:mi>g</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:msub>
+                  <m:mi>g</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>1</m:mn>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>-</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:mi>t</m:mi>
+                <m:mspace width="0.277778em"/>
+                <m:mi>g</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>-</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mi>g</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:msub>
+                  <m:mi>H</m:mi>
+                  <m:mi>j</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mi>j</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mi>j</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>1</m:mn>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mn>1</m:mn>
+                    <m:mo>-</m:mo>
+                    <m:mi>t</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>≤</m:mo>
+                <m:mi>t</m:mi>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mi>j</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>1</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>-</m:mo>
+                  <m:mi>t</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mi>j</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>≤</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>;</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id66129">
+Therefore, all points <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:math> are feasible. Furthermore, note that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>H</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>≥</m:mo><m:msub><m:mi>H</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>h</m:mi><m:mi>j</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>t</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> if <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>∈</m:mo><m:mi>J</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math>. Now, we compute the derivatives of these two functions with respect to <m:math overflow="scroll"><m:mi>t</m:mi></m:math>:</para>
+    <equation id="id66282">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mfrac>
+            <m:mrow>
+              <m:mi>∂</m:mi>
+              <m:mi>G</m:mi>
+            </m:mrow>
+            <m:mrow>
+              <m:mi>∂</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:mfrac>
+          <m:mo>=</m:mo>
+          <m:mn>0</m:mn>
+          <m:mo>=</m:mo>
+          <m:mi>∂</m:mi>
+          <m:msub>
+            <m:mi>g</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>∇</m:mi>
+            <m:msub>
+              <m:mi>g</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id66374">and for <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>∈</m:mo><m:mi>J</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math>,</para>
+    <equation id="id66406">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mn>0</m:mn>
+          <m:mspace width="0.277778em"/>
+          <m:mo>≥</m:mo>
+          <m:mspace width="0.277778em"/>
+          <m:mfrac>
+            <m:mrow>
+              <m:mi>∂</m:mi>
+              <m:msub>
+                <m:mi>H</m:mi>
+                <m:mi>j</m:mi>
+              </m:msub>
+            </m:mrow>
+            <m:mrow>
+              <m:mi>∂</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:mfrac>
+          <m:mo>=</m:mo>
+          <m:mi>∂</m:mi>
+          <m:msub>
+            <m:mi>h</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>∇</m:mi>
+            <m:msub>
+              <m:mi>h</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id66511">Now consider the function <m:math overflow="scroll"><m:mrow><m:mi>F</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>)</m:mo></m:mrow></m:math>: its derivative is given by</para>
+    <equation id="id66552">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mfrac>
+            <m:mrow>
+              <m:mi>∂</m:mi>
+              <m:mi>F</m:mi>
+            </m:mrow>
+            <m:mrow>
+              <m:mi>∂</m:mi>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:mfrac>
+          <m:mo>=</m:mo>
+          <m:mi>∂</m:mi>
+          <m:mi>f</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>∇</m:mi>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mo>-</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>∇</m:mi>
+            <m:msub>
+              <m:mi>g</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mo>-</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:msub>
+            <m:mi>μ</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>∇</m:mi>
+            <m:msub>
+              <m:mi>h</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>d</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>≥</m:mo>
+          <m:mn>0</m:mn>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id66728">where we use the third KKT condition.
+Since <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> is convex and <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math> is affine, then <m:math overflow="scroll"><m:mrow><m:mi>F</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>)</m:mo></m:mrow></m:math> is convex in <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>. Thus <m:math overflow="scroll"><m:mfrac><m:mrow><m:mi>∂</m:mi><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>∂</m:mi><m:mi>t</m:mi></m:mrow></m:mfrac></m:math> is nondecreasing and <m:math overflow="scroll"><m:mrow><m:mfrac><m:mrow><m:mi>∂</m:mi><m:mi>F</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>∂</m:mi><m:mi>t</m:mi></m:mrow></m:mfrac><m:mo>≥</m:mo><m:mfrac><m:mrow><m:mi>∂</m:mi><m:mi>F</m:mi><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>∂</m:mi><m:mi>t</m:mi></m:mrow></m:mfrac><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>. Thus, <m:math overflow="scroll"><m:mrow><m:mi>F</m:mi><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>≥</m:mo><m:mi>F</m:mi><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:math> or <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>≥</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. Since <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub></m:math> was arbitrary, <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> is a global minimum of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> on <m:math overflow="scroll"><m:mi>Ω</m:mi></m:math>.</para>
+    <para id="id67034"><emphasis effect="bold">Example 2 (Channel Capacity)</emphasis> 
+The Shannon capacity of an additive white Gaussian noise channel is given by <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac><m:msub><m:mo form="prefix">log</m:mo><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mfrac><m:mi>P</m:mi><m:mi>N</m:mi></m:mfrac><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, where <m:math overflow="scroll"><m:mi>P</m:mi></m:math> is the transmitted signal power and <m:math overflow="scroll"><m:mi>N</m:mi></m:math> is the noise variance. Assume that <m:math overflow="scroll"><m:mi>n</m:mi></m:math> channels are available with a total transmission power <m:math overflow="scroll"><m:mrow><m:msub><m:mi>P</m:mi><m:mi>T</m:mi></m:msub><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>P</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> available among the channels, where <m:math overflow="scroll"><m:msub><m:mi>P</m:mi><m:mi>i</m:mi></m:msub></m:math> denotes the power in the <m:math overflow="scroll"><m:msup><m:mi>i</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> channel. We wish to assign a power profile <m:math overflow="scroll"><m:mrow><m:mi>P</m:mi><m:mo>=</m:mo><m:msup><m:mrow><m:mo>[</m:mo><m:msub><m:mi>P</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>P</m:mi><m:mi>n</m:mi></m:msub><m:mo>]</m:mo></m:mrow><m:mi>T</m:mi></m:msup></m:mrow></m:math> that maximizes the total capacity for the set of channels</para>
+    <equation id="id67237">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>C</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>P</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mi>C</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>P</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mfrac>
+            <m:mn>1</m:mn>
+            <m:mn>2</m:mn>
+          </m:mfrac>
+          <m:msub>
+            <m:mo form="prefix">log</m:mo>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mfenced separators="" open="(" close=")">
+            <m:mn>1</m:mn>
+            <m:mo>+</m:mo>
+            <m:mfrac>
+              <m:msub>
+                <m:mi>P</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:msub>
+                <m:mi>N</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+            </m:mfrac>
+          </m:mfenced>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id67354">where <m:math overflow="scroll"><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub></m:math> represents the variance of the noise in the <m:math overflow="scroll"><m:msup><m:mi>i</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> channel.</para>
+    <para id="id67392">To solve the problem, we set up an objective function to be minimized</para>
+    <equation id="id67395">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>f</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>P</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mo>-</m:mo>
+          <m:mi>C</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>P</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mo>-</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mi>C</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>P</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mo>-</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mfrac>
+            <m:mn>1</m:mn>
+            <m:mn>2</m:mn>
+          </m:mfrac>
+          <m:msub>
+            <m:mo form="prefix">log</m:mo>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>+</m:mo>
+            <m:mfrac>
+              <m:msub>
+                <m:mi>P</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:msub>
+                <m:mi>N</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+            </m:mfrac>
+            <m:mo>)</m:mo>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id67527">and also set up the constraints</para>
+    <equation id="uid20">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mi>g</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>P</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>T</m:mi>
+                </m:msub>
+                <m:mo>=</m:mo>
+                <m:msup>
+                  <m:mrow>
+                    <m:mn mathvariant="bold">1</m:mn>
+                  </m:mrow>
+                  <m:mi>T</m:mi>
+                </m:msup>
+                <m:mi>P</m:mi>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>T</m:mi>
+                </m:msub>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:msub>
+                  <m:mi>h</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>P</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>P</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>=</m:mo>
+                <m:mo>-</m:mo>
+                <m:msubsup>
+                  <m:mi>e</m:mi>
+                  <m:mi>i</m:mi>
+                  <m:mi>T</m:mi>
+                </m:msubsup>
+                <m:mi>P</m:mi>
+                <m:mo>,</m:mo>
+                <m:mspace width="3.33333pt"/>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>,</m:mo>
+                <m:mo>...</m:mo>
+                <m:mo>,</m:mo>
+                <m:mi>n</m:mi>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id67706">
+as the values of the powers must be nonnegative.
+We start by computing the gradients of these functions: for <m:math overflow="scroll"><m:mi>f</m:mi></m:math>, we must compute the directional derivative</para>
+    <equation id="uid21">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mi>δ</m:mi>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>p</m:mi>
+                <m:mo>;</m:mo>
+                <m:mi>h</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mfrac>
+                  <m:mi>∂</m:mi>
+                  <m:mrow>
+                    <m:mi>∂</m:mi>
+                    <m:mi>α</m:mi>
+                  </m:mrow>
+                </m:mfrac>
+                <m:msub>
+                  <m:mrow>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>f</m:mi>
+                      <m:mrow>
+                        <m:mo>(</m:mo>
+                        <m:mi>p</m:mi>
+                        <m:mo>+</m:mo>
+                        <m:mi>α</m:mi>
+                        <m:mi>h</m:mi>
+                        <m:mo>)</m:mo>
+                      </m:mrow>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                  <m:mrow>
+                    <m:mi>α</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                </m:msub>
+                <m:mo>=</m:mo>
+                <m:msub>
+                  <m:mfenced separators="" open="" close="|">
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:mo>-</m:mo>
+                      <m:munderover>
+                        <m:mo>∑</m:mo>
+                        <m:mrow>
+                          <m:mi>i</m:mi>
+                          <m:mo>=</m:mo>
+                          <m:mn>1</m:mn>
+                        </m:mrow>
+                        <m:mi>n</m:mi>
+                      </m:munderover>
+                      <m:mfrac>
+                        <m:mrow>
+                          <m:msub>
+                            <m:mi>h</m:mi>
+                            <m:mi>i</m:mi>
+                          </m:msub>
+                          <m:mo>/</m:mo>
+                          <m:msub>
+                            <m:mi>N</m:mi>
+                            <m:mi>i</m:mi>
+                          </m:msub>
+                        </m:mrow>
+                        <m:mrow>
+                          <m:mn>2</m:mn>
+                          <m:mrow>
+                            <m:mo>(</m:mo>
+                            <m:mo form="prefix">ln</m:mo>
+                            <m:mn>2</m:mn>
+                            <m:mo>)</m:mo>
+                          </m:mrow>
+                          <m:mfenced separators="" open="(" close=")">
+                            <m:mn>1</m:mn>
+                            <m:mo>+</m:mo>
+                            <m:mfrac>
+                              <m:msub>
+                                <m:mi>P</m:mi>
+                                <m:mi>i</m:mi>
+                              </m:msub>
+                              <m:msub>
+                                <m:mi>N</m:mi>
+                                <m:mi>i</m:mi>
+                              </m:msub>
+                            </m:mfrac>
+                            <m:mo>+</m:mo>
+                            <m:mi>α</m:mi>
+                            <m:mfrac>
+                              <m:msub>
+                                <m:mi>h</m:mi>
+                                <m:mi>i</m:mi>
+                              </m:msub>
+                              <m:msub>
+                                <m:mi>N</m:mi>
+                                <m:mi>i</m:mi>
+                              </m:msub>
+                            </m:mfrac>
+                          </m:mfenced>
+                        </m:mrow>
+                      </m:mfrac>
+                    </m:mfenced>
+                  </m:mfenced>
+                  <m:mrow>
+                    <m:mi>α</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                </m:msub>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mo>-</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:mfrac>
+                  <m:msub>
+                    <m:mi>h</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mn>2</m:mn>
+                    <m:msub>
+                      <m:mi>N</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mo form="prefix">ln</m:mo>
+                      <m:mn>2</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mfenced separators="" open="(" close=")">
+                      <m:mn>1</m:mn>
+                      <m:mo>+</m:mo>
+                      <m:mfrac>
+                        <m:msub>
+                          <m:mi>P</m:mi>
+                          <m:mi>i</m:mi>
+                        </m:msub>
+                        <m:msub>
+                          <m:mi>N</m:mi>
+                          <m:mi>i</m:mi>
+                        </m:msub>
+                      </m:mfrac>
+                    </m:mfenced>
+                  </m:mrow>
+                </m:mfrac>
+                <m:mo>=</m:mo>
+                <m:mo>-</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:mfrac>
+                  <m:msub>
+                    <m:mi>h</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mo form="prefix">ln</m:mo>
+                      <m:mn>2</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>N</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>+</m:mo>
+                      <m:msub>
+                        <m:mi>P</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mfrac>
+                <m:mo>=</m:mo>
+                <m:mrow>
+                  <m:mo>〈</m:mo>
+                  <m:mi>∇</m:mi>
+                  <m:mi>f</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>p</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                  <m:mi>h</m:mi>
+                  <m:mo>〉</m:mo>
+                </m:mrow>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id68127">
+where the gradient has entries <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>(</m:mo><m:mi>∇</m:mi><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>p</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mo>-</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>+</m:mo><m:msub><m:mi>P</m:mi><m:mi>i</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup></m:mrow></m:math>.</para>
+    <para id="id68218">For the constraints, it is straightforward to see that <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:mi>g</m:mi><m:mo>(</m:mo><m:mi>P</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn mathvariant="bold">1</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>∇</m:mi><m:msub><m:mi>h</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>P</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mo>-</m:mo><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math>.</para>
+    <para id="id68306">We begin by assuming that the solution <m:math overflow="scroll"><m:msup><m:mi>P</m:mi><m:mo>*</m:mo></m:msup></m:math> is a regular point. Then the KKT conditions give that for some <m:math overflow="scroll"><m:mi>λ</m:mi></m:math> and nonnegative <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>μ</m:mi><m:mi>m</m:mi></m:msub></m:mrow></m:math> we must have</para>
+    <equation id="uid22">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:munderover>
+                <m:msub>
+                  <m:mi>μ</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:msubsup>
+                  <m:mi>P</m:mi>
+                  <m:mi>i</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msubsup>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mo>-</m:mo>
+                <m:mfrac>
+                  <m:mn>1</m:mn>
+                  <m:mrow>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mo form="prefix">ln</m:mo>
+                      <m:mn>2</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>N</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>+</m:mo>
+                      <m:msubsup>
+                        <m:mi>P</m:mi>
+                        <m:mi>i</m:mi>
+                        <m:mo>*</m:mo>
+                      </m:msubsup>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mfrac>
+                <m:mo>+</m:mo>
+                <m:mi>λ</m:mi>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>μ</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>,</m:mo>
+                <m:mspace width="3.33333pt"/>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+                <m:mo>,</m:mo>
+                <m:mo>...</m:mo>
+                <m:mo>,</m:mo>
+                <m:mi>n</m:mi>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id68528">
+The second set of constraints can be written as</para>
+    <equation id="uid23">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mfrac>
+                <m:mn>1</m:mn>
+                <m:mrow>
+                  <m:mn>2</m:mn>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mo form="prefix">ln</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>N</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>+</m:mo>
+                    <m:msubsup>
+                      <m:mi>P</m:mi>
+                      <m:mi>i</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mfrac>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mi>λ</m:mi>
+                <m:mo>-</m:mo>
+                <m:msub>
+                  <m:mi>μ</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:msub>
+                  <m:mi>N</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>+</m:mo>
+                <m:msubsup>
+                  <m:mi>P</m:mi>
+                  <m:mi>i</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msubsup>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mfrac>
+                  <m:mn>1</m:mn>
+                  <m:mrow>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mo form="prefix">ln</m:mo>
+                      <m:mn>2</m:mn>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>λ</m:mi>
+                      <m:mo>-</m:mo>
+                      <m:msub>
+                        <m:mi>μ</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                  </m:mrow>
+                </m:mfrac>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id68691">
+Consider each inequality constraint <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>i</m:mi></m:msub></m:math>.</para>
+    <list id="id68712" display="block" list-type="bulleted">
+      <item id="uid24">If <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>i</m:mi></m:msub></m:math> is inactive, then <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>P</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>μ</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Then,
+<equation id="uid25"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:mrow><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>+</m:mo><m:msubsup><m:mi>P</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>2</m:mn><m:mi>λ</m:mi><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow></m:mfrac><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:msubsup><m:mi>P</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>2</m:mn><m:mi>λ</m:mi><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow></m:mfrac><m:mo>-</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>&gt;</m:mo><m:mn>0</m:mn><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation></item>
+      <item id="uid26">If <m:math overflow="scroll"><m:msub><m:mi>h</m:mi><m:mi>i</m:mi></m:msub></m:math> is active, then <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>P</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and so
+<equation id="uid27"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>λ</m:mi><m:mo>-</m:mo><m:msub><m:mi>μ</m:mi><m:mi>i</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:mfrac><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:msub><m:mi>μ</m:mi><m:mi>i</m:mi></m:msub></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mi>λ</m:mi><m:mo>-</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>2</m:mn><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:mfrac><m:mo>≥</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>2</m:mn><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:mfrac></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>≤</m:mo><m:mi>λ</m:mi><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>2</m:mn><m:mi>λ</m:mi><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow></m:mfrac></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>≤</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation></item>
+    </list>
+    <para id="id69177">To simplify, write <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mn>2</m:mn><m:mi>λ</m:mi><m:mo>(</m:mo><m:mo form="prefix">ln</m:mo><m:mn>2</m:mn><m:mo>)</m:mo></m:mrow></m:mfrac></m:mrow></m:math>; then, we have two possibilities for each channel <m:math overflow="scroll"><m:mi>i</m:mi></m:math> from above:</para>
+    <list id="id69223" display="block" list-type="bulleted">
+      <item id="uid28">If <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> (i.e., if <m:math overflow="scroll"><m:mrow><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>&lt;</m:mo><m:mi>r</m:mi></m:mrow></m:math>), then <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>P</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>=</m:mo><m:mi>r</m:mi><m:mo>-</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>.
+</item>
+      <item id="uid29">If <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>≤</m:mo><m:mn>0</m:mn></m:mrow></m:math> (i.e., if <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>≤</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>) then <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>P</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+    </list>
+    <para id="id69394">Thus the power is allocated among the channels using the formula <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>P</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>=</m:mo><m:mo movablelimits="true" form="prefix">max</m:mo><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>r</m:mi><m:mo>-</m:mo><m:msub><m:mi>N</m:mi><m:mi>i</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, and the value of <m:math overflow="scroll"><m:mi>r</m:mi></m:math> is chosen so that the total power constraints is met:</para>
+    <equation id="id69455">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mo movablelimits="true" form="prefix">max</m:mo>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>,</m:mo>
+            <m:mi>r</m:mi>
+            <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>N</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mi>P</m:mi>
+            <m:mi>T</m:mi>
+          </m:msub>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id69520">This is the famous <emphasis effect="italics">water-filling solution</emphasis> to the multiple channel capacity problem, illustrated in <link target-id="uid30"/>.</para>
+    <figure id="uid30">
+      <media id="uid30_media" alt="">
+        <image mime-type="image/png" src="../../media/water.png" id="uid30_onlineimage" width="291"><!-- NOTE: attribute width changes image size online (pixels). original width is 291. --></image>
+        <image mime-type="application/postscript" for="pdf" src="../../media/water.eps" id="uid30_printimage" print-width="7.5cm">
+          <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+        </image>
+      </media>
+      <caption>Waterfilling solution to the multiple channel power allocation problem, which is solved using Karush-Kuhn-Tucker conditions.</caption>
+    </figure>
+  </content>
+</document>

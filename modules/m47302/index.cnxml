@@ -1,0 +1,705 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Eigendecomposition of Linear Operators</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47302</md:content-id>
+  <md:title>Eigendecomposition of Linear Operators</md:title>
+  <md:abstract>Introduces the concept of the eigendecomposition of a linear operator, with properties and examples.</md:abstract>
+  <md:uuid>71990be1-2d75-45fd-91e5-ce1af132d89d</md:uuid>
+</metadata>
+
+<content>
+    <para id="id62159"><emphasis effect="bold">Definition 1</emphasis> A scalar <m:math overflow="scroll"><m:mi>λ</m:mi></m:math> is an <emphasis effect="italics">eigenvalue</emphasis> of <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> if there exists a vector <m:math overflow="scroll"><m:mi>e</m:mi></m:math> (dubbed the <emphasis effect="bold">eigenvector</emphasis> for <m:math overflow="scroll"><m:mi>λ</m:mi></m:math>) such that <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>e</m:mi><m:mo>=</m:mo><m:mi>λ</m:mi><m:mi>e</m:mi></m:mrow></m:math>.</para>
+    <para id="id62584">Multiples of eigenvectors are also eigenvectors, as shown below:</para>
+    <equation id="uid2">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mi>A</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>c</m:mi>
+                <m:mi>e</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mi>c</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>A</m:mi>
+                <m:mi>e</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mi>c</m:mi>
+                <m:mi>λ</m:mi>
+                <m:mi>e</m:mi>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mi>λ</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>c</m:mi>
+                <m:mi>e</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id62668"><emphasis effect="bold">Definition 2</emphasis> The <emphasis effect="italics">eigenspace</emphasis> of A corresponding to <m:math overflow="scroll"><m:mi>λ</m:mi></m:math> is defined by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>ϵ</m:mi><m:mi>λ</m:mi></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mi>e</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>:</m:mo><m:mi>A</m:mi><m:mi>e</m:mi><m:mo>=</m:mo><m:mi>λ</m:mi><m:mi>e</m:mi><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.</para>
+    <para id="id62734">For example, if a given eigenvalue <m:math overflow="scroll"><m:mi>λ</m:mi></m:math> has two eigenvectors, the eigenspace is given by <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>}</m:mo></m:mrow><m:mo>]</m:mo></m:mrow></m:math> where <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mi>λ</m:mi><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mi>λ</m:mi><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>.</para>
+    <para id="id62835"><emphasis effect="bold">Definition 3</emphasis> An operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> is said to be <emphasis effect="italics">self-adjoint</emphasis> if <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:mi>A</m:mi></m:mrow></m:math>, i.e., <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo><m:mo>=</m:mo><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.</para>
+    <para id="id63126">If <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>N</m:mi></m:msup></m:mrow></m:math>, a self-adjoint operator corresponds to a symmetric matrix.</para>
+    <para id="id63150"><emphasis effect="bold">Theorem 1</emphasis> All eigenvalues of a self-adjoint operator are real.</para>
+    <para id="id63169">Let <m:math overflow="scroll"><m:mi>λ</m:mi></m:math> be a complex eigenvalue of a self-adjoint operator <m:math overflow="scroll"><m:mi>A</m:mi></m:math>. Then <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>e</m:mi><m:mo>=</m:mo><m:mi>λ</m:mi><m:mi>e</m:mi></m:mrow></m:math> for some <m:math overflow="scroll"><m:mi>e</m:mi></m:math>. For such an <m:math overflow="scroll"><m:mi>e</m:mi></m:math>, we have</para>
+    <equation id="id63221">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>λ</m:mi>
+          <m:msup>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>e</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mn>2</m:mn>
+          </m:msup>
+          <m:mo>=</m:mo>
+          <m:mi>λ</m:mi>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>λ</m:mi>
+            <m:mi>e</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>A</m:mi>
+            <m:mi>e</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>,</m:mo>
+            <m:msup>
+              <m:mi>A</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mi>e</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>A</m:mi>
+            <m:mi>e</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>λ</m:mi>
+            <m:mi>e</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mover accent="true">
+            <m:mi>λ</m:mi>
+            <m:mo>¯</m:mo>
+          </m:mover>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>e</m:mi>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id63371">Therefore we know that lambda is the same as its complex conjugate (<m:math overflow="scroll"><m:mrow><m:mi>λ</m:mi><m:mo>=</m:mo><m:mover accent="true"><m:mi>λ</m:mi><m:mo>¯</m:mo></m:mover></m:mrow></m:math>). The only way for this to be possible is if the imaginary part of <m:math overflow="scroll"><m:mi>λ</m:mi></m:math> is zero, and therefore <m:math overflow="scroll"><m:mrow><m:mi>λ</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>.</para>
+    <para id="id63418"><emphasis effect="bold">Theorem 2</emphasis> If <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math> are distinct eigenvalues of a self-adjoint operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:msub><m:mi>ϵ</m:mi><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub></m:msub><m:mo>⊥</m:mo><m:msub><m:mi>ϵ</m:mi><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub></m:msub></m:mrow></m:math>.</para>
+    <para id="id63519">Assume we pick some arbitrary <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>∈</m:mo><m:msub><m:mi>ϵ</m:mi><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>∈</m:mo><m:msub><m:mi>ϵ</m:mi><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub></m:msub></m:mrow></m:math>. Then,</para>
+    <equation id="id63581">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>λ</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>λ</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>λ</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mi>λ</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id63771">Therefore we know that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>〈</m:mo><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>〈</m:mo><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>〉</m:mo></m:mrow></m:mrow></m:math>. Since we chose two distinct eigenvalues, we know that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>≠</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>. Therefore we must have <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. This implies <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>⊥</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>. Since <m:math overflow="scroll"><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub></m:math> and <m:math overflow="scroll"><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub></m:math> were chosen arbitrarily, this implies <m:math overflow="scroll"><m:mrow><m:msub><m:mi>ϵ</m:mi><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub></m:msub><m:mo>⊥</m:mo><m:msub><m:mi>ϵ</m:mi><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub></m:msub></m:mrow></m:math>.</para>
+    <para id="id63984"><emphasis effect="bold">Theorem 3</emphasis> (Schur's Lemma) Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be an N-dimensional Hilbert space and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Then there exists an orthonormal basis <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>φ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>φ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>φ</m:mi><m:mi>N</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> for <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and a set of coefficients <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>A</m:mi><m:mrow><m:mi>i</m:mi><m:mi>j</m:mi></m:mrow></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:msubsup></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msub><m:mi>φ</m:mi><m:mi>j</m:mi></m:msub><m:mo>=</m:mo><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>j</m:mi></m:munderover><m:msub><m:mi>A</m:mi><m:mrow><m:mi>i</m:mi><m:mi>j</m:mi></m:mrow></m:msub><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mi>N</m:mi></m:mrow></m:math>.</para>
+    <para id="id64201">An important note: since <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>φ</m:mi><m:mi>j</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> makes an orthonormal basis for the domain <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and range <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, there exist coefficients <m:math overflow="scroll"><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msub><m:mi>φ</m:mi><m:mi>j</m:mi></m:msub><m:mo>=</m:mo><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mi>N</m:mi></m:mrow></m:math>.</para>
+    <para id="id64339"><emphasis effect="bold">Example 1</emphasis> Recall the matrix representation of an operator: given <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> and an orthonormal basis <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:msubsup></m:math> for <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, we can write the matrix representation <m:math overflow="scroll"><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover></m:math> of the operator <m:math overflow="scroll"><m:mi>A</m:mi></m:math> with entries</para>
+    <equation id="id64445">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mover accent="true">
+              <m:mi>A</m:mi>
+              <m:mo>˜</m:mo>
+            </m:mover>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>j</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>A</m:mi>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mi>j</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>k</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>j</m:mi>
+          </m:munderover>
+          <m:msub>
+            <m:mi>A</m:mi>
+            <m:mrow>
+              <m:mi>k</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="{" close="">
+            <m:mtable>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:msub>
+                      <m:mi>A</m:mi>
+                      <m:mrow>
+                        <m:mi>i</m:mi>
+                        <m:mi>j</m:mi>
+                      </m:mrow>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mtext>if</m:mtext>
+                    <m:mspace width="4.pt"/>
+                    <m:mi>i</m:mi>
+                    <m:mo>≤</m:mo>
+                    <m:mi>j</m:mi>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mn>0</m:mn>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mtext>if</m:mtext>
+                    <m:mspace width="4.pt"/>
+                    <m:mi>i</m:mi>
+                    <m:mo>&gt;</m:mo>
+                    <m:mi>j</m:mi>
+                    <m:mo>.</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+            </m:mtable>
+          </m:mfenced>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id64684">We can represent <m:math overflow="scroll"><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover></m:math> as an upper-triangular matrix (where <m:math overflow="scroll"><m:mi>x</m:mi></m:math> represents a non-zero entry in the matrix):</para>
+    <equation id="id64715">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mover accent="true">
+            <m:mi>A</m:mi>
+            <m:mo>˜</m:mo>
+          </m:mover>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="[" close="]">
+            <m:mtable>
+              <m:mtr>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋯</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd>
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋯</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd>
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd>
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋯</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd>
+                  <m:mo>⋮</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋮</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋮</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋱</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋮</m:mo>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd>
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd>
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd>
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd>
+                  <m:mo>⋯</m:mo>
+                </m:mtd>
+                <m:mtd>
+                  <m:mi>x</m:mi>
+                </m:mtd>
+              </m:mtr>
+            </m:mtable>
+          </m:mfenced>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id64830">This shows that there exists an orthonormal basis <m:math overflow="scroll"><m:mi>φ</m:mi></m:math> for which the matrix representation of <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is an upper-triangular matrix.</para>
+    <para id="id64856"><emphasis effect="bold">Theorem 4</emphasis> 
+If <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is an <m:math overflow="scroll"><m:mi>N</m:mi></m:math>-dimensional space and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math>, then there exists an orthonormal basis <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:msubsup></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mi>λ</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> for a set of scalars <m:math overflow="scroll"><m:mrow><m:msub><m:mi>λ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>λ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:msub><m:mi>λ</m:mi><m:mi>N</m:mi></m:msub></m:mrow></m:math>. The matrix representation <m:math overflow="scroll"><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover></m:math> is a diagonal matrix whose entries are the eigenvalues; that is, <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover><m:mo>=</m:mo><m:mi> diag </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>λ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.</para>
+    <para id="id65077">Note that, according to the theorem, we can fully represent the operator <m:math overflow="scroll"><m:mi>A</m:mi></m:math> by the aforementioned orthonormal basis <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> and the diagonal matrix <m:math overflow="scroll"><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover></m:math>.</para>
+    <para id="id65133">Pick the orthonormal basis <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>φ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>φ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:msub><m:mi>φ</m:mi><m:mi>N</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> specified by Schur's Lemma. For <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>&lt;</m:mo><m:mi>j</m:mi></m:mrow></m:math>, we have:</para>
+    <equation id="id65198">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>A</m:mi>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="〈" close="〉">
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>j</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>A</m:mi>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mi>j</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>i</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>A</m:mi>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mi>i</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>k</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>i</m:mi>
+          </m:munderover>
+          <m:mover accent="true">
+            <m:msub>
+              <m:mi>A</m:mi>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mi>i</m:mi>
+              </m:mrow>
+            </m:msub>
+            <m:mo>˜</m:mo>
+          </m:mover>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>j</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mi>φ</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id65442">For <m:math overflow="scroll"><m:mrow><m:mi>k</m:mi><m:mo>&lt;</m:mo><m:mi>j</m:mi></m:mrow></m:math>, the term in the sum is equal to zero. We then have:</para>
+    <equation id="id65463">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>A</m:mi>
+          <m:msub>
+            <m:mi>φ</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>k</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>j</m:mi>
+          </m:munderover>
+          <m:msub>
+            <m:mi>A</m:mi>
+            <m:mrow>
+              <m:mi>k</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:msub>
+            <m:mi>φ</m:mi>
+            <m:mi>k</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mi>A</m:mi>
+            <m:mrow>
+              <m:mi>j</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:msub>
+            <m:mi>φ</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id65541">Thus, the only non-zero entries of the representation matrix <m:math overflow="scroll"><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover></m:math> are the diagonal entries. Furthermore, these entries are eigenvalues of <m:math overflow="scroll"><m:mi>A</m:mi></m:math>.</para>
+    <para id="id65573">Recall that to compute <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi></m:mrow></m:math> using its matrix representation <m:math overflow="scroll"><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover></m:math>, there are three steps:</para>
+    <list id="id65604" display="block" list-type="enumerated">
+      <item id="uid10">Represent <m:math overflow="scroll"><m:mi>x</m:mi></m:math> using the orthonormal basis <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> and collect the coefficients into a vector <m:math overflow="scroll"><m:mi>c</m:mi></m:math>.
+</item>
+      <item id="uid11">Perform the matrix-vector product <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>=</m:mo><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover><m:mi>c</m:mi></m:mrow></m:math>.
+</item>
+      <item id="uid12">Then obtain <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>b</m:mi><m:mo>=</m:mo><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:msub><m:mi>d</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>φ</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>.
+</item>
+    </list>
+    <para id="id65755">A matrix-vector product with a dense matrix is computationally intensive. If we can diagonalize <m:math overflow="scroll"><m:mi>A</m:mi></m:math>, we can find the matrix-vector product <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi></m:mrow></m:math> by performing the operation <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover><m:mi>c</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover></m:math> is a diagonal matrix, making the operation more efficient.</para>
+  </content>
+</document>

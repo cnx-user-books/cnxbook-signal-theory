@@ -1,0 +1,319 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Properties of Linear Operators</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47282</md:content-id>
+  <md:title>Properties of Linear Operators</md:title>
+  <md:abstract>Discusses basic properties and classifications of operators.</md:abstract>
+  <md:uuid>8c113f13-b6e5-4ac1-813b-489f14c3ed5e</md:uuid>
+</metadata>
+
+<content>
+    <para id="id160937">We start with a simple but useful property.</para>
+    <para id="id160944"><emphasis effect="bold">Lemma 1</emphasis> If <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+    <para id="id160892">Let <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">C</m:mi></m:mrow></m:math>, then for any <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, we have that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>a</m:mi><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>. Therefore, we obtain</para>
+    <equation id="uid2">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mn>0</m:mn>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:mi>y</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>A</m:mi>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:mi>y</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mfenced>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:mi>y</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>A</m:mi>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:mi>A</m:mi>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mo>,</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>A</m:mi>
+                  <m:mi>x</m:mi>
+                </m:mfenced>
+                <m:mo>+</m:mo>
+                <m:mover>
+                  <m:mi>a</m:mi>
+                  <m:mo>¯</m:mo>
+                </m:mover>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>A</m:mi>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mo>+</m:mo>
+                <m:mi>a</m:mi>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>y</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>A</m:mi>
+                  <m:mi>x</m:mi>
+                </m:mfenced>
+                <m:mo>+</m:mo>
+                <m:msup>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mi>a</m:mi>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                  <m:mn>2</m:mn>
+                </m:msup>
+                <m:mfenced separators="" open="〈" close="〉">
+                  <m:mi>y</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>A</m:mi>
+                  <m:mi>y</m:mi>
+                </m:mfenced>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id161821">
+Since <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, we have that <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mfenced><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>;
+therefore, <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>=</m:mo><m:mover><m:mi>a</m:mi><m:mo>¯</m:mo></m:mover><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mfenced><m:mo>+</m:mo><m:mi>a</m:mi><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mfenced></m:mrow></m:math>.</para>
+    <para id="id161943">If we set <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mfenced><m:mo>+</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mfenced></m:mrow></m:math>. So in this case, <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mo>-</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mfenced></m:mrow></m:math>.</para>
+    <para id="id162049">If we set <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mi>i</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>=</m:mo><m:mo>-</m:mo><m:mi>i</m:mi><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mfenced><m:mo>+</m:mo><m:mi>i</m:mi><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mfenced></m:mrow></m:math>. So in this case, <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mfenced></m:mrow></m:math>.</para>
+    <para id="id162160">Thus, <m:math overflow="scroll"><m:mrow><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mfenced><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, which means <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.
+So we can come to the conclusion that <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+    <section id="cid1">
+      <title>Solutions to Operator Equations</title>
+      <para id="id162258">Assume <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and <m:math overflow="scroll"><m:mi>Y</m:mi></m:math> are two normed linear spaces and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>Y</m:mi><m:mo>)</m:mo></m:mrow></m:math> is a bounded linear operator. Now pick <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math>. Then we pose the question: does a solution <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> to the equation <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math> exist?</para>
+      <para id="id162348">There are three possibilities:</para>
+      <list id="id162351" display="block" list-type="enumerated">
+        <item id="uid3">A unique solution exists;
+</item>
+        <item id="uid4">multiple solutions exist; or
+</item>
+        <item id="uid5">no solution exists.
+</item>
+      </list>
+      <para id="id162389">We consider these cases separately below.</para>
+      <list id="id162393" display="block" list-type="enumerated">
+        <item id="uid6"><emphasis effect="italics">Unique solution</emphasis>: Assume <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub></m:math> are two solutions to the equation. In this case we have <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub></m:mrow></m:math>. So <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Therefore, <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. If the solution <m:math overflow="scroll"><m:mi>x</m:mi></m:math> is unique then we must have <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Therefore, <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>}</m:mo></m:mrow></m:math>. Since the operator has a trivial null space, then <m:math overflow="scroll"><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup></m:math> exists. Thus, the solution to the equation is given by <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mi>y</m:mi></m:mrow></m:math>;
+</item>
+        <item id="uid7"><emphasis effect="italics">Multiple solutions</emphasis>: In this case, we may prefer to pick a particular solution. Often, our goal is to find the solution with smallest norm (for example, to reduce power in a communication problem). Additionally, there is a closed-form expression for the minimum-norm solution to the equation <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math>.
+<emphasis effect="bold">Theorem 1</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, <m:math overflow="scroll"><m:mi>Y</m:mi></m:math> be Hilbert spaces, <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math>, and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>Y</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Then <m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover></m:math> is the solution to <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>z</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math> is the solution of <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>z</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math>.
+
+Let <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub></m:math> be a solution to <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math>. Then all other solutions can be written as <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:mi>u</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>.
+We therefore search for the solution that achieves the minimum value of <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:mi>u</m:mi><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>, i.e., the closest point to <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub></m:math> in <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>.
+Assume <m:math overflow="scroll"><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover></m:math> is such a point; then, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover><m:mo>⊥</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. Now, recall that <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>(</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>⊥</m:mo></m:msup><m:mo>=</m:mo><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, so <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover><m:mo>∈</m:mo><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+Thus <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>z</m:mi></m:mrow></m:math> for some <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math>, and <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:mi>A</m:mi><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>z</m:mi></m:mrow></m:math>.
+Note that if <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> is invertible, then <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>z</m:mi><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:msup><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mi>y</m:mi></m:mrow></m:math>.
+</item>
+        <item id="uid9"><emphasis effect="italics">No solution</emphasis>: In this case, we may aim to find a solution that minimizes the mismatch between the two sides of the equation, i.e., <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math>. This is the well-known projection problem of <m:math overflow="scroll"><m:mi>y</m:mi></m:math> into <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>.
+<emphasis effect="bold">Theorem 2</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, <m:math overflow="scroll"><m:mi>Y</m:mi></m:math> be Hilbert spaces, <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>Y</m:mi></m:mrow></m:math>, and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>Y</m:mi><m:mo>)</m:mo></m:mrow></m:math>. The vector <m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover></m:math> minimizes <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>A</m:mi><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>y</m:mi></m:mrow></m:math>.
+
+Denote <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:mi>x</m:mi></m:mrow></m:math> so that <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mo>∈</m:mo><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>. We need to find the minimum value of <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mi>u</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mo>∈</m:mo><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Assume <m:math overflow="scroll"><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover></m:math> is the closest point to <m:math overflow="scroll"><m:mi>y</m:mi></m:math> in <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>,
+then <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>-</m:mo><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover><m:mo>⊥</m:mo><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, which means <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>-</m:mo><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover><m:mo>∈</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>⊥</m:mo></m:msup></m:mrow></m:math>. Recall that <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>(</m:mo><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>⊥</m:mo></m:msup><m:mo>=</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, which implies that <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>-</m:mo><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+So <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Thus <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>y</m:mi><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover></m:mrow></m:math>. Now, denoting <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>u</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:mi>A</m:mi><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover></m:mrow></m:math>, we have that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>y</m:mi><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover></m:mrow></m:math>.
+Note that if <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi></m:mrow></m:math> is invertible, then we have <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>y</m:mi></m:mrow></m:math>.
+</item>
+      </list>
+    </section>
+    <section id="cid2">
+      <title>Unitary Operator</title>
+      <para id="id164074"><emphasis effect="bold">Definition 1</emphasis> An operator <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> is said to be <emphasis effect="italics">unitary</emphasis> if <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi><m:mo>=</m:mo><m:mi>I</m:mi></m:mrow></m:math>.</para>
+      <para id="id164151">This implies that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup></m:mrow></m:math>. Unitary operators have norm-preservation properties.</para>
+      <para id="id164183"><emphasis effect="bold">Theorem 3</emphasis><m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> is unitary if and only if <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.</para>
+      <para id="id164298">Let <m:math overflow="scroll"><m:mi>A</m:mi></m:math> be unitary, then for any <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>,</para>
+      <equation id="uid13">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>|</m:mo>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msqrt>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                  </m:msqrt>
+                  <m:mo>=</m:mo>
+                  <m:msqrt>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>A</m:mi>
+                      <m:msup>
+                        <m:mi>A</m:mi>
+                        <m:mo>*</m:mo>
+                      </m:msup>
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                  </m:msqrt>
+                  <m:mo>=</m:mo>
+                  <m:msqrt>
+                    <m:mfenced separators="" open="〈" close="〉">
+                      <m:mi>A</m:mi>
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>A</m:mi>
+                      <m:mi>x</m:mi>
+                    </m:mfenced>
+                  </m:msqrt>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:mo>|</m:mo>
+                    <m:mi>A</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>|</m:mo>
+                    <m:mo>|</m:mo>
+                    <m:mo>.</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id164446">
+Since <m:math overflow="scroll"><m:mrow><m:mi>I</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mo>:</m:mo><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mo>→</m:mo><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>. So if <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> is unitary, then <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.
+From <link target-id="uid13"/> we can find that</para>
+      <equation id="uid14">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mn>0</m:mn>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>|</m:mo>
+                      <m:mo>|</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>|</m:mo>
+                      <m:mo>|</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>-</m:mo>
+                  <m:msup>
+                    <m:mrow>
+                      <m:mo>|</m:mo>
+                      <m:mo>|</m:mo>
+                      <m:mi>A</m:mi>
+                      <m:mi>x</m:mi>
+                      <m:mo>|</m:mo>
+                      <m:mo>|</m:mo>
+                    </m:mrow>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>-</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>A</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>A</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>-</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:msup>
+                      <m:mi>A</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msup>
+                    <m:mi>A</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>=</m:mo>
+                  <m:mfenced separators="" open="〈" close="〉">
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>-</m:mo>
+                    <m:msup>
+                      <m:mi>A</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msup>
+                    <m:mi>A</m:mi>
+                    <m:mi>x</m:mi>
+                  </m:mfenced>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id164818">
+Since this is true for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> we have that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, which means that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi><m:mi>x</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>. Therfore, we must have <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi><m:mo>=</m:mo><m:mi>I</m:mi></m:mrow></m:math>. Additionally, since the operator is unitary, we find that for any <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> we have that
+<m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>A</m:mi><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>A</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math>. So <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>A</m:mi><m:mi>y</m:mi></m:mrow></m:math>, implying that <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is one-to-one.
+Since <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>X</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is onto as well. Thus, <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is invertible, which means <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mi>A</m:mi><m:mo>=</m:mo><m:mi>I</m:mi></m:mrow></m:math>. So <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mi>A</m:mi><m:mo>=</m:mo><m:mi>I</m:mi><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup><m:mi>A</m:mi></m:mrow></m:math>, and therefore <m:math overflow="scroll"><m:mrow><m:msup><m:mi>A</m:mi><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mo>=</m:mo><m:msup><m:mi>A</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>. The result is that <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is unitary. We have shown that if <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>X</m:mi><m:mo>)</m:mo></m:mrow></m:math> is unitary.</para>
+      <para id="id165301"><emphasis effect="bold">Corollary 4</emphasis> If <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is finite-dimensional, then <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is unitary if and only if <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>A</m:mi><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.</para>
+    </section>
+  </content>
+</document>

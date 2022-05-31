@@ -1,0 +1,100 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Introduction and Motivation</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46862</md:content-id>
+  <md:title>Introduction and Motivation</md:title>
+  <md:abstract>Introduction and motivation for a graduate electrical engineering course on Signal Theory.</md:abstract>
+  <md:uuid>1e1f5808-7ecd-4153-b47f-37892fb55a39</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Introduction and Motivation</title>
+      <para id="id62167">Most areas of electrical and computer engineering (beyond signal processing) deal with signals. Communications is about transmitting, receiving, and interpreting signals. Signals are used to probe and model systems in control and circuit design. The images acquired by radar systems and biomedical devices are signals that change in space and time, respectively. Signals are used in microelectronic devices to convey digital information or send instructions to processors.</para>
+      <para id="id62174">This course will provide a mathematical framework to handle signals and operations on signals. Some of the questions that will be answered in this course include:</para>
+      <list id="id62179" display="block" list-type="bulleted">
+        <item id="uid1">What is a signal? How do we represent it?
+</item>
+        <item id="uid2">How do we represent operations on signals?
+</item>
+        <item id="uid3">What does it mean for signals to be similar/different from each other?
+</item>
+        <item id="uid4">When is a candidate signal a good/bad approximation (i.e., a simplified version) of a target signal?
+</item>
+        <item id="uid5">When is a signal “interesting” or “boring”?
+</item>
+        <item id="uid6">How can we characterize groups of signals?
+</item>
+        <item id="uid7">How do we find the best approximation of a target signal in a group of candidates?
+</item>
+      </list>
+    </section>
+    <section id="cid2">
+      <title>Course Overview</title>
+      <section id="uid8">
+        <title>Signal Theory</title>
+        <para id="id62622">The signal theory presented in this course has three main components:</para>
+        <list id="id62626" display="block" list-type="bulleted">
+          <item id="uid9"><emphasis effect="italics">Signal representations and signal spaces</emphasis>, which provide a framework to talk about sets of signal and to define signal approximations.
+</item>
+          <item id="uid10"><emphasis effect="italics">Distances and norms</emphasis> to evaluate and compare signals. Norms provide a measure of strength, amplitude, or “interestingness” of a signal, and distances provide a measure of similarity between signals.
+</item>
+          <item id="uid11"><emphasis effect="italics">Projection theory and signal estimation</emphasis> to work with signals that have been distorted, aiming to recover the best approximation in a defined set.
+</item>
+        </list>
+      </section>
+      <section id="uid12">
+        <title>Operator Theory</title>
+        <para id="id62691">Operators are mathematical representations of systems that manipulate a signal. The operator theory presented in this course has three main components:</para>
+        <list id="id62696" display="block" list-type="bulleted">
+          <item id="uid13"><emphasis effect="italics">Operator properties</emphasis> that allow us to characterize their effect on signals in a simple fashion.
+</item>
+          <item id="uid14"><emphasis effect="italics">Operator characterization</emphasis> that allow us to model their effect on arbitrary inputs.
+</item>
+          <item id="uid15"><emphasis effect="italics">Operator operations</emphasis> (no pun intended) that allow us to create new systems and reverse the effect of a system on a signal.
+</item>
+        </list>
+      </section>
+      <section id="uid16">
+        <title>Optimization Theory</title>
+        <para id="id62758">Optimization is an area of applied mathematics that, in the context of our course, will allow us to determine the best signal output for a given problem using defined metrics, such as signal denoising or compression, codebook design, and radar pulse shaping. The optimization theory presented in this course has three main components:</para>
+        <list id="id62764" display="block" list-type="bulleted">
+          <item id="uid17"><emphasis effect="italics">Optimization guarantees</emphasis> that rely on properties of the metrics and signal sets we search over to formally ensure that the optimal signal can be found.
+</item>
+          <item id="uid18"><emphasis effect="italics">Unconstrained optimization</emphasis>, where we search for the optimum over an entire signal space.
+</item>
+          <item id="uid19"><emphasis effect="italics">Constrained optimization</emphasis>, where the optimal signal must meet additional specific requirements.
+</item>
+        </list>
+      </section>
+      <section id="uid20">
+        <title>Example</title>
+        <para id="id62826">As an example, consider the following communications channel:
+
+<figure id="fig1">
+  <media id="commsys" alt="Communications channel">
+    <image mime-type="image/jpeg" src="../../media/module1fig1.png"/>
+  </media>
+  <caption>
+     Block diagram for a communications channel
+  </caption>
+</figure></para><para id="id63360">A mathematical formulation of this channel requires us to:</para>
+        <list id="id63364" display="block" list-type="bulleted">
+          <item id="uid21">establish which signals <m:math overflow="scroll"><m:mi>x</m:mi></m:math> can be input into the transmitter;
+</item>
+          <item id="uid22">how the transmitter <m:math overflow="scroll"><m:mi>F</m:mi></m:math>, the channel <m:math overflow="scroll"><m:mi>H</m:mi></m:math>, and the receiver <m:math overflow="scroll"><m:mi>G</m:mi></m:math> are characterized;
+</item>
+          <item id="uid23">how the concatenation of the blocks <m:math overflow="scroll"><m:mi>F</m:mi></m:math> and <m:math overflow="scroll"><m:mi>H</m:mi></m:math> is expressed;
+</item>
+          <item id="uid24">how the noise addition operation is formulated;
+</item>
+          <item id="uid25">how we measure whether the decoded message <m:math overflow="scroll"><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover></m:math> is a good approximation of the input <m:math overflow="scroll"><m:mi>x</m:mi></m:math>;
+</item>
+          <item id="uid26">how is the receiver <m:math overflow="scroll"><m:mi>G</m:mi></m:math> designed to be optimal for all the choices above.
+</item>
+        </list>
+        <para id="id63515">For this example, by the end of the course, you will be able to solve the problem of selecting the transmitter/receiver pair <m:math overflow="scroll"><m:mrow><m:mi>F</m:mi><m:mo>,</m:mo><m:mi>G</m:mi></m:mrow></m:math> that minimizes the power of the error <m:math overflow="scroll"><m:mrow><m:mi>e</m:mi><m:mo>=</m:mo><m:mover accent="true"><m:mi>x</m:mi><m:mo>^</m:mo></m:mover><m:mo>-</m:mo><m:mi>x</m:mi></m:mrow></m:math> while meeting maximum transmission power constraints <m:math overflow="scroll"><m:mrow><m:mfrac><m:mrow><m:mi> power </m:mi><m:mo>(</m:mo><m:mi>F</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>)</m:mo></m:mrow><m:mrow><m:mi> power </m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mfrac><m:mo>&lt;</m:mo><m:msub><m:mi>P</m:mi><m:mo movablelimits="true" form="prefix">max</m:mo></m:msub></m:mrow></m:math>.</para>
+      </section>
+    </section>
+  </content>
+</document>

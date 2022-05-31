@@ -1,0 +1,1040 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Vector Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47275</md:content-id>
+  <md:title>Vector Spaces</md:title>
+  <md:abstract>Description of vector spaces, subspaces, bases and spans.</md:abstract>
+  <md:uuid>8b193221-93f9-4614-b617-01ad4f178343</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Vector Spaces</title>
+      <para id="id62167"><emphasis effect="bold">Definition 1</emphasis> A <emphasis effect="italics">linear vector space</emphasis> <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>R</m:mi><m:mo>,</m:mo><m:mo>+</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> is given by a signal space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> (called vectors), a set of scalars <m:math overflow="scroll"><m:mi>R</m:mi></m:math>, an addition operation <m:math overflow="scroll"><m:mrow><m:mo>+</m:mo><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>×</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>X</m:mi></m:mrow></m:math>, and a multiplication operation <m:math overflow="scroll"><m:mrow><m:mo>·</m:mo><m:mo>:</m:mo><m:mi>R</m:mi><m:mo>×</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>X</m:mi></m:mrow></m:math>, such that:</para><list id="id62607" display="block" list-type="enumerated">
+        <item id="uid2"><m:math overflow="scroll"><m:mi>X</m:mi></m:math> forms a group under addition:
+<list id="id62628" display="block" list-type="enumerated" number-style="lower-alpha"><item id="uid3"><m:math overflow="scroll"><m:mrow><m:mo>∀</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mspace width="3.33333pt"/><m:mspace width="3.33333pt"/><m:mo>∃</m:mo><m:mo>!</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (closed under addition)
+</item><item id="uid4"><m:math overflow="scroll"><m:mrow><m:mo>∃</m:mo><m:mspace width="3.33333pt"/><m:mn>0</m:mn><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>+</m:mo><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>X</m:mi><m:mo>+</m:mo><m:mn>0</m:mn><m:mo>=</m:mo><m:mi>X</m:mi><m:mo>.</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (additive identity)
+</item><item id="uid5"><m:math overflow="scroll"><m:mrow><m:mo>∀</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mspace width="3.33333pt"/><m:mspace width="3.33333pt"/><m:mo>∃</m:mo><m:mspace width="3.33333pt"/><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (additive inverse)
+</item><item id="uid6"><m:math overflow="scroll"><m:mrow><m:mo>∀</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mspace width="3.33333pt"/><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>+</m:mo><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>+</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>z</m:mi><m:mo>.</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (associative law)
+</item></list></item>
+        <item id="uid7">Multiplication has the following properties: for any <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>:
+<list id="id63132" display="block" list-type="enumerated" number-style="lower-alpha"><item id="uid8"><m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (closure in <m:math overflow="scroll"><m:mi>X</m:mi></m:math> under multiplication)
+</item><item id="uid9"><m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>·</m:mo><m:mo>(</m:mo><m:mi>b</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>·</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (compatibility)
+</item><item id="uid10"><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (distributive law over <m:math overflow="scroll"><m:mi>R</m:mi></m:math>)
+</item><item id="uid11"><m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>·</m:mo><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>a</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>a</m:mi><m:mo>·</m:mo><m:mi>y</m:mi><m:mo>.</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (distributive law over <m:math overflow="scroll"><m:mi>X</m:mi></m:math>)
+</item></list></item>
+        <item id="uid12">The set <m:math overflow="scroll"><m:mi>R</m:mi></m:math> has the following properties:
+<list id="id63375" display="block" list-type="enumerated" number-style="lower-alpha"><item id="uid13">There exists <m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math> s.t. <m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>x</m:mi><m:mspace width="3.33333pt"/><m:mspace width="3.33333pt"/><m:mo>∀</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (multiplication identity)
+</item><item id="uid14">There exists <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math> s.t. <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn><m:mspace width="3.33333pt"/><m:mspace width="3.33333pt"/><m:mo>∀</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>.</m:mo><m:mspace width="1.em"/></m:mrow></m:math> (multiplicative null element)
+</item></list></item>
+      </list>
+      <para id="id63510"><emphasis effect="bold">Example 1</emphasis> Here are some examples of vector spaces:</para>
+      <list id="id63522" display="block" list-type="bulleted">
+        <item id="uid16"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mrow><m:mi mathvariant="double-struck">R</m:mi></m:mrow><m:mi>n</m:mi></m:msup></m:mrow></m:math> (space of all vectors of length <m:math overflow="scroll"><m:mi>n</m:mi></m:math>) over <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> is a vector space.
+</item>
+        <item id="uid17"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">C</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> (<m:math overflow="scroll"><m:mi mathvariant="double-struck">C</m:mi></m:math> is complex numbers) over <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">C</m:mi></m:mrow></m:math> is a vector space.
+</item>
+        <item id="uid18"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mrow><m:mi mathvariant="double-struck">R</m:mi></m:mrow><m:mi>n</m:mi></m:msup></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">C</m:mi></m:mrow></m:math> is not a vector space, because closure in <m:math overflow="scroll"><m:mi>X</m:mi></m:math> under multiplication is not met.
+</item>
+        <item id="uid19"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> (continuous functions in <m:math overflow="scroll"><m:mi>T</m:mi></m:math>) over <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> is a vector space.
+</item>
+      </list>
+    </section>
+    <section id="cid2">
+      <title>Subspaces</title>
+      <para id="id63754"><emphasis effect="bold">Definition 2</emphasis> A subset <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is a <emphasis effect="italics">linear subspace</emphasis> of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> if <m:math overflow="scroll"><m:mi>M</m:mi></m:math> itself is a linear vector space.
+Note that, in particular, this implies that any subspace <m:math overflow="scroll"><m:mi>M</m:mi></m:math> must obey <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>∈</m:mo><m:mi>M</m:mi></m:mrow></m:math>.</para>
+      <para id="id63822"><emphasis effect="bold">Example 2</emphasis> Here are some examples of subspaces:</para>
+      <list id="id63833" display="block" list-type="bulleted"><item id="uid22">In <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mrow><m:mi mathvariant="double-struck">R</m:mi></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>, any line that passes through the origin is a subspace of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>:
+<equation id="id63893"><m:math overflow="scroll" mode="display"><m:mrow><m:mi>M</m:mi><m:mo>=</m:mo><m:mfenced separators="" open="{" close="}"><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>∈</m:mo><m:msup><m:mrow><m:mi mathvariant="double-struck">R</m:mi></m:mrow><m:mn>2</m:mn></m:msup><m:mspace width="3.33333pt"/><m:mspace width="3.33333pt"/><m:mtext>such</m:mtext><m:mspace width="4.pt"/><m:mtext>that</m:mtext><m:mspace width="3.33333pt"/><m:mspace width="3.33333pt"/><m:mfrac><m:mi>y</m:mi><m:mi>x</m:mi></m:mfrac><m:mo>=</m:mo><m:mi>c</m:mi></m:mfenced><m:mo>.</m:mo></m:mrow></m:math></equation></item>
+        <item id="uid23">In <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> over <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>, the followings are subspaces of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>:
+<equation id="uid24"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:msub><m:mi>M</m:mi><m:mn>1</m:mn></m:msub></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mo>{</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>a</m:mi><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>c</m:mi><m:mo>:</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>,</m:mo><m:mi>c</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">R</m:mi><m:mo>}</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:msub><m:mi>M</m:mi><m:mn>2</m:mn></m:msub></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mo>{</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>}</m:mo><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation>
+
+In contrast, the set <m:math overflow="scroll"><m:mrow><m:msub><m:mi>M</m:mi><m:mn>3</m:mn></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>a</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn><m:mo>}</m:mo></m:mrow></m:mrow></m:math> is not a subspace.
+</item>
+      </list><para id="id64241"><emphasis effect="bold">Proposition 1</emphasis> If <m:math overflow="scroll"><m:mi>M</m:mi></m:math> and <m:math overflow="scroll"><m:mi>N</m:mi></m:math> are subspaces of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, then <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>∩</m:mo><m:mi>N</m:mi></m:mrow></m:math> is also a subspace.</para>
+      <para id="id64302"><emphasis effect="italics">Proof:</emphasis> We assume that <m:math overflow="scroll"><m:mi>M</m:mi></m:math> and <m:math overflow="scroll"><m:mi>N</m:mi></m:math> hold properties of linear vector space, and show that so does <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>∩</m:mo><m:mi>N</m:mi></m:mrow></m:math>:</para><list id="id64338" display="block" list-type="enumerated"><item id="uid27">
+              <equation id="id64359">
+                <m:math overflow="scroll" mode="display">
+                  <m:mrow>
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>∈</m:mo>
+                    <m:mi>M</m:mi>
+                    <m:mo>∩</m:mo>
+                    <m:mi>N</m:mi>
+                    <m:mspace width="1.em"/>
+                    <m:mo>⇒</m:mo>
+                    <m:mspace width="1.em"/>
+                    <m:mfenced open="{" close="}">
+                      <m:mtable>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>x</m:mi>
+                              <m:mo>,</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>M</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mo>⇒</m:mo>
+                              <m:mspace width="1.em"/>
+                              <m:mi>x</m:mi>
+                              <m:mo>+</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>M</m:mi>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>x</m:mi>
+                              <m:mo>,</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>N</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mo>⇒</m:mo>
+                              <m:mspace width="1.em"/>
+                              <m:mi>x</m:mi>
+                              <m:mo>+</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>N</m:mi>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                      </m:mtable>
+                    </m:mfenced>
+                    <m:mspace width="1.em"/>
+                    <m:mo>⇒</m:mo>
+                    <m:mspace width="1.em"/>
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>∈</m:mo>
+                    <m:mi>M</m:mi>
+                    <m:mo>∩</m:mo>
+                    <m:mi>N</m:mi>
+                  </m:mrow>
+                </m:math>
+              </equation>
+            </item>
+            <item id="uid28">
+              <equation id="id64500">
+                <m:math overflow="scroll" mode="display">
+                  <m:mrow>
+                    <m:mfenced open="{" close="}">
+                      <m:mtable>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>M</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mtext>linear</m:mtext>
+                              <m:mspace width="4.pt"/>
+                              <m:mtext>vector</m:mtext>
+                              <m:mspace width="4.pt"/>
+                              <m:mtext>space</m:mtext>
+                              <m:mo>⇒</m:mo>
+                              <m:mn>0</m:mn>
+                              <m:mo>∈</m:mo>
+                              <m:mi>M</m:mi>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>N</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mtext>linear</m:mtext>
+                              <m:mspace width="4.pt"/>
+                              <m:mtext>vector</m:mtext>
+                              <m:mspace width="4.pt"/>
+                              <m:mtext>space</m:mtext>
+                              <m:mo>⇒</m:mo>
+                              <m:mn>0</m:mn>
+                              <m:mo>∈</m:mo>
+                              <m:mi>N</m:mi>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                      </m:mtable>
+                    </m:mfenced>
+                    <m:mo>⇒</m:mo>
+                    <m:mn>0</m:mn>
+                    <m:mo>∈</m:mo>
+                    <m:mi>M</m:mi>
+                    <m:mo>∩</m:mo>
+                    <m:mi>N</m:mi>
+                  </m:mrow>
+                </m:math>
+              </equation>
+            </item>
+            <item id="uid29">
+              <equation id="id64601">
+                <m:math overflow="scroll" mode="display">
+                  <m:mrow>
+                    <m:mi>x</m:mi>
+                    <m:mo>∈</m:mo>
+                    <m:mi>M</m:mi>
+                    <m:mo>∩</m:mo>
+                    <m:mi>N</m:mi>
+                    <m:mo>⇒</m:mo>
+                    <m:mfenced open="{" close="}">
+                      <m:mtable>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>x</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>M</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mo>∃</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>M</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mtext>s.t.</m:mtext>
+                              <m:mspace width="1.em"/>
+                              <m:mi>x</m:mi>
+                              <m:mo>+</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>=</m:mo>
+                              <m:mn>0</m:mn>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                        <m:mtr>
+                          <m:mtd>
+                            <m:mrow>
+                              <m:mi>x</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>N</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mo>∃</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>∈</m:mo>
+                              <m:mi>N</m:mi>
+                              <m:mspace width="1.em"/>
+                              <m:mtext>s.t.</m:mtext>
+                              <m:mspace width="1.em"/>
+                              <m:mi>x</m:mi>
+                              <m:mo>+</m:mo>
+                              <m:mi>y</m:mi>
+                              <m:mo>=</m:mo>
+                              <m:mn>0</m:mn>
+                            </m:mrow>
+                          </m:mtd>
+                        </m:mtr>
+                      </m:mtable>
+                    </m:mfenced>
+                    <m:mo>⇒</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>∈</m:mo>
+                    <m:mi>M</m:mi>
+                    <m:mo>∩</m:mo>
+                    <m:mi>N</m:mi>
+                  </m:mrow>
+                </m:math>
+              </equation>
+            </item>
+      </list><para id="id64730">The other properties are shown in a similar fashion.</para>
+      <para id="id64734"><emphasis effect="bold">Definition 3</emphasis> A vector <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>R</m:mi><m:mo>,</m:mo><m:mo>+</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> is a vector space, is a <emphasis effect="italics">linear combination</emphasis> of a set <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> if it can be written as <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>·</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>. The set of all linear combinations of a set of points <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> builds a linear subspace of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>.</para>
+      <para id="id64961"><emphasis effect="bold">Example 3</emphasis> <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mn>2</m:mn></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msup><m:mi>x</m:mi><m:mi>i</m:mi></m:msup></m:mrow></m:math> is a linear subspace of <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo><m:mo>,</m:mo><m:mi mathvariant="double-struck">R</m:mi><m:mo>,</m:mo><m:mo>+</m:mo><m:mo>,</m:mo><m:mo>·</m:mo><m:mo>)</m:mo></m:mrow></m:math> containing the set of all quadratic functions, as it corresponds to all linear combinations of the set of functions <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:math>.</para></section>
+    <section id="cid3">
+      <title>Bases and Spans</title>
+      <para id="id65090"><emphasis effect="bold">Definition 4</emphasis> For the set <m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>, the <emphasis effect="italics">span</emphasis> of <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is written as</para><equation id="id65170">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:mi>S</m:mi>
+              <m:mo>]</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mtext>span</m:mtext>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>S</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mfenced separators="" open="{" close="}">
+              <m:mi>x</m:mi>
+              <m:mo>:</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>=</m:mo>
+              <m:munderover>
+                <m:mo>∑</m:mo>
+                <m:mrow>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:munderover>
+              <m:msub>
+                <m:mi>a</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>a</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mo>∈</m:mo>
+              <m:mi>R</m:mi>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65265"><emphasis effect="bold">Example 4</emphasis> The space of quadratic functions <m:math overflow="scroll"><m:mi>Q</m:mi></m:math> is written as <m:math overflow="scroll"><m:mrow><m:mi>Q</m:mi><m:mo>=</m:mo><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>]</m:mo></m:mrow></m:math>, with <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.
+The space can also be written as <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>]</m:mo></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup><m:mo>-</m:mo><m:mn>2</m:mn><m:mo>}</m:mo></m:mrow><m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, i.e. <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>]</m:mo></m:mrow></m:mrow></m:math>. To prove this, we need to show <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>]</m:mo></m:mrow><m:mo>⊆</m:mo><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>]</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>]</m:mo></m:mrow><m:mo>⊆</m:mo><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>]</m:mo></m:mrow></m:mrow></m:math>. For the former case we have</para><equation id="uid34">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>x</m:mi>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mn>1</m:mn>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mn>3</m:mn>
+                  </m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msup>
+                      <m:mi>x</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msup>
+                    <m:mo>-</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mn>1</m:mn>
+                    </m:msub>
+                    <m:mo>-</m:mo>
+                    <m:mn>2</m:mn>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mn>3</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mn>3</m:mn>
+                  </m:msub>
+                  <m:msup>
+                    <m:mi>x</m:mi>
+                    <m:mn>2</m:mn>
+                  </m:msup>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id65665">
+which means that every element that can be spanned by <m:math overflow="scroll"><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub></m:math>, can also be spanned by <m:math overflow="scroll"><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub></m:math>, and hence <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>]</m:mo></m:mrow><m:mo>⊆</m:mo><m:mrow><m:mo>[</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>]</m:mo></m:mrow></m:mrow></m:math>. The latter case can be shown in a similar manner.</para>
+      <para id="id65736"><emphasis effect="bold">Definition 5</emphasis> A set <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is a <emphasis effect="italics">linearly independent set</emphasis> if</para>
+      <equation id="id65763">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>⇔</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mo>,</m:mo>
+            <m:mo>∀</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>i</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mn>2</m:mn>
+              <m:mo>,</m:mo>
+              <m:mo>...</m:mo>
+              <m:mo>,</m:mo>
+              <m:mi>n</m:mi>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65857">Otherwise, the set <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is <emphasis effect="italics">linearly dependent</emphasis>.</para>
+      <para id="id65878"><emphasis effect="bold">Definition 6</emphasis> A finite set <m:math overflow="scroll"><m:mi>S</m:mi></m:math> of linearly independent vectors is a <emphasis effect="italics">basis</emphasis> for the space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> if <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>S</m:mi><m:mo>]</m:mo><m:mo>=</m:mo><m:mi>X</m:mi></m:mrow></m:math>, i.e. if <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is spanned by <m:math overflow="scroll"><m:mi>S</m:mi></m:math>.</para>
+      <para id="id65950"><emphasis effect="bold">Definition 7</emphasis> The <emphasis effect="italics">dimension</emphasis> of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is the number of elements of its basis <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>S</m:mi><m:mo>|</m:mo></m:mrow></m:math>.
+A vector space for which a finite basis does not exist is called an <emphasis effect="italics">infinite-dimensional space</emphasis>.</para>
+      <para id="id65997"><emphasis effect="bold">Theorem 1</emphasis> Any two bases of a subspace have the same number of elements.</para>
+      <para id="id66016"><emphasis effect="italics">Proof:</emphasis> We prove by contradiction: assume that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>y</m:mi><m:mi>m</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>m</m:mi><m:mo>&gt;</m:mo><m:mi>n</m:mi></m:mrow></m:math>, are two bases for a subspace <m:math overflow="scroll"><m:mi>X</m:mi></m:math> with different numbers of elements. We have that since <m:math overflow="scroll"><m:mrow><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> it can be written as a linear combination of <m:math overflow="scroll"><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub></m:math>:</para><equation id="id66168">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66219">Order the elements of <m:math overflow="scroll"><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub></m:math> above so that <m:math overflow="scroll"><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub></m:math> is nonzero; since <m:math overflow="scroll"><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub></m:math> must be nonzero then at least one such <m:math overflow="scroll"><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub></m:math> must exist. Solving the above equation for <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub></m:math> yields</para>
+      <equation id="id66297">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:msub>
+                <m:mi>a</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:mfenced separators="" open="(" close=")">
+              <m:msub>
+                <m:mi>y</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+              <m:mo>-</m:mo>
+              <m:munderover>
+                <m:mo>∑</m:mo>
+                <m:mrow>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>2</m:mn>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:munderover>
+              <m:msub>
+                <m:mi>a</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66378">Thus <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>3</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a basis, in terms of which we can write any vector of the space <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, including <m:math overflow="scroll"><m:msub><m:mi>y</m:mi><m:mn>2</m:mn></m:msub></m:math>:</para>
+      <equation id="id66460">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>2</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66529">Since <m:math overflow="scroll"><m:mrow><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>y</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math> are linearly independent, at least one of the values of <m:math overflow="scroll"><m:mrow><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:mo>,</m:mo><m:mspace width="3.33333pt"/><m:mi>i</m:mi><m:mo>&gt;</m:mo><m:mn>2</m:mn><m:mo>,</m:mo></m:mrow></m:math> must be nonzero. Sort the remaining <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:math> so that <m:math overflow="scroll"><m:msub><m:mi>b</m:mi><m:mn>2</m:mn></m:msub></m:math> is nonzero. Solving for <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub></m:math> results in</para>
+      <equation id="id66632">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:msub>
+                <m:mi>b</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:mfrac>
+              <m:msub>
+                <m:mi>b</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+              <m:msub>
+                <m:mi>b</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>3</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:mfrac>
+              <m:msub>
+                <m:mi>b</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:msub>
+                <m:mi>b</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+            </m:mfrac>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66743">Therefore, <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>y</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>3</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a basis for <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. Continuing in this way, we can eliminate each <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:math>, showing that <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>y</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>y</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>y</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a basis for <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. Thus, we have <m:math overflow="scroll"><m:mrow><m:msub><m:mi>y</m:mi><m:mrow><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>c</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>, or equivalently:</para>
+      <equation id="id66931">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>c</m:mi>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+            </m:msub>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>c</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>y</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mn>0</m:mn>
+            <m:mspace width="1.em"/>
+            <m:mtext>with</m:mtext>
+            <m:mspace width="1.em"/>
+            <m:msub>
+              <m:mi>c</m:mi>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id67034">As a result, <m:math overflow="scroll"><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub></m:math> is linearly dependent and is not a basis. Therefore, all bases of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> must have the same number of elements.</para>
+    </section>
+    <section id="cid4">
+      <title>Basis Representations</title>
+      <para id="id67073">Having a basis in hand for a given subspace allows us to express the points in the subspace in more than one way. For each point <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mi>S</m:mi><m:mo>]</m:mo></m:mrow></m:math> in the span of a basis <m:math overflow="scroll"><m:mrow><m:mi>S</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mo>...</m:mo><m:msub><m:mi>S</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math>, that is,</para>
+      <equation id="uid39">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>x</m:mi>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id67192">there is a one-to-one map (i.e., an equivalence) between <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mi>S</m:mi><m:mo>]</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>∈</m:mo><m:msup><m:mi>R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math>, that is, both <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>a</m:mi></m:math> uniquely identify the point in <m:math overflow="scroll"><m:mi>S</m:mi></m:math>. This is stated more formally as a theorem.</para>
+      <para id="id67292"><emphasis effect="bold">Theorem 2</emphasis> If <m:math overflow="scroll"><m:mi>S</m:mi></m:math> is a linearly independent set, then</para>
+      <equation id="id67314">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id67387">if and only if <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>...</m:mo><m:mi>n</m:mi></m:mrow></m:math>.</para>
+      <para id="id67441"><emphasis effect="italics">Proof:</emphasis> Theorem 1 states that the scalars <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> are unique for <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.
+
+We begin by assuming that indeed</para><equation id="id67497">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id67573">This implies</para>
+      <equation id="uid41">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:msub>
+                    <m:mi>a</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:msub>
+                    <m:mi>b</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:munderover>
+                    <m:mo>∑</m:mo>
+                    <m:mrow>
+                      <m:mi>i</m:mi>
+                      <m:mo>=</m:mo>
+                      <m:mn>1</m:mn>
+                    </m:mrow>
+                    <m:mi>n</m:mi>
+                  </m:munderover>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>a</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>b</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:msub>
+                    <m:mi>S</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id67738">
+Since the elements of <m:math overflow="scroll"><m:mi>S</m:mi></m:math> are linearly independent, each one of the scalars of the sum must be zero, that is, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and so <m:math overflow="scroll"><m:mrow><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> for each <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math>.</para>
+      <para id="id67830"><emphasis effect="bold">Example 5 (Digital Communications)</emphasis> 
+A transmitter sends two waveforms:</para>
+      <equation id="uid43">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msqrt>
+              <m:mrow>
+                <m:mn>2</m:mn>
+                <m:mo>/</m:mo>
+                <m:mi>T</m:mi>
+              </m:mrow>
+            </m:msqrt>
+            <m:mo form="prefix">cos</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mn>2</m:mn>
+              <m:mi>π</m:mi>
+              <m:msub>
+                <m:mi>f</m:mi>
+                <m:mi>c</m:mi>
+              </m:msub>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mspace width="14.22636pt"/>
+            <m:mi>t</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>,</m:mo>
+              <m:mi>T</m:mi>
+              <m:mo>]</m:mo>
+            </m:mrow>
+            <m:mspace width="14.22636pt"/>
+            <m:mtext>if</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>bit</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>1</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>is</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>transmitted,</m:mtext>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <equation id="uid44">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msqrt>
+              <m:mrow>
+                <m:mn>2</m:mn>
+                <m:mo>/</m:mo>
+                <m:mi>T</m:mi>
+              </m:mrow>
+            </m:msqrt>
+            <m:mo form="prefix">sin</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mn>2</m:mn>
+              <m:mi>π</m:mi>
+              <m:msub>
+                <m:mi>f</m:mi>
+                <m:mi>c</m:mi>
+              </m:msub>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mspace width="14.22636pt"/>
+            <m:mi>t</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>,</m:mo>
+              <m:mi>T</m:mi>
+              <m:mo>]</m:mo>
+            </m:mrow>
+            <m:mspace width="14.22636pt"/>
+            <m:mtext>if</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>bit</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>0</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>is</m:mtext>
+            <m:mspace width="4.pt"/>
+            <m:mtext>transmitted.</m:mtext>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id68064">The signal <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math> recorded by the receiver is continuous, that is, <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>∈</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math>. Assuming that the propagation delay is known and corrected at the receiver, we will have they the received signal must be in the span of the possible transmitted signals, i.e., <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>∈</m:mo><m:mo form="prefix">span</m:mo><m:mo>(</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo><m:msub><m:mi>S</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:math>. One can check that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> are linearly independent. Thus, one can use a unique choice of coefficients <m:math overflow="scroll"><m:msub><m:mi>a</m:mi><m:mn>0</m:mn></m:msub></m:math> and <m:math overflow="scroll"><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub></m:math> that denote whether bit 0 or bit 1 is transmitted and contain the amount of attenuation caused by the transmission:</para><equation id="uid45"><m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>r</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:msub>
+              <m:mi>S</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+              <m:mo>.</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation><para id="id68328">The uniqueness of this representation can only be obtained if the transmitted signals <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> are linearly independent. The waveforms above are used in in phase shift keying (PSK); other similar examples include frequency shift keying (FSK) and quadrature amplitude modulation (QAM).</para>
+    </section>
+  </content>
+</document>

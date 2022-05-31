@@ -1,0 +1,1242 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Fenchel Duality</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46915</md:content-id>
+  <md:title>Fenchel Duality</md:title>
+  <md:abstract>Introduces the concepts of an epigraph and a conjugate function necessary to set up Fenchel dual problems.</md:abstract>
+  <md:uuid>632f6c51-e76f-4770-b085-8e21c8aa9a27</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Convexity and Conjugate Functions</title>
+      <para id="id62167">We begin by reviewing two notions of convexity: for sets and for functions.</para>
+      <para id="id62171"><emphasis effect="bold">Definition 1</emphasis> A subset <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is called <emphasis effect="italics">convex</emphasis> if <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>=</m:mo><m:mi>α</m:mi><m:mi>x</m:mi><m:mo>+</m:mo><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>α</m:mi><m:mo>)</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>C</m:mi></m:mrow></m:math> for every <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>C</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>; <m:math overflow="scroll"><m:mi>z</m:mi></m:math> is called a <emphasis effect="italics">convex combination</emphasis> of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>y</m:mi></m:math>.</para>
+      <para id="id62821"><emphasis effect="bold">Definition 2</emphasis> Let <m:math overflow="scroll"><m:mi>C</m:mi></m:math> be a convex set. A functional <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>:</m:mo><m:mi>C</m:mi><m:mo>→</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> is <emphasis effect="italics">convex on</emphasis><m:math overflow="scroll"><m:mi>C</m:mi></m:math> if <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>α</m:mi><m:mi>x</m:mi><m:mo>+</m:mo><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>α</m:mi><m:mo>)</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>≤</m:mo><m:mi>α</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>α</m:mi><m:mo>)</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>C</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow></m:math>. If strict inequality holds the functional is set to be <emphasis effect="italics">strictly convex</emphasis>. A functional <m:math overflow="scroll"><m:mi>g</m:mi></m:math> is called <emphasis effect="italics">concave (strictly concave)</emphasis> if <m:math overflow="scroll"><m:mrow><m:mo>-</m:mo><m:mi>g</m:mi></m:mrow></m:math> is convex (strictly convex).</para>
+      <para id="id63008">We will denote the region above the function <m:math overflow="scroll"><m:mi>f</m:mi></m:math> defined over a convex set <m:math overflow="scroll"><m:mi>C</m:mi></m:math> as <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:mi>C</m:mi><m:mo>]</m:mo></m:mrow></m:math>, sometimes called an <emphasis effect="italics">epigraph</emphasis>, as illustrated in <link target-id="uid3"/>.</para>
+      <figure id="uid3">
+        <media id="uid3_media" alt="">
+          <image mime-type="image/png" src="../../media/convex2.png" id="uid3_onlineimage" width="360"><!-- NOTE: attribute width changes image size online (pixels). original width is 360. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/convex2.eps" id="uid3_printimage" print-width="6.0cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Example of an epigraph.</caption>
+      </figure>
+      <para id="id63068"><emphasis effect="bold">Definition 3</emphasis> Let <m:math overflow="scroll"><m:mi>f</m:mi></m:math> be a convex functional on a convex set <m:math overflow="scroll"><m:mi>C</m:mi></m:math>. The <emphasis effect="italics">conjugate set</emphasis><m:math overflow="scroll"><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:math> is defined as</para>
+      <equation id="id63114">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>C</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>:</m:mo>
+              <m:munder>
+                <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                <m:mrow>
+                  <m:mi>x</m:mi>
+                  <m:mo>∈</m:mo>
+                  <m:mi>C</m:mi>
+                </m:mrow>
+              </m:munder>
+              <m:mrow>
+                <m:mo>[</m:mo>
+                <m:mrow>
+                  <m:mo>〈</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msup>
+                    <m:mi>x</m:mi>
+                    <m:mo>*</m:mo>
+                  </m:msup>
+                  <m:mo>〉</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+              <m:mo>&lt;</m:mo>
+              <m:mi>∞</m:mi>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id63210">and the <emphasis effect="italics">conjugate functional</emphasis><m:math overflow="scroll"><m:mrow><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup><m:mo>:</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup><m:mo>→</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> is defined as</para>
+      <equation id="id63250">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>C</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>,</m:mo>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>]</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id63335">There is a geometric intuition behind the definition of the conjugate functionals. Consider the illustration below where the horizontal axis represents the space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and the vertical axis represents the scalar field. A hyperplane in this space contains all points <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>r</m:mi><m:mo>)</m:mo><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>×</m:mo><m:mi>R</m:mi></m:mrow></m:math> for which <m:math overflow="scroll"><m:mrow><m:mi>r</m:mi><m:mo>=</m:mo><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>〉</m:mo><m:mo>-</m:mo><m:mi>k</m:mi></m:mrow></m:math> for some value of <m:math overflow="scroll"><m:mrow><m:mi>k</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>; the vector <m:math overflow="scroll"><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup></m:math> determines the orientation of the hyperplane and the value <m:math overflow="scroll"><m:mi>k</m:mi></m:math> determines the shift from the origin (i.e., the intersect in the axis <m:math overflow="scroll"><m:mi>R</m:mi></m:math>). The value of the functional <m:math overflow="scroll"><m:mrow><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math> corresponds to the supremum value of <m:math overflow="scroll"><m:mi>k</m:mi></m:math> for which the hyperplane intersects <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:mi>C</m:mi><m:mo>]</m:mo></m:mrow></m:math>, and is finite only for <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>; this is illustrated in <link target-id="uid5"/>.</para>
+      <figure id="uid5">
+        <media id="uid5_media" alt="">
+          <image mime-type="image/png" src="../../media/hyperplane.png" id="uid5_onlineimage" width="1133"><!-- NOTE: attribute width changes image size online (pixels). original width is 1133. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/hyperplane.eps" id="uid5_printimage" print-width="15.0cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>The conjugate function of a convex epigraph.</caption>
+      </figure>
+      <para id="id63544">Note that <m:math overflow="scroll"><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:math> is convex and <m:math overflow="scroll"><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:math> is convex. This definition is easily extended to concave functionals.</para>
+      <para id="id63574"><emphasis effect="bold">Definition 4</emphasis> Let <m:math overflow="scroll"><m:mi>g</m:mi></m:math> be a concave functional on a convex set <m:math overflow="scroll"><m:mi>D</m:mi></m:math>. The <emphasis effect="italics">conjugate set</emphasis><m:math overflow="scroll"><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:math> is defined as</para>
+      <equation id="id63620">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>D</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>:</m:mo>
+              <m:munder>
+                <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                <m:mrow>
+                  <m:mi>x</m:mi>
+                  <m:mo>∈</m:mo>
+                  <m:mi>D</m:mi>
+                </m:mrow>
+              </m:munder>
+              <m:mrow>
+                <m:mo>[</m:mo>
+                <m:mrow>
+                  <m:mo>〈</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msup>
+                    <m:mi>x</m:mi>
+                    <m:mo>*</m:mo>
+                  </m:msup>
+                  <m:mo>〉</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>g</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>]</m:mo>
+              </m:mrow>
+              <m:mo>&gt;</m:mo>
+              <m:mo>-</m:mo>
+              <m:mi>∞</m:mi>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id63717">and the <emphasis effect="italics">conjugate functional</emphasis><m:math overflow="scroll"><m:mrow><m:msup><m:mi>g</m:mi><m:mo>*</m:mo></m:msup><m:mo>:</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup><m:mo>→</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> is defined as</para>
+      <equation id="id63758">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>g</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>D</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>[</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>,</m:mo>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>]</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id63842">Note that <m:math overflow="scroll"><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:math> is convex and <m:math overflow="scroll"><m:msup><m:mi>g</m:mi><m:mo>*</m:mo></m:msup></m:math> is concave.</para>
+    </section>
+    <section id="cid2">
+      <title>Fenchel Duality</title>
+      <para id="id63881">The following theorem will allow us to convert an optimization problem with a convex objective function into a dual problem with a concave objective function.</para>
+      <para id="id63886"><emphasis effect="bold">Theorem 1 (Fenchel)</emphasis> 
+Assume that <m:math overflow="scroll"><m:mi>f</m:mi></m:math> and <m:math overflow="scroll"><m:mi>g</m:mi></m:math> are convex and concave functions, respectively, on convex sets <m:math overflow="scroll"><m:mi>C</m:mi></m:math> and <m:math overflow="scroll"><m:mi>D</m:mi></m:math> in a normed space <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. Assume that <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>∩</m:mo><m:mi>D</m:mi></m:mrow></m:math> contains points in the relative interior of <m:math overflow="scroll"><m:mi>C</m:mi></m:math> and <m:math overflow="scroll"><m:mi>D</m:mi></m:math> and that either <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:mi>C</m:mi><m:mo>]</m:mo></m:mrow></m:math> or <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>g</m:mi><m:mo>,</m:mo><m:mi>D</m:mi><m:mo>]</m:mo></m:mrow></m:math> has a nonempty interior. Suppose further that</para>
+      <equation id="id64002">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>μ</m:mi>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>C</m:mi>
+                <m:mo>∩</m:mo>
+                <m:mi>D</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>g</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>}</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id64063">is finite. Then,</para>
+      <equation id="id64068">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>μ</m:mi>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>C</m:mi>
+                <m:mo>∩</m:mo>
+                <m:mi>D</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>g</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">max</m:mo>
+              <m:mrow>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+                <m:mo>∈</m:mo>
+                <m:msup>
+                  <m:mi>C</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+                <m:mo>∩</m:mo>
+                <m:msup>
+                  <m:mi>D</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:msup>
+                <m:mi>g</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:msup>
+                <m:mi>f</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id64220">where the maximum is achieved by some <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>x</m:mi><m:mn>0</m:mn><m:mo>*</m:mo></m:msubsup><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup><m:mo>∩</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>.</para>
+      <para id="id64264">In this theorem, <m:math overflow="scroll"><m:mrow><m:mi>g</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> is usually set to zero. From a geometrical point of view, the theorem states that there are two ways to interpret the minimum distance between the two epigraphs <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:mi>C</m:mi><m:mo>]</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo>[</m:mo><m:mi>g</m:mi><m:mo>,</m:mo><m:mi>D</m:mi><m:mo>]</m:mo></m:mrow></m:math> shown below: one in terms of the original functions <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>,</m:mo><m:mi>g</m:mi></m:mrow></m:math> and one in terms of the duals <m:math overflow="scroll"><m:mrow><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup><m:mo>,</m:mo><m:msup><m:mi>g</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>: we look for the two tangent hyperplanes for <m:math overflow="scroll"><m:mi>f</m:mi></m:math> and <m:math overflow="scroll"><m:mi>g</m:mi></m:math> that are maximally separated from one another, as illustrated in <link target-id="uid8"/>.</para>
+      <figure id="uid8">
+        <media id="uid8_media" alt="">
+          <image mime-type="image/png" src="../../media/fenchel.png" id="uid8_onlineimage" width="401"><!-- NOTE: attribute width changes image size online (pixels). original width is 401. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/fenchel.eps" id="uid8_printimage" print-width="7.5cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Illustration of the Fenchel dual problem on a conjugate function.</caption>
+      </figure>
+      <para id="id64399">If the infimum on the left is achieved by <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>, then</para>
+      <equation id="uid9">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">max</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>C</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mn>0</m:mn>
+                        <m:mo>*</m:mo>
+                      </m:msubsup>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>f</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                      <m:mo>*</m:mo>
+                    </m:msubsup>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">max</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>D</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:msubsup>
+                        <m:mi>x</m:mi>
+                        <m:mn>0</m:mn>
+                        <m:mo>*</m:mo>
+                      </m:msubsup>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>g</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>,</m:mo>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                      <m:mo>*</m:mo>
+                    </m:msubsup>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:mi>g</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id64651"><emphasis effect="bold">Example 1 (Allocation)</emphasis> 
+Assume that we have a capital <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> available for investment with <m:math overflow="scroll"><m:mi>n</m:mi></m:math> different funds. There is a predicted gain <m:math overflow="scroll"><m:mrow><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> to having stock worth <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:math> at fund <m:math overflow="scroll"><m:mi>i</m:mi></m:math>, where the functions <m:math overflow="scroll"><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub></m:math> are concave. We aim to find the optimal allocation of the capital <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> that maximizes the total gain <m:math overflow="scroll"><m:mrow><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>g</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id64847">To appeal to duality, we have the concave function <m:math overflow="scroll"><m:mrow><m:mi>g</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> and must define a convex function, e.g., <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. The constraint set can be written as the intersection <m:math overflow="scroll"><m:mrow><m:mi>C</m:mi><m:mo>∩</m:mo><m:mi>D</m:mi></m:mrow></m:math> with</para>
+      <equation id="uid11">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>C</m:mi>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>{</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>:</m:mo>
+                    <m:munderover>
+                      <m:mo>∑</m:mo>
+                      <m:mrow>
+                        <m:mi>i</m:mi>
+                        <m:mo>=</m:mo>
+                        <m:mn>1</m:mn>
+                      </m:mrow>
+                      <m:mi>n</m:mi>
+                    </m:munderover>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>=</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>}</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mrow>
+                    <m:mo>{</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>:</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mn mathvariant="bold">1</m:mn>
+                      <m:mo>,</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>=</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>0</m:mn>
+                    </m:msub>
+                    <m:mo>}</m:mo>
+                  </m:mrow>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>D</m:mi>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>{</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>≥</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                  <m:mo>,</m:mo>
+                  <m:mo>...</m:mo>
+                  <m:mo>,</m:mo>
+                  <m:mi>n</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id65067">
+Therefore, we can write our optimization problem as</para>
+      <equation id="id65073">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">min</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>C</m:mi>
+                <m:mo>∩</m:mo>
+                <m:mi>D</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>{</m:mo>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>g</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>}</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65134">We consider the conjugate sets. First, we have</para>
+      <equation id="uid12">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msup>
+                  <m:mi>C</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>{</m:mo>
+                  <m:msup>
+                    <m:mi>x</m:mi>
+                    <m:mo>*</m:mo>
+                  </m:msup>
+                  <m:mo>∈</m:mo>
+                  <m:mi>X</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>C</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:msup>
+                        <m:mi>x</m:mi>
+                        <m:mo>*</m:mo>
+                      </m:msup>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>f</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                  <m:mo>&lt;</m:mo>
+                  <m:mi>∞</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>{</m:mo>
+                  <m:msup>
+                    <m:mi>x</m:mi>
+                    <m:mo>*</m:mo>
+                  </m:msup>
+                  <m:mo>∈</m:mo>
+                  <m:mi>X</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">sup</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>C</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:msup>
+                        <m:mi>x</m:mi>
+                        <m:mo>*</m:mo>
+                      </m:msup>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                  <m:mo>&lt;</m:mo>
+                  <m:mi>∞</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id65328">
+We want to define <m:math overflow="scroll"><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:math> more explicitly. Let <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> be written as <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:mi>λ</m:mi><m:mn mathvariant="bold">1</m:mn><m:mo>+</m:mo><m:mi>w</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>⊥</m:mo><m:mn mathvariant="bold">1</m:mn></m:mrow></m:math>. Then,</para>
+      <equation id="id65418">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>,</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mi>λ</m:mi>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mn mathvariant="bold">1</m:mn>
+              <m:mo>,</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>w</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msup>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>w</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id65496">which can be arbitrarily large. Now let <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mfrac><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mi>n</m:mi></m:mfrac><m:mn mathvariant="bold">1</m:mn><m:mo>+</m:mo><m:mi>λ</m:mi><m:mi>w</m:mi></m:mrow></m:math>; it is easy to check that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>C</m:mi></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>λ</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>.
+If <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:mi>λ</m:mi><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>+</m:mo><m:mi>λ</m:mi><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>w</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:math>, which again can be arbitrarily large.
+Since <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> must hold that <m:math overflow="scroll"><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>C</m:mi></m:mrow></m:msub><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>〉</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, we must have that <m:math overflow="scroll"><m:mrow><m:mi>w</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and so <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:mn mathvariant="bold">1</m:mn><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> was arbitrary, then <m:math overflow="scroll"><m:mrow><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup><m:mo>⊆</m:mo><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:mn mathvariant="bold">1</m:mn><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id65821">It is also easy to see that <m:math overflow="scroll"><m:mrow><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:mn mathvariant="bold">1</m:mn><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>⊆</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>, therefore implying that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:mn mathvariant="bold">1</m:mn><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id65896">For <m:math overflow="scroll"><m:mi>D</m:mi></m:math>, we have a conjugate set</para>
+      <equation id="uid13">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:msup>
+                  <m:mi>D</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>{</m:mo>
+                  <m:mi>y</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>D</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>y</m:mi>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>g</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                  <m:mo>&gt;</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mi>∞</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd/>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>{</m:mo>
+                  <m:mi>y</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mrow>
+                      <m:mi>x</m:mi>
+                      <m:mo>∈</m:mo>
+                      <m:mi>D</m:mi>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>[</m:mo>
+                    <m:mrow>
+                      <m:mo>〈</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:mi>y</m:mi>
+                      <m:mo>〉</m:mo>
+                    </m:mrow>
+                    <m:mo>-</m:mo>
+                    <m:mi>g</m:mi>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>x</m:mi>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>]</m:mo>
+                  </m:mrow>
+                  <m:mo>&gt;</m:mo>
+                  <m:mo>-</m:mo>
+                  <m:mi>∞</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id66082">
+since <m:math overflow="scroll"><m:mrow><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>≤</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math>. Now <m:math overflow="scroll"><m:mrow><m:mi>D</m:mi><m:mo>⊆</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> since all vectors in <m:math overflow="scroll"><m:mi>D</m:mi></m:math> have nonnegative entries. Fix <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>; if <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∉</m:mo><m:mi>D</m:mi></m:mrow></m:math> then there is some negative entry <m:math overflow="scroll"><m:mrow><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>&lt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> among <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math>. For such <m:math overflow="scroll"><m:mi>i</m:mi></m:math> let <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>λ</m:mi></m:msub><m:mo>=</m:mo><m:mi>λ</m:mi><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>∈</m:mo><m:mi>D</m:mi></m:mrow></m:math> for some <m:math overflow="scroll"><m:mrow><m:mi>λ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>; then we get <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>〈</m:mo><m:msub><m:mi>x</m:mi><m:mi>λ</m:mi></m:msub><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>=</m:mo><m:mi>λ</m:mi><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> which can be arbitrarily close to <m:math overflow="scroll"><m:mi>∞</m:mi></m:math> (i.e., as <m:math overflow="scroll"><m:mrow><m:mi>λ</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math> we have <m:math overflow="scroll"><m:mrow><m:mo>〈</m:mo><m:msub><m:mi>x</m:mi><m:mi>λ</m:mi></m:msub><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo><m:mo>→</m:mo><m:mo>-</m:mo><m:mi>∞</m:mi></m:mrow></m:math>. Thus <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∉</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>, a contradiction. Therefore, if <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>D</m:mi></m:mrow></m:math> and so <m:math overflow="scroll"><m:mrow><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup><m:mo>⊆</m:mo><m:mi>D</m:mi></m:mrow></m:math>. We have therefore shown that <m:math overflow="scroll"><m:mrow><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:mi>D</m:mi></m:mrow></m:math>.</para>
+      <para id="id66463">The conjugate functionals can be written as</para>
+      <equation id="id66466">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>C</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mi>λ</m:mi>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66547">since each <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> can be written as <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:mi>λ</m:mi><m:mn mathvariant="bold">1</m:mn></m:mrow></m:math>. Therefore, <m:math overflow="scroll"><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:math> can be written as a function of a single variable. Similarly,</para>
+      <equation id="id66617">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>g</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msup>
+                <m:mi>x</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>D</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mrow>
+                <m:mo>〈</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>,</m:mo>
+                <m:msup>
+                  <m:mi>x</m:mi>
+                  <m:mo>*</m:mo>
+                </m:msup>
+                <m:mo>〉</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:mi>g</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>D</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mfenced separators="" open="(" close=")">
+              <m:munderover>
+                <m:mo>∑</m:mo>
+                <m:mrow>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:munderover>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+              <m:mo>-</m:mo>
+              <m:msub>
+                <m:mi>g</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mfenced>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msubsup>
+              <m:mi>g</m:mi>
+              <m:mi>i</m:mi>
+              <m:mo>*</m:mo>
+            </m:msubsup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66832">where we write</para>
+      <equation id="id66838">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msubsup>
+              <m:mi>g</m:mi>
+              <m:mi>i</m:mi>
+              <m:mo>*</m:mo>
+            </m:msubsup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">inf</m:mo>
+              <m:mrow>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>&gt;</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:msubsup>
+                <m:mi>x</m:mi>
+                <m:mi>i</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+              <m:mo>-</m:mo>
+              <m:msub>
+                <m:mi>g</m:mi>
+                <m:mi>i</m:mi>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id66947">For <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup><m:mo>∩</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> we can write <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mi>λ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math> and so</para>
+      <equation id="uid14">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:msubsup>
+                    <m:mi>g</m:mi>
+                    <m:mi>i</m:mi>
+                    <m:mo>*</m:mo>
+                  </m:msubsup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:msubsup>
+                      <m:mi>x</m:mi>
+                      <m:mi>i</m:mi>
+                      <m:mo>*</m:mo>
+                    </m:msubsup>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:msubsup>
+                    <m:mi>g</m:mi>
+                    <m:mi>i</m:mi>
+                    <m:mo>*</m:mo>
+                  </m:msubsup>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>λ</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:munder>
+                    <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                    <m:mrow>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>&gt;</m:mo>
+                      <m:mn>0</m:mn>
+                    </m:mrow>
+                  </m:munder>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>λ</m:mi>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>-</m:mo>
+                    <m:msub>
+                      <m:mi>g</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+                        <m:mi>i</m:mi>
+                      </m:msub>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id67168">
+Therefore, the original problem can be reformulated as the following single-variable problem:</para>
+      <equation id="id67175">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>λ</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">min</m:mo>
+              <m:mrow>
+                <m:mi>λ</m:mi>
+                <m:mo>&gt;</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+            </m:munder>
+            <m:mfenced separators="" open="[" close="]">
+              <m:mi>λ</m:mi>
+              <m:msub>
+                <m:mi>x</m:mi>
+                <m:mn>0</m:mn>
+              </m:msub>
+              <m:mo>-</m:mo>
+              <m:munderover>
+                <m:mo>∑</m:mo>
+                <m:mrow>
+                  <m:mi>i</m:mi>
+                  <m:mo>=</m:mo>
+                  <m:mn>1</m:mn>
+                </m:mrow>
+                <m:mi>n</m:mi>
+              </m:munderover>
+              <m:msubsup>
+                <m:mi>g</m:mi>
+                <m:mi>i</m:mi>
+                <m:mo>*</m:mo>
+              </m:msubsup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>λ</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mfenced>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id67268">This is due to <m:math overflow="scroll"><m:mrow><m:msup><m:mi>x</m:mi><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:mi>λ</m:mi><m:mn mathvariant="bold">1</m:mn><m:mo>∈</m:mo><m:msup><m:mi>C</m:mi><m:mo>*</m:mo></m:msup><m:mo>∩</m:mo><m:msup><m:mi>D</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:mi>λ</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Once <m:math overflow="scroll"><m:msup><m:mi>λ</m:mi><m:mo>*</m:mo></m:msup></m:math> is found, we can find each <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:math> as the minimizer in <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>g</m:mi><m:mi>i</m:mi><m:mo>*</m:mo></m:msubsup><m:mrow><m:mo>(</m:mo><m:msup><m:mi>λ</m:mi><m:mo>*</m:mo></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, cf. <link target-id="uid14"/>.</para>
+    </section>
+  </content>
+</document>

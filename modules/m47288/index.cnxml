@@ -1,0 +1,48 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Mathematical Review</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47288</md:content-id>
+  <md:title>Mathematical Review</md:title>
+  <md:abstract>Review of background mathematical concepts for the Signal Theory course.</md:abstract>
+  <md:uuid>0fdd9884-8729-4231-8b87-02628e3aa264</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Basic Set Theory</title>
+      <para id="id326905">We begin with a quick review of basic set theory from undergraduate courses.</para>
+      <para id="id326909"><emphasis effect="bold">Definition 1</emphasis> A <emphasis effect="italics">set</emphasis> is an unordered collection of objects denoted by a capital letter <m:math overflow="scroll"><m:mi>A</m:mi></m:math> and written explicitly by listing its elements <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>=</m:mo><m:mo>{</m:mo><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>a</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>}</m:mo></m:mrow></m:math>.</para>
+      <para id="id327309"><emphasis effect="bold">Definition 2</emphasis> The <emphasis effect="italics">union</emphasis> of two sets <m:math overflow="scroll"><m:mi>A</m:mi></m:math> and <m:math overflow="scroll"><m:mi>B</m:mi></m:math> is denoted by <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∪</m:mo><m:mi>B</m:mi><m:mo>:</m:mo><m:mo>=</m:mo><m:mo>{</m:mo><m:mi>x</m:mi><m:mo>:</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi><m:mspace width="3.33333pt"/><m:mo>∨</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>}</m:mo></m:mrow></m:math>. The <emphasis effect="italics">intersection</emphasis> of two sets <m:math overflow="scroll"><m:mi>A</m:mi></m:math> and <m:math overflow="scroll"><m:mi>B</m:mi></m:math> is denoted by <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>∩</m:mo><m:mi>B</m:mi><m:mo>:</m:mo><m:mo>=</m:mo><m:mo>{</m:mo><m:mi>x</m:mi><m:mo>:</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi><m:mo>∧</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi><m:mo>}</m:mo></m:mrow></m:math>.</para>
+      <para id="id327447"><emphasis effect="bold">Definition 3</emphasis> A set <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is <emphasis effect="italics">contained</emphasis> in another set <m:math overflow="scroll"><m:mi>B</m:mi></m:math>, denoted <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>⊂</m:mo><m:mi>B</m:mi></m:mrow></m:math>, if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi><m:mo>⇒</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi></m:mrow></m:math>. Two sets <m:math overflow="scroll"><m:mi>A</m:mi></m:math> and <m:math overflow="scroll"><m:mi>B</m:mi></m:math> are <emphasis effect="italics">equal</emphasis> if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi><m:mo>⇔</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi></m:mrow></m:math>.</para>
+      <para id="id327557"><emphasis effect="bold">Definition 4</emphasis> The <emphasis effect="italics">complement</emphasis> of <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is the set <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>A</m:mi><m:mo>˜</m:mo></m:mover><m:mo>:</m:mo><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mi>x</m:mi><m:mo>:</m:mo><m:mi>x</m:mi><m:mo>∉</m:mo><m:mi>A</m:mi><m:mo>}</m:mo></m:mrow></m:mrow></m:math>. The <emphasis effect="italics">empty set</emphasis> is denoted by <m:math overflow="scroll"><m:mrow><m:mi>φ</m:mi><m:mo>:</m:mo><m:mo>=</m:mo><m:mo>{</m:mo><m:mo>}</m:mo></m:mrow></m:math>.</para>
+      <para id="id327640"><emphasis effect="bold">Definition 5</emphasis> A set is <emphasis effect="italics">finite</emphasis> if it has a finite number of elements. A set is <emphasis effect="italics">countably infinite</emphasis> if there is a one-to-one relationship between its elements and the integers <m:math overflow="scroll"><m:mi mathvariant="double-struck">Z</m:mi></m:math>. A set is <emphasis effect="italics">uncountably infinite</emphasis> if it is not finite or countably infinite.</para>
+    </section>
+    <section id="cid2">
+      <title>Convexity</title>
+      <para id="id327688"><emphasis effect="bold">Definition 6</emphasis> A set <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is <emphasis effect="italics">convex</emphasis> if for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi></m:mrow></m:math> all convex combinations of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>y</m:mi></m:math> are in <m:math overflow="scroll"><m:mi>A</m:mi></m:math>, i.e., for all <m:math overflow="scroll"><m:mrow><m:mn>0</m:mn><m:mo>≤</m:mo><m:mi>α</m:mi><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:math> we have <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mi>x</m:mi><m:mo>+</m:mo><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>-</m:mo><m:mi>α</m:mi><m:mo>)</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi></m:mrow></m:math>.</para>
+      <para id="id327985"><emphasis effect="bold">Example 1</emphasis> <link target-id="uid8"/> below shows that the line <m:math overflow="scroll"><m:mover><m:mrow><m:mi>x</m:mi><m:mi>y</m:mi></m:mrow><m:mo>¯</m:mo></m:mover></m:math> (containing all convex combinations of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and <m:math overflow="scroll"><m:mi>y</m:mi></m:math>) is included in <m:math overflow="scroll"><m:mi>A</m:mi></m:math>; since this is true for each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi></m:mrow></m:math> then the set <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is convex. Conversely, for the set <m:math overflow="scroll"><m:mi>B</m:mi></m:math> we can find two points <m:math overflow="scroll"><m:mrow><m:mi>u</m:mi><m:mo>,</m:mo><m:mi>v</m:mi><m:mo>∈</m:mo><m:mi>B</m:mi></m:mrow></m:math> such that the line <m:math overflow="scroll"><m:mover><m:mrow><m:mi>u</m:mi><m:mi>v</m:mi></m:mrow><m:mo>¯</m:mo></m:mover></m:math> is not completely contained in <m:math overflow="scroll"><m:mi>B</m:mi></m:math>; therefore, <m:math overflow="scroll"><m:mi>B</m:mi></m:math> is not convex.</para>
+      <figure id="uid8">
+        <media id="uid8_media" alt="">
+          <image mime-type="image/png" src="../../media/convex.png" id="uid8_onlineimage" width="534"><!-- NOTE: attribute width changes image size online (pixels). original width is 534. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/convex.eps" id="uid8_printimage" print-width="7.5cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Examples of convex and nonconvex regions.</caption>
+      </figure>
+      <para id="id328136"><emphasis effect="bold">Fact 1</emphasis> If A is convex then <m:math overflow="scroll"><m:mrow><m:mi>β</m:mi><m:mi>A</m:mi><m:mo>=</m:mo><m:mfenced separators="" open="{" close="}"><m:mi>β</m:mi><m:mi>X</m:mi><m:mo>:</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi></m:mfenced></m:mrow></m:math> is convex for <m:math overflow="scroll"><m:mrow><m:mi>β</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+      <para id="id328194"><emphasis effect="bold">Definition 7</emphasis> The <emphasis effect="italics">convex hull</emphasis> of a set <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> is the smallest convex set S such that <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>⊆</m:mo><m:mi>S</m:mi></m:mrow></m:math></para>
+      <para id="id328236"><emphasis effect="bold">Example 2</emphasis> Consider the set <m:math overflow="scroll"><m:mi>A</m:mi></m:math> in <link target-id="uid12"/> below, which is not convex. By adding to <m:math overflow="scroll"><m:mi>A</m:mi></m:math> all points that are convex combinations of elements of <m:math overflow="scroll"><m:mi>A</m:mi></m:math> but not in <m:math overflow="scroll"><m:mi>A</m:mi></m:math> (i.e., the points in the shaded region), we obtain the convex hull of <m:math overflow="scroll"><m:mi>A</m:mi></m:math>.</para>
+      <figure id="uid12">
+        <media id="uid12_media" alt="">
+          <image mime-type="image/png" src="../../media/hull.png" id="uid12_onlineimage" width="471"><!-- NOTE: attribute width changes image size online (pixels). original width is 471. --></image>
+          <image mime-type="application/postscript" for="pdf" src="../../media/hull.eps" id="uid12_printimage" print-width="7.5cm">
+            <!--NOTE: attribute width changes image size in printed PDF (if specified in .tex file)-->
+          </image>
+        </media>
+        <caption>Examples of convex and nonconvex regions.</caption>
+      </figure>
+      <para id="id328307">A set with a single element is always convex.</para>
+    </section>
+  </content>
+</document>

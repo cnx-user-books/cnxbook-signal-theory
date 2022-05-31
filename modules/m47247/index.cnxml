@@ -1,0 +1,717 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Linear Functionals</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47247</md:content-id>
+  <md:title>Linear Functionals</md:title>
+  <md:abstract>Introduces the definition of a linear functional in a normed space and the norm of a functional.</md:abstract>
+  <md:uuid>2edc71cf-2c1e-444a-b2bc-9808a5386b2b</md:uuid>
+</metadata>
+
+<content>
+    <para id="id218486">Many systems in engineering can be characterized as linear systems, taking inputs in one signal space into outputs in another. The most common type of system maps into a space of scalars, defined as maps <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>R</m:mi></m:mrow></m:math>. We will study these maps (known in the mathematics literature as <emphasis effect="italics">functionals</emphasis>) during the next few lectures.</para>
+    <para id="id218517"><emphasis effect="bold">Definition 1</emphasis> A functional <m:math overflow="scroll"><m:mi>f</m:mi></m:math> on <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is <emphasis effect="italics">linear</emphasis> if for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>, we have that <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>a</m:mi><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>a</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>b</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow></m:math>.</para>
+    <para id="id218968"><emphasis effect="bold">Example 1</emphasis> In the case <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math>, all linear functionals can be written using the form <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math> for some set of scalars <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo><m:mo>⊆</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>.</para>
+    <para id="id219268"><emphasis effect="bold">Example 2</emphasis> For a Hilbert space <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi></m:mfenced></m:mrow></m:math> for any <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> is a linear functional.</para>
+    <para id="id219332"><emphasis effect="bold">Example 3</emphasis> For the space <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>C</m:mi><m:mo>(</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo><m:mo>)</m:mo></m:mrow></m:math>, the sampling functionals <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>t</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>δ</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>-</m:mo><m:msub><m:mi>t</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mfenced></m:mrow></m:math> are linear.</para>
+    <para id="id219438"><emphasis effect="bold">Example 4</emphasis><m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math> is not a linear functional (since the triangle inequality is not a strict equality).</para>
+    <para id="id219473">Linear functionals are particularly amenable to analysis.</para>
+    <para id="id219477"><emphasis effect="bold">Theorem 1</emphasis> 
+If a linear functional on a normed space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is continuous at a point <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, then it is continuous on the entire space <m:math overflow="scroll"><m:mi>X</m:mi></m:math>.</para>
+    <para id="id219531">Assume <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> is contiuous at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>. Let <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> be a sequence of points converging to <m:math overflow="scroll"><m:mi>x</m:mi></m:math>. Then,</para>
+    <equation id="uid7">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mi>f</m:mi>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mi>f</m:mi>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mo>=</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mi>f</m:mi>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mi>f</m:mi>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id219825">
+It is easy to show that <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a sequence that converges to <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>. Therefore, <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> has to converge to <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> as <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous at <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math>:</para>
+    <equation id="uid8">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mi>f</m:mi>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:mo>-</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>+</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>-</m:mo>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mn>0</m:mn>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:mover>
+                  <m:mo>→</m:mo>
+                  <m:mrow>
+                    <m:mi>n</m:mi>
+                    <m:mo>→</m:mo>
+                    <m:mi>∞</m:mi>
+                  </m:mrow>
+                </m:mover>
+                <m:mn>0</m:mn>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id220040">
+This implies that the sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>}</m:mo></m:mrow></m:math> converges to <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> and so <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous at <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.
+Since <m:math overflow="scroll"><m:mi>x</m:mi></m:math> was arbitrary, then <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous on <m:math overflow="scroll"><m:mi>X</m:mi></m:math>.</para>
+    <para id="id220126"><emphasis effect="bold">Fact 1</emphasis> For <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> a linear functional, what is the value of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:math>? For any such <m:math overflow="scroll"><m:mi>f</m:mi></m:math>,</para>
+    <equation id="uid10">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>)</m:mo>
+                <m:mo>=</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>·</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>·</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+                <m:mo>.</m:mo>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id220241"><emphasis effect="bold">Definition 2</emphasis> A linear functional <m:math overflow="scroll"><m:mi>f</m:mi></m:math> on a normed space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is <emphasis effect="italics">bounded</emphasis> if there exists a constant <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>≤</m:mo><m:mi>M</m:mi><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>. The smallest such element is denoted as the norm of the function <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow></m:math>:</para>
+    <equation id="uid12">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mrow>
+                  <m:mo>∥</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:munder>
+                  <m:mo movablelimits="true" form="prefix">inf</m:mo>
+                  <m:mrow>
+                    <m:mi>x</m:mi>
+                    <m:mo>∈</m:mo>
+                    <m:mi>X</m:mi>
+                  </m:mrow>
+                </m:munder>
+                <m:mrow>
+                  <m:mo>{</m:mo>
+                  <m:mi>M</m:mi>
+                  <m:mo>:</m:mo>
+                  <m:mo>|</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mo>|</m:mo>
+                </m:mrow>
+                <m:mo>≤</m:mo>
+                <m:mrow>
+                  <m:mi>M</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>∥</m:mo>
+                  <m:mo>,</m:mo>
+                  <m:mo>∀</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>∈</m:mo>
+                  <m:mi>X</m:mi>
+                  <m:mo>}</m:mo>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id220438">There are several ways in which we can write this norm:</para>
+    <equation id="id220442">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+            <m:mi>f</m:mi>
+            <m:mo>∥</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">sup</m:mo>
+            <m:mrow>
+              <m:mi>x</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>≠</m:mo>
+              <m:mn>0</m:mn>
+            </m:mrow>
+          </m:munder>
+          <m:mfrac>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+          </m:mfrac>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">sup</m:mo>
+            <m:mrow>
+              <m:mi>x</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>,</m:mo>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>|</m:mo>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>|</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">sup</m:mo>
+            <m:mrow>
+              <m:mi>x</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>X</m:mi>
+              <m:mo>,</m:mo>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+              <m:mo>≤</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>|</m:mo>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>|</m:mo>
+          </m:mrow>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id220603">Before continuing, we should verify that the defined <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow></m:math> is a valid norm.</para>
+    <list id="id220622" display="block" list-type="bulleted">
+      <item id="uid13"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>⇔</m:mo><m:mi>f</m:mi><m:mo>=</m:mo><m:mi>z</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.
+</item>
+      <item id="uid14"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math>: <m:math overflow="scroll"><m:mi>M</m:mi></m:math> has to be positive since <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>|</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math> are always positive.
+</item>
+      <item id="uid15"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>α</m:mi><m:mi>f</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow></m:math>: can be trivially shown.
+</item>
+      <item id="uid16"><m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>+</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>: by definition,
+<equation id="uid17"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>∥</m:mo></m:mrow></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:munder><m:mrow><m:mo>|</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mo>=</m:mo></m:mrow><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:munder><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mo>≤</m:mo></m:mrow><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:munder><m:mrow><m:mo>(</m:mo><m:mo>|</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mo>+</m:mo><m:mo>|</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd columnalign="left"><m:mrow><m:mo>≤</m:mo><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:munder><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo><m:mo>+</m:mo></m:mrow><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:munder><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>1</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>+</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>∥</m:mo><m:mo>.</m:mo></m:mrow></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation></item>
+    </list>
+    <para id="id221256">The following theorem can save us much work in checking for continuity of linear functionals.</para>
+    <para id="id221260"><emphasis effect="bold">Theorem 2</emphasis> A linear functional on a normed space is bounded if and only if it is continuous.</para>
+    <para id="id221281">(<m:math overflow="scroll"><m:mo>⇒</m:mo></m:math>) Assume <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is bounded, and let <m:math overflow="scroll"><m:mi>M</m:mi></m:math> be such that <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>≤</m:mo><m:mi>M</m:mi><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>.
+Then for a sequence <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math> we have <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mo>≤</m:mo><m:mi>M</m:mi><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>.Therefore,
+<m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>→</m:mo><m:mn>0</m:mn><m:mo>=</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:math>, which implies that <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous at <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Using Theorem <link target-id="uid6"/>, <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous on <m:math overflow="scroll"><m:mi>X</m:mi></m:math>.</para>
+    <para id="id221510">(<m:math overflow="scroll"><m:mo>⇐</m:mo></m:math>) Assume <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is continuous. If we set <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math> there exist <m:math overflow="scroll"><m:mrow><m:mi>δ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> such that if <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mn>0</m:mn><m:mo>∥</m:mo><m:mo>&lt;</m:mo><m:mi>δ</m:mi></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>-</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>&lt;</m:mo><m:mn>1</m:mn></m:mrow></m:math>, i.e.</para>
+    <equation id="id221620">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mo>∥</m:mo>
+          <m:mi>x</m:mi>
+          <m:mo>∥</m:mo>
+          <m:mo>&lt;</m:mo>
+          <m:mi>δ</m:mi>
+          <m:mo>⇒</m:mo>
+          <m:mo>|</m:mo>
+          <m:mi>f</m:mi>
+          <m:mo>(</m:mo>
+          <m:mi>x</m:mi>
+          <m:mo>)</m:mo>
+          <m:mo>|</m:mo>
+          <m:mo>&lt;</m:mo>
+          <m:mn>1</m:mn>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id221662">Since <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is linear, we can write this as</para>
+    <equation id="id221678">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>∥</m:mo>
+            <m:mo>&lt;</m:mo>
+            <m:mn>1</m:mn>
+          </m:mrow>
+          <m:mo>⇒</m:mo>
+          <m:mrow>
+            <m:mo>|</m:mo>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>|</m:mo>
+            <m:mo>&lt;</m:mo>
+          </m:mrow>
+          <m:mfrac>
+            <m:mn>1</m:mn>
+            <m:mi>δ</m:mi>
+          </m:mfrac>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id221728">So, <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mo>≤</m:mo><m:mfrac><m:mn>1</m:mn><m:mi>δ</m:mi></m:mfrac><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is bounded.</para>
+    <para id="id221773"><emphasis effect="bold">Example 5</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be a space of finitely nonzero sequences with <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>∞</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">max</m:mo><m:mi>i</m:mi></m:msub><m:mrow><m:mo>|</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>|</m:mo></m:mrow></m:mrow></m:math>. Define a functional <m:math overflow="scroll"><m:mi>f</m:mi></m:math> as</para>
+    <equation id="id221851">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>f</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>∞</m:mi>
+          </m:munderover>
+          <m:mi>i</m:mi>
+          <m:msub>
+            <m:mi>x</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id221898"><m:math overflow="scroll"><m:mi>f</m:mi></m:math> is linear because</para>
+    <equation id="uid20">
+      <m:math overflow="scroll" mode="display">
+        <m:mtable displaystyle="true">
+          <m:mtr>
+            <m:mtd columnalign="right">
+              <m:mrow>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>a</m:mi>
+                <m:mi>x</m:mi>
+                <m:mo>+</m:mo>
+                <m:mi>b</m:mi>
+                <m:mi>y</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mtd>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mi>i</m:mi>
+                <m:msub>
+                  <m:mrow>
+                    <m:mo>(</m:mo>
+                    <m:mi>a</m:mi>
+                    <m:mi>x</m:mi>
+                    <m:mo>+</m:mo>
+                    <m:mi>b</m:mi>
+                    <m:mi>y</m:mi>
+                    <m:mo>)</m:mo>
+                  </m:mrow>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mi>i</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:mi>b</m:mi>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>=</m:mo>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>a</m:mi>
+                  <m:mi>i</m:mi>
+                  <m:msub>
+                    <m:mi>x</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>+</m:mo>
+                  <m:mi>b</m:mi>
+                  <m:mi>i</m:mi>
+                  <m:msub>
+                    <m:mi>y</m:mi>
+                    <m:mi>i</m:mi>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+          <m:mtr>
+            <m:mtd/>
+            <m:mtd columnalign="left">
+              <m:mrow>
+                <m:mo>=</m:mo>
+                <m:mi>a</m:mi>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mi>i</m:mi>
+                <m:msub>
+                  <m:mi>x</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>+</m:mo>
+                <m:mi>b</m:mi>
+                <m:munderover>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>∞</m:mi>
+                </m:munderover>
+                <m:mi>i</m:mi>
+                <m:msub>
+                  <m:mi>y</m:mi>
+                  <m:mi>i</m:mi>
+                </m:msub>
+                <m:mo>=</m:mo>
+                <m:mi>a</m:mi>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mo>+</m:mo>
+                <m:mi>b</m:mi>
+                <m:mi>f</m:mi>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>y</m:mi>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+              </m:mrow>
+            </m:mtd>
+          </m:mtr>
+        </m:mtable>
+      </m:math>
+    </equation>
+    <para id="id222188">
+If we want to show that <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is unbounded, we must show that for every <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> there exists <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>&gt;</m:mo><m:mi>M</m:mi><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math>. Let <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mo>(</m:mo><m:msub><m:munder accentunder="true"><m:mrow><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mn>1</m:mn></m:mrow><m:mo>︸</m:mo></m:munder><m:mrow><m:mrow><m:mo>⌈</m:mo><m:mi>M</m:mi><m:mo>⌉</m:mo></m:mrow><m:mspace width="4.pt"/><m:mtext>times</m:mtext></m:mrow></m:msub><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>)</m:mo><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mo>⌈</m:mo><m:mi>M</m:mi><m:mo>⌉</m:mo></m:mrow></m:math> is the smallest integer greater or equal to <m:math overflow="scroll"><m:mi>M</m:mi></m:math>. Then,</para>
+    <equation id="id222372">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>f</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>⌈</m:mo>
+              <m:mi>M</m:mi>
+              <m:mo>⌉</m:mo>
+            </m:mrow>
+          </m:munderover>
+          <m:mi>i</m:mi>
+          <m:mo>·</m:mo>
+          <m:mn>1</m:mn>
+          <m:mo>≥</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>⌈</m:mo>
+              <m:mi>M</m:mi>
+              <m:mo>⌉</m:mo>
+            </m:mrow>
+          </m:munderover>
+          <m:mn>1</m:mn>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>⌈</m:mo>
+            <m:mi>M</m:mi>
+            <m:mo>⌉</m:mo>
+          </m:mrow>
+          <m:mo>≥</m:mo>
+          <m:mi>M</m:mi>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id222465">Therefore, <m:math overflow="scroll"><m:mi>f</m:mi></m:math> is unbounded.</para>
+  </content>
+</document>

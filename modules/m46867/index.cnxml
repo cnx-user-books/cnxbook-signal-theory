@@ -1,0 +1,85 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Metric Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m46867</md:content-id>
+  <md:title>Metric Spaces</md:title>
+  <md:abstract>Description of signal spaces and metric spaces.</md:abstract>
+  <md:uuid>f6eff705-ce21-4373-86e1-9a8d921302ac</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Signal Spaces</title>
+      <para id="id328407">We start the content of our course by defining its main concepts of a signal and a signal space.</para>
+      <para id="id328411"><emphasis effect="bold">Definition 1</emphasis> A <emphasis effect="italics">signal</emphasis> is the value of some quantity as a function of time, space, frequency, etc.; each signal is labeled by a lower-case letter <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.</para>
+      <para id="id328437"><emphasis effect="bold">Definition 2</emphasis> A <emphasis effect="italics">signal space</emphasis> is a set of signals defined by some criterion, labeled by an upper-case letter <m:math overflow="scroll"><m:mi>X</m:mi></m:math> (since it is a set).</para>
+      <para id="id328800">Some familiar sets of signals are <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">C</m:mi></m:mrow></m:math>, and the set of vectors <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mrow><m:mi mathvariant="double-struck">R</m:mi></m:mrow><m:mi>n</m:mi></m:msup></m:mrow></m:math>.</para>
+      <para id="id328855"><emphasis effect="bold">Definition 3</emphasis> The signal space <m:math overflow="scroll"><m:mrow><m:msub><m:mi>L</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>[</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:math> contains all signals <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>&lt;</m:mo><m:mi>a</m:mi></m:mrow></m:math> or <m:math overflow="scroll"><m:mrow><m:mi>t</m:mi><m:mo>&gt;</m:mo><m:mi>b</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mi>a</m:mi><m:mi>b</m:mi></m:msubsup><m:msup><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mi>d</m:mi><m:mi>t</m:mi><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math> (i.e., at no time the signal is infinite).</para>
+    </section>
+    <section id="cid2">
+      <title>Metric Spaces</title>
+      <para id="id329190"><emphasis effect="bold">Definition 4</emphasis> A <emphasis effect="italics">metric</emphasis> <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>×</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> is a function used to measure distance between pairs of elements of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> with the following properties: for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>,</para><list id="id329261" display="block" list-type="enumerated">
+        <item id="uid5"><m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> (symmetry),
+</item>
+        <item id="uid6"><m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math> (non-negativity),
+</item>
+        <item id="uid7"><m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>⇔</m:mo><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math>,
+</item>
+        <item id="uid8"><m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>≤</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mrow></m:math> (triangle inequality).
+</item>
+      </list>
+      <para id="id329446">If <m:math overflow="scroll"><m:mi>d</m:mi></m:math> is a metric on <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, the pair <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mi>d</m:mi><m:mo>)</m:mo></m:mrow></m:math> is called a <emphasis effect="italics">metric space</emphasis>. A set <m:math overflow="scroll"><m:mi>X</m:mi></m:math> can have multiple metrics, leading to different metric spaces.</para>
+      <para id="id329496"><emphasis effect="bold">Example 1</emphasis> The following are some initial examples of metric spaces:</para>
+      <list id="id329508" display="block" list-type="bulleted"><item id="uid10"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>|</m:mo></m:mrow></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>: it is easy to check properties (1-4).
+</item>
+        <item id="uid11"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> with <m:math overflow="scroll"><m:mrow><m:msup><m:mi>d</m:mi><m:mo>'</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfenced separators="" open="{" close=""><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mrow><m:mi> if </m:mi><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>≠</m:mo><m:mi>y</m:mi></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mrow><m:mi> if </m:mi><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:mtd></m:mtr></m:mtable></m:mfenced></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math>: it is easy to check properties (1-3). To verify (4), assume that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>; then both <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, which means <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>y</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mi>z</m:mi></m:mrow></m:math>; by transitivity, <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>z</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>≤</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mrow></m:math>, as desired. Now assume that <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>; then we immediately get <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>≤</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mrow></m:math>, as desired.
+</item>
+        <item id="uid12"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mrow><m:mi mathvariant="double-struck">R</m:mi></m:mrow><m:mi>n</m:mi></m:msup></m:mrow></m:math> with metric <m:math overflow="scroll">
+	<m:mrow>
+		<m:msubsup>
+			<m:mi>d</m:mi><m:mn>2</m:mn><m:mi>n</m:mi>
+		</m:msubsup>
+		<m:mrow>
+			<m:mrow>
+				<m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo>
+			</m:mrow>
+			<m:mo>:</m:mo><m:mo>=</m:mo>
+		</m:mrow>
+		<m:msup>
+			<m:mfenced separators="" open="(" close=")">
+				<m:msubsup>
+					<m:mo>∑</m:mo>
+					<m:mrow>
+						<m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn>
+					</m:mrow>
+					<m:mi>n</m:mi>
+				</m:msubsup>
+				<m:mrow>
+					<m:mo>|</m:mo>
+				</m:mrow>
+				<m:msub>
+					<m:mi>x</m:mi><m:mi>i</m:mi>
+				</m:msub>
+				<m:mo>-</m:mo>
+				<m:msub>
+					<m:mi>y</m:mi><m:mi>i</m:mi>
+				</m:msub>
+				<m:mrow>
+					<m:msup>
+						<m:mo>|</m:mo><m:mn>2</m:mn>
+					</m:msup>
+				</m:mrow>
+			</m:mfenced>
+			<m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:math>, known as the Euclidean metric.
+</item>
+        <item id="uid13"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mrow><m:mi mathvariant="double-struck">R</m:mi></m:mrow><m:mi>n</m:mi></m:msup></m:mrow></m:math> with metric <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>d</m:mi><m:mn>1</m:mn><m:mi>n</m:mi></m:msubsup><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mo>=</m:mo></m:mrow><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>|</m:mo></m:mrow></m:mfenced></m:mrow></m:math>.
+</item>
+        <item id="uid14"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msub><m:mi>L</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>[</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:math> with metric <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mo>=</m:mo><m:msup><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mo>∫</m:mo><m:mi>a</m:mi><m:mi>b</m:mi></m:msubsup><m:msup><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>y</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mi>d</m:mi><m:mi>t</m:mi></m:mfenced><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:math>. Formally, <m:math overflow="scroll"><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub></m:math> is a <emphasis effect="italics">pseudometric</emphasis> on <m:math overflow="scroll"><m:mi>X</m:mi></m:math>, since there are signals <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>≠</m:mo><m:mi>y</m:mi></m:mrow></m:math> that yield <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. However, one can define a new signal space where all signals with <m:math overflow="scroll"><m:mrow><m:mi>d</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> are equal to each other.
+</item>
+        <item id="uid15"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msub><m:mi>L</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>[</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:math> with metric <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mi>p</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mo>=</m:mo><m:msup><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mo>∫</m:mo><m:mi>a</m:mi><m:mi>b</m:mi></m:msubsup><m:msup><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>y</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mi>p</m:mi></m:msup><m:mi>d</m:mi><m:mi>t</m:mi></m:mfenced><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:mrow></m:math>, for <m:math overflow="scroll"><m:mrow><m:mn>1</m:mn><m:mo>≤</m:mo><m:mi>p</m:mi><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, an extension of the metric <m:math overflow="scroll"><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub></m:math>.
+</item>
+        <item id="uid16"><m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msub><m:mi>L</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>[</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:math> with metric <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mi>∞</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mo>[</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>]</m:mo></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>y</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math>; this metric solves the equivalence problem of <m:math overflow="scroll"><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub></m:math>.
+</item>
+      </list><para id="id330805">Here, <m:math overflow="scroll"><m:mrow><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> is the <emphasis effect="italics">supremum</emphasis> of <m:math overflow="scroll"><m:mi>A</m:mi></m:math>, i.e., the smallest value <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>≤</m:mo><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mspace width="3.33333pt"/><m:mo>∀</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi></m:mrow></m:math>. Similarly, <m:math overflow="scroll"><m:mrow><m:mo movablelimits="true" form="prefix">inf</m:mo><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> is the <emphasis effect="italics">infimum</emphasis> of <m:math overflow="scroll"><m:mi>A</m:mi></m:math>, i.e., the largest value <m:math overflow="scroll"><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub></m:math> such that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>x</m:mi><m:mn>0</m:mn></m:msub><m:mo>≤</m:mo><m:mi>x</m:mi><m:mspace width="3.33333pt"/><m:mo>∀</m:mo><m:mspace width="3.33333pt"/><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>A</m:mi></m:mrow></m:math>.</para></section>
+  </content>
+</document>

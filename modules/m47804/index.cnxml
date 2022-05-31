@@ -1,0 +1,310 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Fundamental Subspaces of an Operator</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47804</md:content-id>
+  <md:title>Fundamental Subspaces of an Operator</md:title>
+  <md:abstract>Discusses the two fundamental subspaces of a linear operator - range and nullspace - and the rank of an operator.</md:abstract>
+  <md:uuid>179179c1-0a85-4dba-aeb4-4898c1bd4f53</md:uuid>
+</metadata>
+
+<content>
+    <para id="id178963"><emphasis effect="bold">Definition 1</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be a finite dimensional Hilbert Space with orthonormal basis <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>b</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>b</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>b</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> be a linear operator. The <emphasis effect="italics">range</emphasis> of <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is the subspace</para>
+    <equation id="id179397">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi mathvariant="script">R</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>A</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>{</m:mo>
+            <m:mi>y</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>Y</m:mi>
+            <m:mo>:</m:mo>
+            <m:mi>y</m:mi>
+            <m:mo>=</m:mo>
+            <m:mi>A</m:mi>
+            <m:mi>x</m:mi>
+            <m:mo>∈</m:mo>
+            <m:mi>X</m:mi>
+            <m:mo>}</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mo>[</m:mo>
+          <m:mrow>
+            <m:mo>{</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>,</m:mo>
+            <m:mo>...</m:mo>
+            <m:mo>,</m:mo>
+            <m:mi>A</m:mi>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mo>}</m:mo>
+          </m:mrow>
+          <m:mo>]</m:mo>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id179677">It is easy to see that <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> is a subspace of <m:math overflow="scroll"><m:mi>Y</m:mi></m:math>.
+To show the second equality above, note that if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> then it can be written as <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>; therefore,</para>
+    <equation id="id179761">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi>A</m:mi>
+          <m:mi>x</m:mi>
+          <m:mo>=</m:mo>
+          <m:mi>A</m:mi>
+          <m:mfenced separators="" open="(" close=")">
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:mi>A</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:msub>
+            <m:mi>a</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mi>A</m:mi>
+          <m:msub>
+            <m:mi>b</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:msub>
+            <m:mi>a</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:msub>
+            <m:mi>ψ</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id179927">where <m:math overflow="scroll"><m:mrow><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mi>A</m:mi><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:math>. Before we can claim that <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is a basis for <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>, we must first show its elements are linearly independent.</para>
+    <para id="id179995"><emphasis effect="bold">Lemma 1</emphasis> If <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be <m:math overflow="scroll"><m:mi>n</m:mi></m:math>-dimensional and <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math>, then <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> has dimension less than for equal to <m:math overflow="scroll"><m:mi>n</m:mi></m:math>.</para>
+    <para id="id180072">If the set <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>ψ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> given above is linearly independent then it is a basis for <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>, and the dimension of <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> is <m:math overflow="scroll"><m:mi>n</m:mi></m:math>. If they are not linearly independent we must show that <m:math overflow="scroll"><m:mrow><m:mi> dim </m:mi><m:mo>(</m:mo><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>n</m:mi></m:mrow></m:math>.
+If <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>ψ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> are linearly dependent then there exists a set of scalars <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>α</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>α</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>α</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>α</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> with at leas one nonzero <m:math overflow="scroll"><m:msub><m:mi>α</m:mi><m:mi>i</m:mi></m:msub></m:math>; we let that be <m:math overflow="scroll"><m:msub><m:mi>α</m:mi><m:mn>1</m:mn></m:msub></m:math> without loss of generality. We then have</para>
+    <equation id="id180342">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>ψ</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:mfrac>
+            <m:mrow>
+              <m:mo>-</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:msub>
+              <m:mi>α</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfrac>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>2</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:msub>
+            <m:mi>α</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:msub>
+            <m:mi>ψ</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id180409">and so <m:math overflow="scroll"><m:mrow><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. If the set <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>,</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> is linearly independent, then <m:math overflow="scroll"><m:mrow><m:mi> dim </m:mi><m:mo>(</m:mo><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>≤</m:mo><m:mi>n</m:mi></m:mrow></m:math>. Otherwise, iterate this procedure to show that <m:math overflow="scroll"><m:mrow><m:mi> dim </m:mi><m:mo>(</m:mo><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:math>.</para>
+    <para id="id180593"><emphasis effect="bold">Definition 2</emphasis> The <emphasis effect="italics">null space</emphasis> of a <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is the set of all points <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> that map to zero:</para>
+    <equation id="id180631">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi mathvariant="script">N</m:mi>
+          <m:mo>(</m:mo>
+          <m:mi>A</m:mi>
+          <m:mo>)</m:mo>
+          <m:mo>=</m:mo>
+          <m:mo>{</m:mo>
+          <m:mi>x</m:mi>
+          <m:mo>∈</m:mo>
+          <m:mi>X</m:mi>
+          <m:mo>:</m:mo>
+          <m:mi>A</m:mi>
+          <m:mi>x</m:mi>
+          <m:mo>=</m:mo>
+          <m:mn>0</m:mn>
+          <m:mo>}</m:mo>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id180676">It is easy to see that <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> is a subspace of X.</para>
+    <para id="id180696"><emphasis effect="bold">Lemma 2</emphasis> An operator <m:math overflow="scroll"><m:mi>A</m:mi></m:math> is non-singular if and only if <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>{</m:mo><m:mn>0</m:mn><m:mo>}</m:mo></m:mrow></m:math>.</para>
+    <para id="id180741">We can extend the concept of rank from matrices to operators.</para>
+    <para id="id180745"><emphasis effect="bold">Definition 3</emphasis> The <emphasis effect="italics">rank</emphasis> of A is the dimension of <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi> rank </m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math>.</para>
+    <para id="id180790"><emphasis effect="bold">Theorem 1</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi>Y</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be an n-dimensional space. Then,</para>
+    <equation id="id180826">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:mi> rank </m:mi>
+          <m:mo>(</m:mo>
+          <m:mi>A</m:mi>
+          <m:mo>)</m:mo>
+          <m:mo>+</m:mo>
+          <m:mi> dim </m:mi>
+          <m:mo>(</m:mo>
+          <m:mi mathvariant="script">N</m:mi>
+          <m:mo>(</m:mo>
+          <m:mi>A</m:mi>
+          <m:mo>)</m:mo>
+          <m:mo>)</m:mo>
+          <m:mo>=</m:mo>
+          <m:mi>n</m:mi>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id180876">Let <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> have dimension <m:math overflow="scroll"><m:mi>m</m:mi></m:math>. Design an orthonormal basis <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>m</m:mi></m:msub></m:mrow></m:math> are an orthonormal basis for <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>.
+This implies that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mi>A</m:mi><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>, for <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mi>m</m:mi></m:mrow></m:math>. Therefore, <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">R</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi> span </m:mi><m:mrow><m:mo>(</m:mo><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, so <m:math overflow="scroll"><m:mrow><m:mi> rank </m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi> dim </m:mi><m:mo>(</m:mo><m:mi mathvariant="script">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>≤</m:mo><m:mi>n</m:mi><m:mo>-</m:mo><m:mi>m</m:mi></m:mrow></m:math>.</para>
+    <para id="id181188">Now we need to show that <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup></m:math> are linearly independent. We use contradiction by assuming that <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup></m:math> are linearly dependent, which means that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> for some scalars <m:math overflow="scroll"><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub></m:math> that are not all zero, i.e.,</para>
+    <equation id="id181333">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:munderover>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mi>i</m:mi>
+              <m:mo>=</m:mo>
+              <m:mi>m</m:mi>
+              <m:mo>+</m:mo>
+              <m:mn>1</m:mn>
+            </m:mrow>
+            <m:mi>n</m:mi>
+          </m:munderover>
+          <m:msub>
+            <m:mi>b</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mi>A</m:mi>
+          <m:msub>
+            <m:mi>e</m:mi>
+            <m:mi>i</m:mi>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:mi>A</m:mi>
+          <m:mfenced separators="" open="(" close=")">
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mi>m</m:mi>
+                <m:mo>+</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>b</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>e</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+          </m:mfenced>
+          <m:mo>=</m:mo>
+          <m:mn>0</m:mn>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id181432">so we know <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. We also know that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>⊥</m:mo><m:msub><m:mi>e</m:mi><m:mi>j</m:mi></m:msub></m:mrow></m:math> , <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>≠</m:mo><m:mi>j</m:mi></m:mrow></m:math>, and so <m:math overflow="scroll"><m:mrow><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>⊥</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math>. This implies in turn that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>⊥</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> for all choices of <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math>. Because <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi><m:mrow><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, the only possibility is that <m:math overflow="scroll"><m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. However, the orthonormal basis vectors <m:math overflow="scroll"><m:msub><m:mi>e</m:mi><m:mi>i</m:mi></m:msub></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:math> are linear independent, and so we must have that <m:math overflow="scroll"><m:mrow><m:msub><m:mi>b</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. This is a contradiction with our original assumption, implying that the vectors <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>ψ</m:mi><m:mi>i</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup></m:math> are linearly independent.
+Therefore, this set of vectors is a basis for <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi> rank </m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi> dim </m:mi><m:mo>(</m:mo><m:mi mathvariant="normal">R</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>n</m:mi><m:mo>-</m:mo><m:mi>m</m:mi></m:mrow></m:math>. This in turn implies that
+<m:math overflow="scroll"><m:mrow><m:mi> rank </m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi> dim </m:mi><m:mo>(</m:mo><m:mi mathvariant="script">N</m:mi><m:mo>(</m:mo><m:mi>A</m:mi><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>n</m:mi><m:mo>.</m:mo></m:mrow></m:math></para>
+  </content>
+</document>

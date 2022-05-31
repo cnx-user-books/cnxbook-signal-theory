@@ -1,0 +1,758 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Dual Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47284</md:content-id>
+  <md:title>Dual Spaces</md:title>
+  <md:abstract>Definition of the dual space of a normed space containing all linear operators.</md:abstract>
+  <md:uuid>faf366c3-f3ff-4948-a0f8-a0285482001c</md:uuid>
+</metadata>
+
+<content>
+    <section id="cid1">
+      <title>Definition</title>
+      <para id="id128898">The set of linear functionals <m:math overflow="scroll"><m:mi>f</m:mi></m:math> on <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is itself a vector space:</para>
+      <list id="id128917" display="block" list-type="bulleted">
+        <item id="uid1"><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>+</m:mo><m:mi>g</m:mi><m:mo>)</m:mo><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>g</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> (closed under addition),
+</item>
+        <item id="uid2"><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mi>f</m:mi><m:mo>)</m:mo><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>a</m:mi><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:math> (closed under scalar multiplication),
+</item>
+        <item id="uid3"><m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> is linear and <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>+</m:mo><m:mi>z</m:mi><m:mo>=</m:mo><m:mi>f</m:mi></m:mrow></m:math> (features an addition zero).
+</item>
+      </list>
+      <para id="id129406"><emphasis effect="bold">Definition 1</emphasis> The <emphasis effect="italics">dual space</emphasis> (or algebraic dual) <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math> of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is the vector space of all linear function on <m:math overflow="scroll"><m:mi>X</m:mi></m:math>.</para>
+      <para id="id129452"><emphasis effect="bold">Example 1</emphasis> 
+If <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>N</m:mi></m:msup></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>i</m:mi></m:msub><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>∈</m:mo><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> and any linear functional on <m:math overflow="scroll"><m:mi>X</m:mi></m:math> can be written in this form.</para>
+      <para id="id129730"><emphasis effect="bold">Definition 2</emphasis> Let <m:math overflow="scroll"><m:mi>X</m:mi></m:math> be a normed space. The <emphasis effect="italics">normed dual</emphasis><m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math> of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is the normed space of all bounded linear functionals with norm <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id129829">Since in the sequel we refer almost exclusively to the normed dual, we will abbreviate to “dual” (and ignore the algebraic dual in the process).</para>
+      <para id="id129835"><emphasis effect="bold">Example 2</emphasis> Let us find the dual of <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>N</m:mi></m:msup></m:mrow></m:math>. In this space,</para>
+      <equation id="id129866">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>x</m:mi>
+            <m:mo>=</m:mo>
+            <m:mfenced separators="" open="[" close="]">
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>1</m:mn>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mn>2</m:mn>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:mo>⋮</m:mo>
+                  </m:mtd>
+                </m:mtr>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mi>n</m:mi>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+            <m:mspace width="3.33333pt"/>
+            <m:mi> and </m:mi>
+            <m:mspace width="3.33333pt"/>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msqrt>
+              <m:mrow>
+                <m:msubsup>
+                  <m:mo>∑</m:mo>
+                  <m:mrow>
+                    <m:mi>i</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mn>1</m:mn>
+                  </m:mrow>
+                  <m:mi>n</m:mi>
+                </m:msubsup>
+                <m:msup>
+                  <m:mrow>
+                    <m:mo>|</m:mo>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+                      <m:mi>i</m:mi>
+                    </m:msub>
+                    <m:mo>|</m:mo>
+                  </m:mrow>
+                  <m:mn>2</m:mn>
+                </m:msup>
+              </m:mrow>
+            </m:msqrt>
+            <m:mo>,</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:mi> where </m:mi>
+            <m:mspace width="3.33333pt"/>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>∈</m:mo>
+            <m:mi mathvariant="double-struck">R</m:mi>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id130004">From Example <link target-id="uid5"/>, a linear functional <m:math overflow="scroll"><m:mi>f</m:mi></m:math> can be written as:</para>
+      <equation id="id130020">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>i</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>n</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>i</m:mi>
+            </m:msub>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>〈</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>a</m:mi>
+              <m:mo>〉</m:mo>
+            </m:mrow>
+            <m:mo>,</m:mo>
+            <m:mspace width="3.33333pt"/>
+            <m:mi>a</m:mi>
+            <m:mo>∈</m:mo>
+            <m:msup>
+              <m:mi mathvariant="double-struck">R</m:mi>
+              <m:mi>n</m:mi>
+            </m:msup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id130105">There is a one-to-one mapping between the space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and the dual of <m:math overflow="scroll"><m:mi>X</m:mi></m:math>:</para>
+      <equation id="id130126">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mi>f</m:mi>
+            <m:mo>∈</m:mo>
+            <m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msup>
+                  <m:mi mathvariant="double-struck">R</m:mi>
+                  <m:mi>n</m:mi>
+                </m:msup>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mo>⟷</m:mo>
+            <m:mi>a</m:mi>
+            <m:mo>∈</m:mo>
+            <m:msup>
+              <m:mi mathvariant="double-struck">R</m:mi>
+              <m:mi>n</m:mi>
+            </m:msup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id130175">For this reason, <m:math overflow="scroll"><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup></m:math> is called self-dual (as there is a one-to-one mapping <m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup><m:mo>)</m:mo></m:mrow><m:mo>*</m:mo></m:msup><m:mo>⟷</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math>). Using the Cauchy-Schwartz Inequality, we can show that</para>
+      <equation id="id130235">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mo>|</m:mo>
+            <m:mi>f</m:mi>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>)</m:mo>
+            <m:mo>|</m:mo>
+            <m:mo>=</m:mo>
+            <m:mo>|</m:mo>
+            <m:mo>〈</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>a</m:mi>
+            <m:mo>〉</m:mo>
+            <m:mo>|</m:mo>
+            <m:mo>≤</m:mo>
+            <m:mo>∥</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>∥</m:mo>
+            <m:mo>∥</m:mo>
+            <m:mi>a</m:mi>
+            <m:mo>∥</m:mo>
+            <m:mo>,</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id130291">with equality if <m:math overflow="scroll"><m:mi>a</m:mi></m:math> is a scalar multiple of <m:math overflow="scroll"><m:mi>x</m:mi></m:math>. Therefore, we have that <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mo>∥</m:mo><m:mi>a</m:mi><m:mo>∥</m:mo></m:mrow></m:math>, i.e., the norms of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> and <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math> match through the mapping.</para>
+      <para id="id130355"><emphasis effect="bold">Theorem 1</emphasis> All normed dual spaces are Banach.</para>
+      <para id="id130373">Since we have shown that all dual spaces <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math> have a valid norm, it remains to be shown that all Cauchy sequences in in <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math> are convergent.</para>
+      <para id="id130404">Let <m:math overflow="scroll"><m:mrow><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:mo>⊆</m:mo><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> be a Cauchy sequence in <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math>. Thus, we have that for each <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> there exists <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">Z</m:mi><m:mo>+</m:mo></m:msup></m:mrow></m:math> such that if <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>,</m:mo><m:mi>m</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:msub><m:mi>f</m:mi><m:mi>m</m:mi></m:msub><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>∥</m:mo><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:mrow></m:math> as <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>,</m:mo><m:mi>m</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:math>.
+We will first show that for an arbitrary input <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, the sequence <m:math overflow="scroll"><m:mrow><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:mo>⊆</m:mo><m:mi>R</m:mi></m:mrow></m:math> is Cauchy.
+Pick an arbitrary <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>, and obtain the <m:math overflow="scroll"><m:mrow><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">Z</m:mi><m:mo>+</m:mo></m:msup></m:mrow></m:math> from the definition of Cauchy sequence for <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msubsup><m:mi>f</m:mi><m:mi>n</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup></m:math>.
+Then for all <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>,</m:mo><m:mi>m</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:math> we have that <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:msub><m:mi>f</m:mi><m:mi>m</m:mi></m:msub><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>f</m:mi><m:mi>m</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mo>≤</m:mo><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:msub><m:mi>f</m:mi><m:mi>m</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mo>≤</m:mo><m:mrow><m:mi>ϵ</m:mi><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id130892">Now, since <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>R</m:mi><m:mo>=</m:mo><m:mi mathvariant="double-struck">C</m:mi></m:mrow></m:math> are complete, we have that the sequence <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup></m:math> converges to some scalar <m:math overflow="scroll"><m:mrow><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>. In this way, we can define a new function <m:math overflow="scroll"><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:math> that collects the limits of all such sequences over all inputs <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>. We conjecture that the sequence <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>: we begin by picking some <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Since <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup></m:math> is convergent to <m:math overflow="scroll"><m:mrow><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> for each <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math>, we have that for <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:msub><m:mi>n</m:mi><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>x</m:mi></m:mrow></m:msub></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:msubsup><m:mi>f</m:mi><m:mi>n</m:mi><m:mo>*</m:mo></m:msubsup><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo><m:mo>≤</m:mo><m:mi>ϵ</m:mi></m:mrow></m:mrow></m:math>. Now, let <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>*</m:mo></m:msubsup><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:msub><m:mi>n</m:mi><m:mrow><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>x</m:mi></m:mrow></m:msub></m:mrow></m:math>. Then, for <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>*</m:mo></m:msubsup></m:mrow></m:math>,</para>
+      <equation id="id131302">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mo>=</m:mo>
+            </m:mrow>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>X</m:mi>
+                <m:mo>,</m:mo>
+                <m:mo>∥</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>∥</m:mo>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+            </m:munder>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:msub>
+                <m:mi>f</m:mi>
+                <m:mi>n</m:mi>
+              </m:msub>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>-</m:mo>
+              <m:msup>
+                <m:mi>f</m:mi>
+                <m:mo>*</m:mo>
+              </m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mo>&lt;</m:mo>
+            <m:mi>ϵ</m:mi>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id131412">Therefore, we have found an <m:math overflow="scroll"><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>*</m:mo></m:msubsup></m:math> for each <m:math overflow="scroll"><m:mi>ϵ</m:mi></m:math> that fits the definition of convergence, and so <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>→</m:mo><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>.</para>
+      <para id="id131470">Next, we will show that <m:math overflow="scroll"><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:math> is linear and bounded.
+To show that <m:math overflow="scroll"><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:math> is linear, we check that</para>
+      <equation id="id131502">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>a</m:mi>
+              <m:mi>x</m:mi>
+              <m:mo>+</m:mo>
+              <m:mi>b</m:mi>
+              <m:mi>y</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>a</m:mi>
+              <m:mi>x</m:mi>
+              <m:mo>+</m:mo>
+              <m:mi>b</m:mi>
+              <m:mi>y</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mi>a</m:mi>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mi>b</m:mi>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">lim</m:mo>
+              <m:mrow>
+                <m:mi>n</m:mi>
+                <m:mo>→</m:mo>
+                <m:mi>∞</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:mi>a</m:mi>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>+</m:mo>
+            <m:mi>b</m:mi>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>y</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id131693">To show that <m:math overflow="scroll"><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:math> is bounded, we have that for each <m:math overflow="scroll"><m:mrow><m:mi>ϵ</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> there exists <m:math overflow="scroll"><m:mrow><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>*</m:mo></m:msubsup><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">Z</m:mi><m:mo>+</m:mo></m:msup></m:mrow></m:math> (shown above) such that if <m:math overflow="scroll"><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:msubsup><m:mi>n</m:mi><m:mn>0</m:mn><m:mo>*</m:mo></m:msubsup></m:mrow></m:math> then</para>
+      <equation id="id131782">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>≤</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>-</m:mo>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mo>*</m:mo>
+            </m:msup>
+            <m:mrow>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>+</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>≤</m:mo>
+              <m:mi>ϵ</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>+</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>·</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:mo>≤</m:mo>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>ϵ</m:mi>
+              <m:mo>+</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>f</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>)</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>|</m:mo>
+              <m:mo>.</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id131964">This shows that <m:math overflow="scroll"><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup></m:math> is linear and bounded and so <m:math overflow="scroll"><m:mrow><m:msup><m:mi>f</m:mi><m:mo>*</m:mo></m:msup><m:mo>∈</m:mo><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math>. Therefore, <m:math overflow="scroll"><m:msubsup><m:mrow><m:mo>{</m:mo><m:msubsup><m:mi>f</m:mi><m:mi>n</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>}</m:mo></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup></m:math> converges in <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math> and, since the Cauchy sequence was arbitrary, we have that <m:math overflow="scroll"><m:msup><m:mi>X</m:mi><m:mo>*</m:mo></m:msup></m:math> is complete and therefore Banach.</para>
+    </section>
+    <section id="cid2">
+      <title>The Dual of <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub></m:math></title>
+      <para id="id132099">Recall the space <m:math overflow="scroll"><m:mrow><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub><m:mrow><m:mo>=</m:mo><m:mo>{</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:msup><m:mo>|</m:mo><m:mi>p</m:mi></m:msup><m:mo>&lt;</m:mo><m:mi>∞</m:mi><m:mo>}</m:mo></m:mrow></m:mrow></m:math>, with the <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub></m:math>-norm <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mi>p</m:mi></m:msub><m:mrow><m:mo>=</m:mo><m:mo>(</m:mo></m:mrow><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:mrow><m:mo>|</m:mo></m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:msup><m:mrow><m:msup><m:mo>|</m:mo><m:mi>p</m:mi></m:msup><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:mrow></m:math>. The dual of <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub></m:math> is
+<m:math overflow="scroll"><m:mrow><m:msup><m:mrow><m:mo>(</m:mo><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>*</m:mo></m:msup><m:mo>=</m:mo><m:msub><m:mi>ℓ</m:mi><m:mi>q</m:mi></m:msub></m:mrow></m:math>, with <m:math overflow="scroll"><m:mrow><m:mi>q</m:mi><m:mo>=</m:mo><m:mfrac><m:mi>p</m:mi><m:mrow><m:mi>p</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:mfrac></m:mrow></m:math>. That is, every linear bounded functional <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msub><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>*</m:mo></m:msup></m:mrow></m:math> can be represented in terms of <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>∞</m:mi></m:msubsup><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub></m:mrow></m:math>, where <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mi>a</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>a</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>...</m:mo><m:mo>)</m:mo></m:mrow><m:mo>∈</m:mo><m:msub><m:mi>ℓ</m:mi><m:mi>q</m:mi></m:msub></m:mrow></m:math>. Note that if <m:math overflow="scroll"><m:mrow><m:mi>p</m:mi><m:mo>=</m:mo><m:mn>2</m:mn></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mi>q</m:mi><m:mo>=</m:mo><m:mn>2</m:mn></m:mrow></m:math>, and so <m:math overflow="scroll"><m:msub><m:mi>ℓ</m:mi><m:mn>2</m:mn></m:msub></m:math> is self-dual.</para>
+    </section>
+    <section id="cid3">
+      <title>Bases for self-dual spaces</title>
+      <para id="id132546">Consider the example self-dual space <m:math overflow="scroll"><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup></m:math> and pick a basis <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>e</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mn>2</m:mn></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>e</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo></m:mrow></m:math> for it. Recall that for each <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> there exists a bounded linear functional
+<m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>a</m:mi></m:msub><m:mo>∈</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup><m:mo>)</m:mo></m:mrow><m:mo>*</m:mo></m:msup></m:mrow></m:math> given by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>a</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>a</m:mi><m:mo>〉</m:mo></m:mrow><m:mo>.</m:mo></m:mrow></m:math> Thus, one can build a basis for the dual space <m:math overflow="scroll"><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup><m:mo>)</m:mo></m:mrow><m:mo>*</m:mo></m:msup></m:math> as <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>f</m:mi><m:mrow><m:mi>e</m:mi><m:mn>1</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mrow><m:mi>e</m:mi><m:mn>2</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>.</m:mo><m:mo>,</m:mo><m:msub><m:mi>f</m:mi><m:mrow><m:mi>e</m:mi><m:mi>n</m:mi></m:mrow></m:msub><m:mo>}</m:mo></m:mrow></m:math>.</para>
+    </section>
+    <section id="cid4">
+      <title>Riesz Representation Theorem</title>
+      <para id="id132808">Since it is easier to conceive a dual space by linking it to elements of a known space (as seen above for self duals), we may ask if there are large classes of spaces who are self-dual.</para>
+      <para id="id132812"><emphasis effect="bold">Theorem 2 (Riesz Representation Theorem)</emphasis> 
+If <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mi>H</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> is a bounded linear functional on a Hilbert space <m:math overflow="scroll"><m:mi>H</m:mi></m:math>, there exists a unique vector <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math> such that for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math> we have <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:math>.
+Furthermore, we have <m:math overflow="scroll"><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow></m:math>, and every <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math> defines a unique bounded linear functional <m:math overflow="scroll"><m:mrow><m:msub><m:mi>f</m:mi><m:mi>y</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:mrow></m:math>.</para>
+      <para id="id132996">Thus, since there is a one-to-one mapping between the dual of the Hilbert space and the Hilbert space (<m:math overflow="scroll"><m:mrow><m:msup><m:mi>H</m:mi><m:mo>*</m:mo></m:msup><m:mo>≈</m:mo><m:mi>H</m:mi></m:mrow></m:math>), we say that all Hilbert spaces are self-dual.
+
+Pick a linear bounded functional <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mi>H</m:mi><m:mo>*</m:mo></m:msup></m:mrow></m:math> and let <m:math overflow="scroll"><m:mrow><m:mi mathvariant="script">N</m:mi><m:mo>⊆</m:mo><m:mi>H</m:mi></m:mrow></m:math> be the set of all vectors <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math> for which <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Note that <m:math overflow="scroll"><m:mi mathvariant="script">N</m:mi></m:math> is a closed subspace of <m:math overflow="scroll"><m:mi>H</m:mi></m:math>, for if <m:math overflow="scroll"><m:mrow><m:mo>{</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>}</m:mo><m:mo>⊆</m:mo><m:mi mathvariant="script">N</m:mi></m:mrow></m:math> is sequence that converges to <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math> then, due to the continuity of <m:math overflow="scroll"><m:mi>f</m:mi></m:math>, <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mi>n</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mo>→</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and so <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi></m:mrow></m:math>. We consider two possibilities for the subspace <m:math overflow="scroll"><m:mi mathvariant="script">N</m:mi></m:math>:</para>
+      <list id="id133237" display="block" list-type="bulleted">
+        <item id="uid10">If <m:math overflow="scroll"><m:mrow><m:mi>N</m:mi><m:mo>=</m:mo><m:mi>H</m:mi></m:mrow></m:math> then <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>〉</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+</item>
+        <item id="uid11">If <m:math overflow="scroll"><m:mrow><m:mi>N</m:mi><m:mo>≠</m:mo><m:mi>H</m:mi></m:mrow></m:math> then we can partition <m:math overflow="scroll"><m:mrow><m:mi>H</m:mi><m:mo>=</m:mo><m:mi mathvariant="script">N</m:mi><m:mo>+</m:mo><m:msup><m:mi mathvariant="script">N</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math> and so there must exist some <m:math overflow="scroll"><m:mrow><m:msub><m:mi>z</m:mi><m:mn>0</m:mn></m:msub><m:mo>∈</m:mo><m:msup><m:mi mathvariant="script">N</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:msub><m:mi>z</m:mi><m:mn>0</m:mn></m:msub><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Then, define <m:math overflow="scroll"><m:mstyle scriptlevel="0" displaystyle="true"><m:mrow><m:mi>z</m:mi><m:mo>=</m:mo><m:mfrac><m:msub><m:mi>z</m:mi><m:mi>o</m:mi></m:msub><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>z</m:mi><m:mi>o</m:mi></m:msub><m:mo>)</m:mo><m:mo>|</m:mo></m:mrow></m:mfrac></m:mrow></m:mstyle></m:math> to get <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>∈</m:mo><m:msup><m:mi mathvariant="script">N</m:mi><m:mo>⊥</m:mo></m:msup></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>.
+Now, pick an arbitrary <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math> and see that
+<equation id="id133520"><m:math overflow="scroll" mode="display"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>-</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>-</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>.</m:mo></m:mrow></m:math></equation>
+Therefore, we have that <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mi>z</m:mi><m:mo>∈</m:mo><m:mi mathvariant="script">N</m:mi></m:mrow></m:math>. Since <m:math overflow="scroll"><m:mrow><m:mi>z</m:mi><m:mo>⊥</m:mo><m:mi mathvariant="script">N</m:mi></m:mrow></m:math>, we have that
+<equation id="uid12"><m:math overflow="scroll" mode="display"><m:mtable displaystyle="true"><m:mtr><m:mtd columnalign="right"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mi>z</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo><m:mo>-</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>〈</m:mo><m:mi>z</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:math></equation>
+
+and so
+<equation id="id133772"><m:math overflow="scroll" mode="display"><m:mstyle scriptlevel="0" displaystyle="true"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo></m:mrow><m:mrow><m:mo>〈</m:mo><m:mi>z</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo></m:mrow></m:mfrac><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>z</m:mi><m:mo>〉</m:mo></m:mrow><m:msup><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>z</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfrac><m:mo>=</m:mo><m:mfenced separators="" open="〈" close="〉"><m:mi>x</m:mi><m:mo>,</m:mo><m:mfrac><m:mi>z</m:mi><m:msup><m:mrow><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>z</m:mi><m:mo>|</m:mo><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfrac></m:mfenced><m:mo>.</m:mo></m:mrow></m:mstyle></m:math></equation>
+Thus, we have found a vector <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mfrac><m:mi>z</m:mi><m:msup><m:mrow><m:mo>∥</m:mo><m:mi>z</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfrac></m:mrow></m:math> such that <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math>. Now, to compute the norm of the functional, consider
+<equation id="id133977"><m:math overflow="scroll" mode="display"><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mo>|</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>〉</m:mo><m:mo>|</m:mo><m:mo>≤</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>·</m:mo><m:mo>|</m:mo><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>|</m:mo><m:mo>,</m:mo></m:mrow></m:math></equation>
+with equality if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>α</m:mi><m:mi>y</m:mi></m:mrow></m:math> for <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>. Thus, we have that <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow></m:math>.
+</item>
+      </list>
+      <para id="id134106">We now show uniqueness: let us assume that there exists a second <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>≠</m:mo><m:mi>y</m:mi></m:mrow></m:math>, <m:math overflow="scroll"><m:mrow><m:mover accent="true"><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math>, for which <m:math overflow="scroll"><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>〈</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mover accent="true"><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>〉</m:mo></m:mrow></m:mrow></m:math> for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math>. Then we have that for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>H</m:mi></m:mrow></m:math>,</para>
+      <equation id="uid13">
+        <m:math overflow="scroll" mode="display">
+          <m:mtable displaystyle="true">
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>〈</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                  <m:mo>〉</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mo>〈</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mover accent="true">
+                    <m:mi>y</m:mi>
+                    <m:mo>^</m:mo>
+                  </m:mover>
+                  <m:mo>〉</m:mo>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                  <m:mo>-</m:mo>
+                  <m:mrow>
+                    <m:mo>〈</m:mo>
+                    <m:mi>x</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mover accent="true">
+                      <m:mi>y</m:mi>
+                      <m:mo>^</m:mo>
+                    </m:mover>
+                    <m:mo>〉</m:mo>
+                  </m:mrow>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mo>〈</m:mo>
+                  <m:mi>x</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:mi>y</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mover accent="true">
+                    <m:mi>y</m:mi>
+                    <m:mo>^</m:mo>
+                  </m:mover>
+                  <m:mo>〉</m:mo>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mrow>
+                  <m:mi>y</m:mi>
+                  <m:mo>-</m:mo>
+                  <m:mover accent="true">
+                    <m:mi>y</m:mi>
+                    <m:mo>^</m:mo>
+                  </m:mover>
+                </m:mrow>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mn>0</m:mn>
+                  <m:mo>,</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+            <m:mtr>
+              <m:mtd columnalign="right">
+                <m:mi>y</m:mi>
+              </m:mtd>
+              <m:mtd columnalign="left">
+                <m:mrow>
+                  <m:mo>=</m:mo>
+                  <m:mover accent="true">
+                    <m:mi>y</m:mi>
+                    <m:mo>^</m:mo>
+                  </m:mover>
+                  <m:mo>.</m:mo>
+                </m:mrow>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:math>
+      </equation>
+      <para id="id134420">
+This contradicts the original assumption that <m:math overflow="scroll"><m:mrow><m:mi>y</m:mi><m:mo>≠</m:mo><m:mover accent="true"><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:mrow></m:math>. Therefore we have that <m:math overflow="scroll"><m:mi>y</m:mi></m:math> is unique, completing the proof.</para>
+    </section>
+    <section id="cid5">
+      <title>Linear Functional Extensions</title>
+      <para id="id134468">When we consider spaces nested inside one another, we can define pairs of functions that match each other at the overlap.</para>
+      <para id="id134472"><emphasis effect="bold">Definition 3</emphasis> Let <m:math overflow="scroll"><m:mi>f</m:mi></m:math> be a linear functional on a subspace <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> of a vector space <m:math overflow="scroll"><m:mi>X</m:mi></m:math>. A linear functional <m:math overflow="scroll"><m:mi>F</m:mi></m:math> is said to be an <emphasis effect="italics">extension</emphasis> of <m:math overflow="scroll"><m:mi>f</m:mi></m:math> to <m:math overflow="scroll"><m:mi>N</m:mi></m:math> (where <m:math overflow="scroll"><m:mi>N</m:mi></m:math> is another subspace of <m:math overflow="scroll"><m:mi>X</m:mi></m:math> that satisfies <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>⊆</m:mo><m:mi>N</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math>) if <m:math overflow="scroll"><m:mi>F</m:mi></m:math> is defined on <m:math overflow="scroll"><m:mi>N</m:mi></m:math> and <m:math overflow="scroll"><m:mi>F</m:mi></m:math> is identical to <m:math overflow="scroll"><m:mi>f</m:mi></m:math> on <m:math overflow="scroll"><m:mi>M</m:mi></m:math>.</para>
+      <para id="id134630">Here is another reason why we are so interested in bounded linear functionals.</para>
+      <para id="id134634"><emphasis effect="bold">Theorem 3 (Hahn-Banach Theorem)</emphasis> 
+A bounded linear functional <m:math overflow="scroll"><m:mi>f</m:mi></m:math> on a subspace <m:math overflow="scroll"><m:mrow><m:mi>M</m:mi><m:mo>⊆</m:mo><m:mi>X</m:mi></m:mrow></m:math> can be extended to a bounded linear functional <m:math overflow="scroll"><m:mi>F</m:mi></m:math> on the entire space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> with</para>
+      <equation id="id134687">
+        <m:math overflow="scroll" mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>F</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>X</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>|</m:mo>
+                <m:mi>F</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>|</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>M</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>|</m:mo>
+                <m:mi>f</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>|</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo movablelimits="true" form="prefix">sup</m:mo>
+              <m:mrow>
+                <m:mi>x</m:mi>
+                <m:mo>∈</m:mo>
+                <m:mi>M</m:mi>
+              </m:mrow>
+            </m:munder>
+            <m:mfrac>
+              <m:mrow>
+                <m:mo>|</m:mo>
+                <m:mi>F</m:mi>
+                <m:mo>(</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>)</m:mo>
+                <m:mo>|</m:mo>
+              </m:mrow>
+              <m:mrow>
+                <m:mo>∥</m:mo>
+                <m:mi>x</m:mi>
+                <m:mo>∥</m:mo>
+              </m:mrow>
+            </m:mfrac>
+            <m:mo>.</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id134848">The proof is in page 111 of Luenberger.</para>
+    </section>
+  </content>
+</document>

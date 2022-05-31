@@ -1,0 +1,88 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Normed Spaces</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m47289</md:content-id>
+  <md:title>Normed Spaces</md:title>
+  <md:abstract>Description of norms, normed spaces, and Banach spaces</md:abstract>
+  <md:uuid>cca443dd-ba3d-4827-bf06-716d8dd1b663</md:uuid>
+</metadata>
+
+<content>
+    <para id="id326176">Distances and metrics allow us to evaluate how different two signals are from each other. Norms allow us to evaluate how “big”, “important”, or “interesting” a given signal is.</para>
+    <para id="id326186"><emphasis effect="bold">Definition 1</emphasis> Assume <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is a linear vector space. A <emphasis effect="italics">norm</emphasis> on <m:math overflow="scroll"><m:mi>X</m:mi></m:math> is a function <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo><m:mo>:</m:mo><m:mi>X</m:mi><m:mo>→</m:mo><m:mi mathvariant="double-struck">R</m:mi></m:mrow></m:math> with the following properties for all <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>∈</m:mo><m:mi>X</m:mi></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>a</m:mi><m:mo>∈</m:mo><m:mi>R</m:mi></m:mrow></m:math>:</para>
+    <list id="id326612" display="block" list-type="enumerated">
+      <item id="uid2"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math>, (non-negativity)
+</item>
+      <item id="uid3"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> if and only if <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> (zero norm for zero vector)
+</item>
+      <item id="uid4"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>a</m:mi><m:mo>·</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mi>a</m:mi><m:mo>|</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math>, (scaling)
+</item>
+      <item id="uid5"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo><m:mo>≤</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>+</m:mo><m:mo>∥</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow></m:math>. (triangle inequality)
+</item>
+    </list>
+    <para id="id326953"><m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math> is read as the norm of <m:math overflow="scroll"><m:mi>x</m:mi></m:math> or length of <m:math overflow="scroll"><m:mi>x</m:mi></m:math>.</para>
+    <para id="id326984">Intuitively, one can say that <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow></m:math> is the distance between <m:math overflow="scroll"><m:mi>x</m:mi></m:math> and the zero vector (more on this soon).</para>
+    <para id="id327008"><emphasis effect="bold">Definition 2</emphasis> A vector space <m:math overflow="scroll"><m:mi>X</m:mi></m:math> with a norm <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo></m:mrow></m:math> is called a <emphasis effect="italics">normed linear vector space</emphasis><m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo><m:mo>)</m:mo></m:mrow></m:math> (or a normed space for brevity).</para>
+    <para id="id327068"><emphasis effect="bold">Definition 3</emphasis> Let <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo><m:mo>)</m:mo></m:mrow></m:math> be a normed space. The <emphasis effect="italics">induced metric</emphasis> or <emphasis effect="italics">induced distance</emphasis> is given by <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mi>I</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>.</para>
+    <para id="id327151"><emphasis effect="bold">Definition 4</emphasis> If a normed space is complete under the induced metric, then it is called a <emphasis effect="italics">Banach space</emphasis>.</para>
+    <para id="id327168">All norms induce distances, but not all distances are induced by norms.</para>
+    <para id="id327172"><emphasis effect="bold">Example 1</emphasis> Consider the distance</para>
+    <equation id="id327184">
+      <m:math overflow="scroll" mode="display">
+        <m:mrow>
+          <m:msup>
+            <m:mi>d</m:mi>
+            <m:mo>'</m:mo>
+          </m:msup>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mi>x</m:mi>
+            <m:mo>,</m:mo>
+            <m:mi>y</m:mi>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>=</m:mo>
+          <m:mfenced separators="" open="{" close="">
+            <m:mtable>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>0</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mi> if </m:mi>
+                    <m:mspace width="3.33333pt"/>
+                    <m:mi>x</m:mi>
+                    <m:mo>=</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>,</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+              <m:mtr>
+                <m:mtd columnalign="left">
+                  <m:mn>1</m:mn>
+                </m:mtd>
+                <m:mtd columnalign="left">
+                  <m:mrow>
+                    <m:mi> if </m:mi>
+                    <m:mspace width="3.33333pt"/>
+                    <m:mi>x</m:mi>
+                    <m:mo>≠</m:mo>
+                    <m:mi>y</m:mi>
+                    <m:mo>.</m:mo>
+                  </m:mrow>
+                </m:mtd>
+              </m:mtr>
+            </m:mtable>
+          </m:mfenced>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id327271">Let us assume that there exists a norm <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msup><m:mi>d</m:mi><m:mo>'</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math> that would induce this distance. We would then have for <m:math overflow="scroll"><m:mrow><m:mi>x</m:mi><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:mi>α</m:mi><m:mo>∉</m:mo><m:mo>{</m:mo><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:math> that <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>α</m:mi><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msup><m:mi>d</m:mi><m:mo>'</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:mi>α</m:mi><m:mi>x</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math> and <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msup><m:mi>d</m:mi><m:mo>'</m:mo></m:msup><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math>, which contradicts <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>α</m:mi><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mrow><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub></m:mrow></m:math>. Thus <m:math overflow="scroll"><m:msub><m:mrow><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo></m:mrow><m:mi>i</m:mi></m:msub></m:math> is not a valid norm.</para>
+    <para id="id327515">In contrast, here are some examples of valid norms.</para>
+    <para id="id327519"><emphasis effect="bold">Example 2</emphasis> The vector space <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mi>C</m:mi><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow></m:math> accepts the norm <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mi>∞</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mi>T</m:mi></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math>. The induced distance is <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>t</m:mi><m:mo>∈</m:mo><m:mi>T</m:mi></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>y</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>d</m:mi><m:mi>∞</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>; it is straightforward to prove properties (1–4). We previously showed that the metric space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mi>∞</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> is complete, and so <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>C</m:mi><m:mrow><m:mo>[</m:mo><m:mi>T</m:mi><m:mo>]</m:mo></m:mrow><m:mo>,</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:msub><m:mo>∥</m:mo><m:mi>∞</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> is a Banach space.</para>
+    <para id="id327763"><emphasis effect="bold">Example 3</emphasis> The vector space <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup></m:mrow></m:math> accepts the norm <m:math overflow="scroll"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:msup><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msup><m:mrow><m:mo>|</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfenced><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:math>. The induced metric is <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:msup><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>n</m:mi></m:msubsup><m:msup><m:mrow><m:mo>|</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mfenced><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:mo>=</m:mo><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>, the Euclidean distance. Thus <m:math overflow="scroll"><m:msub><m:mrow><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo></m:mrow><m:mn>2</m:mn></m:msub></m:math> is known as the Euclidean norm. The spaces <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>n</m:mi></m:msup><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> are Banach spaces for all values of <m:math overflow="scroll"><m:mi>n</m:mi></m:math>.</para>
+    <para id="id328057"><emphasis effect="bold">Example 4</emphasis> The vector space <m:math overflow="scroll"><m:mrow><m:mi>X</m:mi><m:mo>=</m:mo><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:math> accepts the norm <m:math overflow="scroll"><m:mrow><m:mo>∥</m:mo><m:mi>x</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow></m:math>. The induced metric <m:math overflow="scroll"><m:mrow><m:msub><m:mi>d</m:mi><m:mi>i</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>|</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> is the standard metric for the reals. Since we have previously shown that <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mi>X</m:mi><m:mo>,</m:mo><m:msub><m:mi>d</m:mi><m:mn>0</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:math> is not a complete vector space, then the space <m:math overflow="scroll"><m:mrow><m:mo>(</m:mo><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo><m:mo>,</m:mo><m:mo>∥</m:mo><m:mo>·</m:mo><m:mo>∥</m:mo><m:mo>)</m:mo></m:mrow></m:math> is not a Banach space.</para>
+  </content>
+</document>
