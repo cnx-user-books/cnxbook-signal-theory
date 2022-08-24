@@ -1,12 +1,13 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" authors="Marco F. Duarte">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
     <md:content-id>col11542</md:content-id>
     <md:title>Signal Theory</md:title>
     <md:language>en</md:language>
     <md:license url="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License</md:license>
     <md:uuid>b4ef9358-43bc-46d5-809e-6f6e1263a7c5</md:uuid>
-<md:slug>signal-theory</md:slug>
-</metadata>
+    <md:slug>signal-theory</md:slug>
+  </metadata>
   <col:content>
     <col:module document="m46862"/>
     <col:module document="m47288"/>
